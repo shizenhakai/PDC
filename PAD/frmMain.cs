@@ -33,8 +33,10 @@ namespace PAD
 
         private void img1_Click(object sender, EventArgs e)
         {
-            curMon++;
-            SetMonsterSlot(1, curMon);
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if(loadMonster.SelectedMonster!=0) SetMonsterSlot(1, loadMonster.SelectedMonster);
         }
         public int SetMonsterSlot(int TeamSlot, int MonsterNo)
         {
@@ -226,6 +228,12 @@ namespace PAD
                                     case "xp_max":
                                         curMonster.xp_max = convertedInt;
                                         break;
+                                    case "random_flags":
+                                        curMonster.random_flags = convertedInt;
+                                        break;
+                                    case "unknown_009":
+                                        curMonster.unknown_009 = convertedInt;
+                                        break;
                                     case "name": //string
                                         curMonster.name = reader.Value.ToString();
                                         break;
@@ -234,16 +242,19 @@ namespace PAD
                                     case "super_awakenings": //list
                                         break;
                                     case "inheritable": //bool
-                                        curMonster.inheritable = (reader.Value.ToString() == "true");
+                                        curMonster.inheritable = (reader.Value.ToString() == "True");
                                         break;
                                     case "is_collab": //bool
-                                        curMonster.is_collab = (reader.Value.ToString() == "true");
+                                        curMonster.is_collab = (reader.Value.ToString() == "True");
                                         break;
                                     case "released_status": //bool
-                                        curMonster.released_status = (reader.Value.ToString() == "true");
+                                        string test = reader.Value.ToString();
+                                        if (test == "True") curMonster.released_status = true;
+                                        else curMonster.released_status = false;
+                                        //curMonster.released_status = (reader.Value.ToString() == "True"); ;
                                         break;
                                     case "is_ult": //bool
-                                        curMonster.is_ult = (reader.Value.ToString() == "true");
+                                        curMonster.is_ult = (reader.Value.ToString() == "True");
                                         break;
                                     case "leader_skill":
                                         curObject = "leader_skill";
@@ -275,6 +286,46 @@ namespace PAD
                 }
             }
             Console.WriteLine("Added {0} monsters to dictionary.", MonsterList.Count);
+        }
+
+        private void img2_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(2, loadMonster.SelectedMonster);
+        }
+
+        private void img3_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(3, loadMonster.SelectedMonster);
+        }
+
+        private void img4_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(4, loadMonster.SelectedMonster);
+        }
+
+        private void img5_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(5, loadMonster.SelectedMonster);
+        }
+
+        private void img6_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = MonsterList;
+            loadMonster.ShowDialog();
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(6, loadMonster.SelectedMonster);
         }
     }
     public class PadMonster
@@ -321,6 +372,8 @@ namespace PAD
         public int un_evo_mat_5 { get; set; }
         public double xp_gr { get; set; }
         public int xp_max { get; set; }
+        public int random_flags { get; set; }
+        public int unknown_009 { get; set; }
         public PadMonster()
         {
             awakenings = new List<int>();

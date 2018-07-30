@@ -27,21 +27,25 @@ namespace PAD
             filteredList = new Dictionary<int, PadMonster>();
             foreach (KeyValuePair<int, PadMonster> entry in MonsterList)
             {
+                toAdd = true;
                 if ((InheritSelect) && (MonsterList[entry.Key].inheritable == false)) toAdd = false;
+                if (MonsterList[entry.Key].card_id > 9999) toAdd = false;
+                if (MonsterList[entry.Key].released_status == false) toAdd = false;
 
                 if (toAdd == true)
                 {
                     filteredList.Add(MonsterList[entry.Key].card_id, MonsterList[entry.Key]);
-                    cmbMonsters.Items.Add(MonsterList[entry.Key].name);
+                    cmbMonsters.Items.Add(entry.Key.ToString() + ". " + MonsterList[entry.Key].name);
                 }
+                cmbMonsters.Sorted = true;
             }
         }
 
         private void btnSelect_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i < filteredList.Count - 1; i++)
+            foreach (KeyValuePair<int, PadMonster> entry in MonsterList)
             {
-                if (filteredList[i].name == cmbMonsters.Text) SelectedMonster = i;
+                if (filteredList[entry.Key].name == cmbMonsters.Text) SelectedMonster = entry.Key;
             }
             this.Hide();
         }
