@@ -12,13 +12,13 @@ using Newtonsoft.Json;
 
 namespace PAD
 {
-    public partial class frmMain : Form
+    public partial class v : Form
     {
         Dictionary<int, CombinedCard> CombinedList;
         Dictionary<int, PadMonster> NAList;
         Dictionary<int, PadMonster> JPList;
         string PadDataPath= @"E:\PadSync\";
-        public frmMain()
+        public v()
         {
             InitializeComponent();
             NAList = new Dictionary<int, PadMonster>();

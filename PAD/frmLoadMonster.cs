@@ -23,13 +23,18 @@ namespace PAD
 
         private void frmLoadMonster_Load(object sender, EventArgs e)
         {
+        }
+
+        private void FilterList()
+        {
             bool toAdd = true;
+            lstMonsters.Items.Clear();
             filteredList = new Dictionary<int, CombinedCard>();
             foreach (KeyValuePair<int, CombinedCard> entry in MonsterList)
             {
                 toAdd = true;
                 if ((InheritSelect) && (MonsterList[entry.Key].inheritable == false)) toAdd = false;
-                
+
                 if (MonsterList[entry.Key].card_id > 9999) toAdd = false;
                 if (MonsterList[entry.Key].released_status == false) toAdd = false;
                 if (MonsterList[entry.Key].type_1_id != -1)
@@ -50,7 +55,10 @@ namespace PAD
                     Type3 = this.Controls.Find("chk" + MonsterList[entry.Key].type_3_id.ToString(), false).FirstOrDefault() as CheckBox;
                     if (Type3.Checked == false) toAdd = false; ;
                 }
-
+                if(txtFilter.Text!="")
+                {
+                    if (!MonsterList[entry.Key].name.ToLower().Contains(txtFilter.Text.ToLower())) toAdd = false;
+                }
                 if (toAdd == true)
                 {
                     filteredList.Add(MonsterList[entry.Key].card_id, MonsterList[entry.Key]);
@@ -59,8 +67,37 @@ namespace PAD
                 lstMonsters.Sorted = true;
             }
         }
-
         private void btnSelect_Click(object sender, EventArgs e)
+        {
+            foreach (KeyValuePair<int, CombinedCard> entry in filteredList)
+            {
+                if (filteredList[entry.Key].name == lstMonsters.Text) SelectedMonster = entry.Key;
+            }
+            this.Hide();
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFilter_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+        }
+
+        private void txtFilter_KeyUp(object sender, KeyEventArgs e)
+        {
+            if(txtFilter.Text.Length > 3) FilterList();
+            else if (e.KeyCode == Keys.Enter) FilterList();
+        }
+
+        private void lstMonsters_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lstMonsters_DoubleClick(object sender, EventArgs e)
         {
             foreach (KeyValuePair<int, CombinedCard> entry in filteredList)
             {

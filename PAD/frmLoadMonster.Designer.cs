@@ -41,7 +41,7 @@
             this.chk14 = new System.Windows.Forms.CheckBox();
             this.chk12 = new System.Windows.Forms.CheckBox();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFilter = new System.Windows.Forms.TextBox();
             this.lstMonsters = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
@@ -187,12 +187,15 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // textBox1
+            // txtFilter
             // 
-            this.textBox1.Location = new System.Drawing.Point(19, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(360, 20);
-            this.textBox1.TabIndex = 14;
+            this.txtFilter.Location = new System.Drawing.Point(19, 12);
+            this.txtFilter.Name = "txtFilter";
+            this.txtFilter.Size = new System.Drawing.Size(360, 20);
+            this.txtFilter.TabIndex = 1;
+            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
+            this.txtFilter.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFilter_KeyDown);
+            this.txtFilter.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFilter_KeyUp);
             // 
             // lstMonsters
             // 
@@ -201,6 +204,8 @@
             this.lstMonsters.Name = "lstMonsters";
             this.lstMonsters.Size = new System.Drawing.Size(360, 316);
             this.lstMonsters.TabIndex = 15;
+            this.lstMonsters.SelectedIndexChanged += new System.EventHandler(this.lstMonsters_SelectedIndexChanged);
+            this.lstMonsters.DoubleClick += new System.EventHandler(this.lstMonsters_DoubleClick);
             // 
             // frmLoadMonster
             // 
@@ -208,7 +213,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(399, 502);
             this.Controls.Add(this.lstMonsters);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.chk15);
             this.Controls.Add(this.chk14);
@@ -223,6 +228,7 @@
             this.Controls.Add(this.chk1);
             this.Controls.Add(this.chk0);
             this.Name = "frmLoadMonster";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Select Monster";
             this.Load += new System.EventHandler(this.frmLoadMonster_Load);
             this.ResumeLayout(false);
@@ -245,7 +251,7 @@
         private System.Windows.Forms.CheckBox chk14;
         private System.Windows.Forms.CheckBox chk12;
         private System.Windows.Forms.Button btnSelect;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.ListBox lstMonsters;
     }
 }
