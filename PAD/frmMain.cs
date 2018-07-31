@@ -96,7 +96,8 @@ namespace PAD
             PlusATK.Value = 99;
             PlusHP.Value = 99;
             PlusRCV.Value = 99;
-            MonsterPortrait.Load(PadDataPath + @"padimages\na\portrait\" + MonsterNo.ToString() + ".png");
+            if(CombinedList[MonsterNo].jp_only) MonsterPortrait.Load(PadDataPath + @"padimages\jp\portrait\" + MonsterNo.ToString() + ".png");
+            else MonsterPortrait.Load(PadDataPath + @"padimages\na\portrait\" + MonsterNo.ToString() + ".png");
             if (CombinedList[MonsterNo].type_1_id != -1) Type1.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_1_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_2_id != -1) Type2.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_2_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_3_id != -1) Type3.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_3_id.ToString() + ".png");
