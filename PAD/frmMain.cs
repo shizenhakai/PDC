@@ -14,30 +14,48 @@ namespace PAD
 {
     public partial class frmMain : Form
     {
-        Dictionary<int, PadMonster> MonsterList;
+        Dictionary<int, CombinedCard> CombinedList;
+        Dictionary<int, PadMonster> NAList;
+        Dictionary<int, PadMonster> JPList;
         string PadDataPath= @"E:\PadSync\";
-        int curMon = 1;
         public frmMain()
         {
             InitializeComponent();
-            LoadMonsterList();
+            NAList = new Dictionary<int, PadMonster>();
+            JPList = new Dictionary<int, PadMonster>(); ;
+            CombinedList = new Dictionary<int, CombinedCard>();
+            LoadMonsterList(PadDataPath + @"paddata\processed\na_cards.json", NAList);
+            LoadMonsterList(PadDataPath + @"paddata\processed\jp_cards.json", JPList);
+            CombineLists();
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
+        public void CombineLists()
         {
-            frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
-            loadMonster.ShowDialog();
+            foreach(KeyValuePair<int, PadMonster> entry in NAList)
+            {
+                if(!CombinedList.ContainsKey(entry.Key))
+                {
+                    CombinedCard newCard = new CombinedCard(NAList[entry.Key]);
+                    newCard.jp_only = false;
+                    CombinedList.Add(newCard.card_id, newCard);
+                }
+            }
+            foreach (KeyValuePair<int, PadMonster> entry in JPList)
+            {
+                if (!CombinedList.ContainsKey(entry.Key))
+                {
+                    CombinedCard newCard = new CombinedCard(JPList[entry.Key]);
+                    newCard.jp_only = true;
+                    newCard.jp_name = JPList[entry.Key].name;
+                    CombinedList.Add(newCard.card_id, newCard);
+                }
+                else
+                {
+                    CombinedList[entry.Key].jp_name = JPList[entry.Key].name;
+                }
+            }
         }
 
-        private void img1_Click(object sender, EventArgs e)
-        {
-            frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
-            loadMonster.ShowDialog();
-            if(loadMonster.SelectedMonster!=0) SetMonsterSlot(1, loadMonster.SelectedMonster);
-        }
         public int SetMonsterSlot(int TeamSlot, int MonsterNo)
         {
             PictureBox MonsterPortrait;
@@ -66,37 +84,34 @@ namespace PAD
             PlusATK = this.Controls.Find("nmATK" + strTeamslot, false).FirstOrDefault() as NumericUpDown;
             PlusRCV = this.Controls.Find("nmRCV" + strTeamslot, false).FirstOrDefault() as NumericUpDown;
 
-            MonsterName.Text = MonsterList[MonsterNo].name;
+            MonsterName.Text = CombinedList[MonsterNo].name;
             while(MonsterName.Width < System.Windows.Forms.TextRenderer.MeasureText(MonsterName.Text, new Font(MonsterName.Font.FontFamily, MonsterName.Font.Size, MonsterName.Font.Style)).Width)
             {
                 MonsterName.Font = new Font(MonsterName.Font.FontFamily, MonsterName.Font.Size - 0.1f, MonsterName.Font.Style);
             }
-            HP.Text = (MonsterList[MonsterNo].max_hp + 990).ToString();
-            ATK.Text = (MonsterList[MonsterNo].max_atk + 495).ToString();
-            RCV.Text = (MonsterList[MonsterNo].max_rcv + 297).ToString();
+            HP.Text = (CombinedList[MonsterNo].max_hp + 990).ToString();
+            ATK.Text = (CombinedList[MonsterNo].max_atk + 495).ToString();
+            RCV.Text = (CombinedList[MonsterNo].max_rcv + 297).ToString();
             LVL.Value = 99;
             PlusATK.Value = 99;
             PlusHP.Value = 99;
             PlusRCV.Value = 99;
             MonsterPortrait.Load(PadDataPath + @"padimages\na\portrait\" + MonsterNo.ToString() + ".png");
-            if (MonsterList[MonsterNo].type_1_id != -1) Type1.Load(PadDataPath + @"padimages\icons\types\" + MonsterList[MonsterNo].type_1_id.ToString() + ".png");
-            if (MonsterList[MonsterNo].type_2_id != -1) Type2.Load(PadDataPath + @"padimages\icons\types\" + MonsterList[MonsterNo].type_2_id.ToString() + ".png");
-            if (MonsterList[MonsterNo].type_3_id != -1) Type3.Load(PadDataPath + @"padimages\icons\types\" + MonsterList[MonsterNo].type_3_id.ToString() + ".png");
+            if (CombinedList[MonsterNo].type_1_id != -1) Type1.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_1_id.ToString() + ".png");
+            if (CombinedList[MonsterNo].type_2_id != -1) Type2.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_2_id.ToString() + ".png");
+            if (CombinedList[MonsterNo].type_3_id != -1) Type3.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_3_id.ToString() + ".png");
             return 0;
         }
-        public void LoadMonsterList()
+        public void LoadMonsterList(string MonsterJSONPath, Dictionary<int, PadMonster> list)
         {
-            JsonTextReader reader = new JsonTextReader(new StreamReader(PadDataPath + @"paddata\processed\na_cards.json"));
+            JsonTextReader reader = new JsonTextReader(new StreamReader(MonsterJSONPath));
             string curObject="root";
-            MonsterList = new Dictionary<int, PadMonster>();
             PadMonster curMonster = new PadMonster();
             int convertedInt = 0;
             double convertedDouble = 0.0;
             curMonster.card_id = 0;
             while(reader.Read())
             {
-                //if (reader.ValueType != null) Console.WriteLine("Token: {0}, Value: {1} - ValueType: {2}", reader.TokenType, reader.Value, reader.ValueType);
-                //else Console.WriteLine("Token: {0}", reader.TokenType);
                 switch(reader.TokenType)
                 {
                     case JsonToken.StartObject:
@@ -278,20 +293,40 @@ namespace PAD
                         if (curObject == "leader_skill")
                         {
                             curObject = "active_skill";
-                            if(!MonsterList.ContainsKey(curMonster.card_id)) MonsterList.Add(curMonster.card_id, curMonster);
+                            bool toAdd = true;
+                            //if (File.Exists(PadDataPath + @"padimages\na\portrait\" + curMonster.card_id.ToString() + ".png") == false) toAdd = false;
+                            if (curMonster.card_id > 6000) toAdd = false;
+                            if (curMonster.name.Contains("***")) toAdd = false;
+                            if (curMonster.name.Contains("???")) toAdd = false;
+                            if (list.ContainsKey(curMonster.card_id)) toAdd = false;
+                            if(toAdd) list.Add(curMonster.card_id, curMonster);
                             curMonster = new PadMonster();
                             //save card
                         }
                         break;
                 }
             }
-            Console.WriteLine("Added {0} monsters to dictionary.", MonsterList.Count);
+            Console.WriteLine("Added {0} monsters to dictionary.", list.Count);
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = CombinedList;
+            loadMonster.ShowDialog();
+        }
+
+        private void img1_Click(object sender, EventArgs e)
+        {
+            frmLoadMonster loadMonster = new frmLoadMonster();
+            loadMonster.MonsterList = CombinedList;
+            loadMonster.ShowDialog();
+            if(loadMonster.SelectedMonster!=0) SetMonsterSlot(1, loadMonster.SelectedMonster);
         }
 
         private void img2_Click(object sender, EventArgs e)
         {
             frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
+            loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(2, loadMonster.SelectedMonster);
         }
@@ -299,7 +334,7 @@ namespace PAD
         private void img3_Click(object sender, EventArgs e)
         {
             frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
+            loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(3, loadMonster.SelectedMonster);
         }
@@ -307,7 +342,7 @@ namespace PAD
         private void img4_Click(object sender, EventArgs e)
         {
             frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
+            loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(4, loadMonster.SelectedMonster);
         }
@@ -315,7 +350,7 @@ namespace PAD
         private void img5_Click(object sender, EventArgs e)
         {
             frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
+            loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(5, loadMonster.SelectedMonster);
         }
@@ -323,9 +358,22 @@ namespace PAD
         private void img6_Click(object sender, EventArgs e)
         {
             frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = MonsterList;
+            loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(6, loadMonster.SelectedMonster);
+        }
+    }
+    public class CombinedCard : PadMonster
+    {
+        public bool jp_only { get; set; }
+        public string jp_name { get; set; }
+        public CombinedCard()
+            : base()
+        {
+        }
+        public CombinedCard(PadMonster toCopy)
+            : base(toCopy)
+        {
         }
     }
     public class PadMonster
@@ -374,10 +422,59 @@ namespace PAD
         public int xp_max { get; set; }
         public int random_flags { get; set; }
         public int unknown_009 { get; set; }
+        public bool portrait_exists { get; set; }
         public PadMonster()
         {
             awakenings = new List<int>();
             super_awakenings = new List<int>();
+        }
+        public PadMonster(PadMonster toCopy)
+        {
+            this.active_skill_id = toCopy.active_skill_id;
+            this.ancestor_id = toCopy.ancestor_id;
+            this.atk_exponent = toCopy.atk_exponent;
+            this.attr_id = toCopy.attr_id;
+            this.awakenings = toCopy.awakenings; ;
+            this.base_id = toCopy.base_id;
+            this.card_id = toCopy.card_id;
+            this.cost = toCopy.cost;
+            this.evo_mat_id1 = toCopy.evo_mat_id1;
+            this.evo_mat_id2 = toCopy.evo_mat_id2;
+            this.evo_mat_id3 = toCopy.evo_mat_id3;
+            this.evo_mat_id4 = toCopy.evo_mat_id4;
+            this.evo_mat_id5 = toCopy.evo_mat_id5;
+            this.hp_exponent = toCopy.hp_exponent;
+            this.inheritable = toCopy.inheritable;
+            this.is_collab = toCopy.is_collab;
+            this.is_ult = toCopy.is_ult;
+            this.leader_skill_id = toCopy.leader_skill_id;
+            this.limit_mult = toCopy.limit_mult;
+            this.max_atk = toCopy.max_atk;
+            this.max_hp = toCopy.max_hp;
+            this.max_rcv = toCopy.max_rcv;
+            this.min_atk = toCopy.min_atk;
+            this.min_hp = toCopy.min_hp;
+            this.min_rcv = toCopy.min_rcv;
+            this.name = toCopy.name;
+            this.rarity = toCopy.rarity;
+            this.rcv_exponent = toCopy.rcv_exponent;
+            this.released_status = toCopy.released_status;
+            this.sell_mp = toCopy.sell_mp;
+            this.subb_attr_id = toCopy.subb_attr_id;
+            this.super_awakenings = toCopy.super_awakenings;
+            this.type_1_id = toCopy.type_1_id;
+            this.type_2_id = toCopy.type_2_id;
+            this.type_3_id = toCopy.type_3_id;
+            this.un_evo_mat_1 = toCopy.un_evo_mat_1;
+            this.un_evo_mat_2 = toCopy.un_evo_mat_2;
+            this.un_evo_mat_3 = toCopy.un_evo_mat_3;
+            this.un_evo_mat_4 = toCopy.un_evo_mat_4;
+            this.un_evo_mat_5 = toCopy.un_evo_mat_5;
+            this.xp_gr = toCopy.xp_gr;
+            this.xp_max = toCopy.xp_max;
+            this.random_flags = toCopy.random_flags;
+            this.unknown_009 = toCopy.unknown_009;
+            this.portrait_exists = toCopy.portrait_exists;
         }
     }
 }
