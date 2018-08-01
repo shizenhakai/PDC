@@ -237,9 +237,9 @@
             this.awakening0 = new System.Windows.Forms.PictureBox();
             this.awakening2 = new System.Windows.Forms.PictureBox();
             this.awakening1 = new System.Windows.Forms.PictureBox();
+            this.sawakening0 = new System.Windows.Forms.PictureBox();
             this.sawakening1 = new System.Windows.Forms.PictureBox();
             this.sawakening2 = new System.Windows.Forms.PictureBox();
-            this.sawakening3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
@@ -308,9 +308,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.awakening0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awakening2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.awakening1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sawakening0)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sawakening1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sawakening2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sawakening3)).BeginInit();
             this.SuspendLayout();
             // 
             // img3
@@ -1574,27 +1574,27 @@
             // img1Latent1
             // 
             this.img1Latent1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.img1Latent1.Location = new System.Drawing.Point(191, 98);
+            this.img1Latent1.Location = new System.Drawing.Point(192, 95);
             this.img1Latent1.Name = "img1Latent1";
-            this.img1Latent1.Size = new System.Drawing.Size(30, 19);
+            this.img1Latent1.Size = new System.Drawing.Size(25, 25);
             this.img1Latent1.TabIndex = 133;
             this.img1Latent1.TabStop = false;
             // 
             // img1Latent2
             // 
             this.img1Latent2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.img1Latent2.Location = new System.Drawing.Point(232, 98);
+            this.img1Latent2.Location = new System.Drawing.Point(230, 95);
             this.img1Latent2.Name = "img1Latent2";
-            this.img1Latent2.Size = new System.Drawing.Size(30, 19);
+            this.img1Latent2.Size = new System.Drawing.Size(25, 25);
             this.img1Latent2.TabIndex = 134;
             this.img1Latent2.TabStop = false;
             // 
             // imt1Latent3
             // 
             this.imt1Latent3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imt1Latent3.Location = new System.Drawing.Point(272, 98);
+            this.imt1Latent3.Location = new System.Drawing.Point(272, 95);
             this.imt1Latent3.Name = "imt1Latent3";
-            this.imt1Latent3.Size = new System.Drawing.Size(30, 19);
+            this.imt1Latent3.Size = new System.Drawing.Size(24, 25);
             this.imt1Latent3.TabIndex = 135;
             this.imt1Latent3.TabStop = false;
             // 
@@ -2320,44 +2320,44 @@
             this.awakening1.TabIndex = 287;
             this.awakening1.TabStop = false;
             // 
+            // sawakening0
+            // 
+            this.sawakening0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sawakening0.Location = new System.Drawing.Point(375, 361);
+            this.sawakening0.Name = "sawakening0";
+            this.sawakening0.Size = new System.Drawing.Size(25, 25);
+            this.sawakening0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.sawakening0.TabIndex = 289;
+            this.sawakening0.TabStop = false;
+            // 
             // sawakening1
             // 
             this.sawakening1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sawakening1.Location = new System.Drawing.Point(375, 361);
+            this.sawakening1.Location = new System.Drawing.Point(406, 361);
             this.sawakening1.Name = "sawakening1";
             this.sawakening1.Size = new System.Drawing.Size(25, 25);
             this.sawakening1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sawakening1.TabIndex = 289;
+            this.sawakening1.TabIndex = 290;
             this.sawakening1.TabStop = false;
             // 
             // sawakening2
             // 
             this.sawakening2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sawakening2.Location = new System.Drawing.Point(406, 361);
+            this.sawakening2.Location = new System.Drawing.Point(436, 361);
             this.sawakening2.Name = "sawakening2";
             this.sawakening2.Size = new System.Drawing.Size(25, 25);
             this.sawakening2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sawakening2.TabIndex = 290;
+            this.sawakening2.TabIndex = 291;
             this.sawakening2.TabStop = false;
-            // 
-            // sawakening3
-            // 
-            this.sawakening3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.sawakening3.Location = new System.Drawing.Point(436, 361);
-            this.sawakening3.Name = "sawakening3";
-            this.sawakening3.Size = new System.Drawing.Size(25, 25);
-            this.sawakening3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.sawakening3.TabIndex = 291;
-            this.sawakening3.TabStop = false;
             // 
             // v
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 729);
-            this.Controls.Add(this.sawakening3);
             this.Controls.Add(this.sawakening2);
             this.Controls.Add(this.sawakening1);
+            this.Controls.Add(this.sawakening0);
             this.Controls.Add(this.awakening1);
             this.Controls.Add(this.awakening2);
             this.Controls.Add(this.awakening0);
@@ -2637,9 +2637,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.awakening0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.awakening2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.awakening1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sawakening0)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sawakening1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sawakening2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sawakening3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2856,9 +2856,9 @@
         private System.Windows.Forms.PictureBox awakening0;
         private System.Windows.Forms.PictureBox awakening2;
         private System.Windows.Forms.PictureBox awakening1;
+        private System.Windows.Forms.PictureBox sawakening0;
         private System.Windows.Forms.PictureBox sawakening1;
         private System.Windows.Forms.PictureBox sawakening2;
-        private System.Windows.Forms.PictureBox sawakening3;
     }
 }
 

@@ -101,12 +101,17 @@ namespace PAD
             if (CombinedList[MonsterNo].type_1_id != -1) Type1.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_1_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_2_id != -1) Type2.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_2_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_3_id != -1) Type3.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_3_id.ToString() + ".png");
-            if(TeamSlot==1)
+            if (TeamSlot == 1)
             {
-                for(int i = 0;i<CombinedList[MonsterNo].awakenings.Count;i++)
+                for (int i = 0; i < CombinedList[MonsterNo].awakenings.Count; i++)
                 {
                     PictureBox img = this.Controls.Find("awakening" + i.ToString(), false).FirstOrDefault() as PictureBox;
                     img.Load(PadDataPath + @"padimages\icons\awakenings\" + CombinedList[MonsterNo].awakenings[i].ToString() + ".png");
+                }
+                for (int i = 0; i < CombinedList[MonsterNo].super_awakenings.Count; i++)
+                {
+                    PictureBox img = this.Controls.Find("sawakening" + i.ToString(), false).FirstOrDefault() as PictureBox;
+                    img.Load(PadDataPath + @"padimages\icons\awakenings\" + CombinedList[MonsterNo].super_awakenings[i].ToString() + ".png");
                 }
             }
             return 0;
@@ -282,25 +287,6 @@ namespace PAD
                                             curMonster.awakenings = awakenings;
                                         }
                                         break;
-                                        if (reader.TokenType==JsonToken.StartArray)
-                                        {
-                                            reader.Read();
-                                            List<int> awakenings = new List<int>();
-                                            while (reader.TokenType != JsonToken.EndArray)
-                                            {
-                                                if (reader.Value != null)
-                                                {
-                                                    Console.WriteLine("Token: {0}, Value: {1}", reader.TokenType, reader.Value);
-                                                    if (reader.TokenType == JsonToken.Integer)
-                                                    {
-                                                        int.TryParse(reader.Value.ToString(), out convertedInt);
-                                                        awakenings.Add(convertedInt);
-                                                    }
-                                                }
-                                                reader.Read();
-                                            }
-                                            curMonster.awakenings = awakenings;
-                                        }
                                     case "super_awakenings": //list
                                         if (reader.TokenType == JsonToken.StartArray)
                                         {
@@ -319,7 +305,10 @@ namespace PAD
                                                 }
                                                 reader.Read();
                                             }
-                                            curMonster.super_awakenings = awakenings;
+                                            if (awakenings.Count > 0)
+                                            {
+                                                curMonster.super_awakenings = awakenings;
+                                            }
                                         }
                                         break;
                                     case "inheritable": //bool
