@@ -105,5 +105,30 @@ namespace PAD
             }
             this.Hide();
         }
+        public class MonsterListBox : ListBox
+        {
+            public MonsterListBox()
+            {
+                DrawMode = DrawMode.OwnerDrawFixed;
+                ItemHeight = 18;
+            }
+            protected override void OnDrawItem(DrawItemEventArgs e)
+            {
+                const TextFormatFlags flags = TextFormatFlags.Left | TextFormatFlags.VerticalCenter;
+
+                if (e.Index >= 0)
+                {
+                    e.DrawBackground();
+                    e.Graphics.DrawRectangle(Pens.Red, 2, e.Bounds.Y + 2, 14, 14);
+
+                    var textrect = e.Bounds;
+                    textrect.X += 20;
+                    textrect.Width -= 20;
+                    string itemText = DesignMode ? "MonsterListBox" : Items[e.Index].ToString();
+                    TextRenderer.DrawText(e.Graphics, itemText, e.Font, textrect, e.ForeColor, flags);
+                    e.DrawFocusRectangle();
+                }
+            }
+        }
     }
 }
