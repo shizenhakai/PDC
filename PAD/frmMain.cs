@@ -12,13 +12,14 @@ using Newtonsoft.Json;
 
 namespace PAD
 {
-    public partial class v : Form
+    public partial class frmMain : Form
     {
         Dictionary<int, CombinedCard> CombinedList;
         Dictionary<int, PadMonster> NAList;
         Dictionary<int, PadMonster> JPList;
+        List<CombinedCard>Team;
         string PadDataPath= @"E:\PadSync\";
-        public v()
+        public frmMain()
         {
             InitializeComponent();
             NAList = new Dictionary<int, PadMonster>();
@@ -27,6 +28,13 @@ namespace PAD
             LoadMonsterList(PadDataPath + @"paddata\processed\na_cards.json", NAList);
             LoadMonsterList(PadDataPath + @"paddata\processed\jp_cards.json", JPList);
             CombineLists();
+            Team = new List<CombinedCard>();
+            Team.Add(CombinedList[3305]);
+            Team.Add(CombinedList[3305]);
+            Team.Add(CombinedList[3305]);
+            Team.Add(CombinedList[3305]);
+            Team.Add(CombinedList[3305]);
+            Team.Add(CombinedList[3305]);
         }
 
         public void CombineLists()
@@ -70,6 +78,7 @@ namespace PAD
             NumericUpDown PlusHP;
             NumericUpDown PlusATK;
             NumericUpDown PlusRCV;
+            Team[TeamSlot] = CombinedList[MonsterNo];
             string strTeamslot = TeamSlot.ToString();
             MonsterPortrait = this.Controls.Find("img" + strTeamslot, false).FirstOrDefault() as PictureBox;
             Type1 = this.Controls.Find("img" + strTeamslot + "Type1", false).FirstOrDefault() as PictureBox;
@@ -96,24 +105,15 @@ namespace PAD
             PlusATK.Value = 99;
             PlusHP.Value = 99;
             PlusRCV.Value = 99;
-            if(CombinedList[MonsterNo].jp_only) MonsterPortrait.Load(PadDataPath + @"padimages\jp\portrait\" + MonsterNo.ToString() + ".png");
+            Team[TeamSlot].level = 99;
+            Team[TeamSlot].cur_atk = Team[TeamSlot].max_atk;
+            Team[TeamSlot].cur_hp = Team[TeamSlot].max_hp;
+            Team[TeamSlot].cur_rcv = Team[TeamSlot].max_rcv;
+            if (CombinedList[MonsterNo].jp_only) MonsterPortrait.Load(PadDataPath + @"padimages\jp\portrait\" + MonsterNo.ToString() + ".png");
             else MonsterPortrait.Load(PadDataPath + @"padimages\na\portrait\" + MonsterNo.ToString() + ".png");
             if (CombinedList[MonsterNo].type_1_id != -1) Type1.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_1_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_2_id != -1) Type2.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_2_id.ToString() + ".png");
             if (CombinedList[MonsterNo].type_3_id != -1) Type3.Load(PadDataPath + @"padimages\icons\types\" + CombinedList[MonsterNo].type_3_id.ToString() + ".png");
-            if (TeamSlot == 1)
-            {
-                for (int i = 0; i < CombinedList[MonsterNo].awakenings.Count; i++)
-                {
-                    PictureBox img = this.Controls.Find("awakening" + i.ToString(), false).FirstOrDefault() as PictureBox;
-                    img.Load(PadDataPath + @"padimages\icons\awakenings\" + CombinedList[MonsterNo].awakenings[i].ToString() + ".png");
-                }
-                for (int i = 0; i < CombinedList[MonsterNo].super_awakenings.Count; i++)
-                {
-                    PictureBox img = this.Controls.Find("sawakening" + i.ToString(), false).FirstOrDefault() as PictureBox;
-                    img.Load(PadDataPath + @"padimages\icons\awakenings\" + CombinedList[MonsterNo].super_awakenings[i].ToString() + ".png");
-                }
-            }
             return 0;
         }
         public void LoadMonsterList(string MonsterJSONPath, Dictionary<int, PadMonster> list)
@@ -206,6 +206,9 @@ namespace PAD
                                     case "max_rcv":
                                         curMonster.max_rcv = convertedInt;
                                         break;
+                                    case "max_level":
+                                        curMonster.max_level = convertedInt;
+                                        break;
                                     case "min_atk":
                                         curMonster.min_atk = convertedInt;
                                         break;
@@ -224,8 +227,8 @@ namespace PAD
                                     case "sell_mp":
                                          curMonster.sell_mp = convertedInt;
                                         break;
-                                    case "subb_attr_id":
-                                        curMonster.subb_attr_id = convertedInt;
+                                    case "sub_attr_id":
+                                        curMonster.sub_attr_id = convertedInt;
                                         break;
                                     case "type_1_id":
                                         curMonster.type_1_id = convertedInt;
@@ -365,9 +368,119 @@ namespace PAD
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            frmLoadMonster loadMonster = new frmLoadMonster();
-            loadMonster.MonsterList = CombinedList;
-            loadMonster.ShowDialog();
+
+            
+            //Assume Noctis Leader skill
+            //4: dark
+            //3: light
+            //2: green
+            //1: blue
+            //0: red
+            List<LeaderSkillItem> LeaderSkill= new List<LeaderSkillItem>();
+            List<List<int>> Combos = new List<List<int>>();
+            List<List<int>> Enhance = new List<List<int>>();
+            List<int> OE = new List<int>();
+            OE.Add(0);
+            OE.Add(0);
+            OE.Add(0);
+            OE.Add(0);
+            OE.Add(0);
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 1; j < Team[i].awakenings.Count-1; j++)
+                {
+                    if (Team[i].awakenings[j] == 14) OE[0]++;
+                    if (Team[i].awakenings[j] == 15) OE[1]++;
+                    if (Team[i].awakenings[j] == 16) OE[2]++;
+                    if (Team[i].awakenings[j] == 17) OE[3]++;
+                    if (Team[i].awakenings[j] == 18) OE[4]++;
+                }
+                int convertedInt = 0;
+                List<int> colorCombo = new List<int>();
+                List<int> colorEnhance = new List<int>();
+                List<int> colorOE = new List<int>();
+                for (int j = 1; j < 5; j++)
+                {
+                    string colorName = "txt";
+                    switch(i)
+                    {
+                        case 0: //Red
+                            colorName += "Red";
+                            break;
+                        case 1: //Blue
+                            colorName += "Red";
+                            break;
+                        case 2: //Green
+                            colorName += "Red";
+                            break;
+                        case 3: //Light
+                            colorName += "Red";
+                            break;
+                        case 4: //Dark
+                            colorName += "Red";
+                            break;
+                        default:
+                            colorName = "ERROR";
+                            break;
+
+                    }
+                    if (colorName == "ERROR")
+                        return;
+                    TextBox textBox = this.Controls.Find("txt" + colorName + "Combo" + i.ToString(), false).FirstOrDefault() as TextBox;
+                    int.TryParse(textBox.Text, out convertedInt);
+                    colorCombo.Add(convertedInt);
+
+                    textBox = this.Controls.Find("txt" + colorName + "Enhance" + i.ToString(), false).FirstOrDefault() as TextBox;
+                    int.TryParse(textBox.Text, out convertedInt);
+                    colorEnhance.Add(convertedInt);
+
+                }
+                Combos.Add(colorCombo);
+                Enhance.Add(colorEnhance);
+            }
+            LeaderSkillItem Noctis = new LeaderSkillItem();
+            Noctis.skill_type = LeaderSkillTypes.static_mult;
+            Noctis.arguments.Add(1.5f);
+            Noctis.arguments.Add(0);
+            Noctis.arguments.Add(10);
+            Noctis.arguments.Add(11);
+            Noctis.arguments.Add(12);
+            Noctis.arguments.Add(13);
+            Noctis.arguments.Add(14);
+            LeaderSkill.Add(Noctis);
+            Noctis = new LeaderSkillItem();
+            Noctis.skill_type = LeaderSkillTypes.combo;
+            Noctis.arguments.Add(3);
+            Noctis.arguments.Add(4.5f);
+            Noctis.arguments.Add(1);
+            Noctis.arguments.Add(7.5f);
+            int comboCount = 0;
+            for (int i = 0; i < Team.Count - 1; i++)
+            {
+                if (i > 0) break; //Just doing first member for now
+                //Do Main Att Combos
+                int numTPA = 0;
+                for (int j =0;j<Team[i].awakenings.Count-1;j++)
+                {
+                    if (Team[i].awakenings[j] == 27) numTPA++;
+                }
+                for(int MainAttCombo=0;MainAttCombo<5;MainAttCombo++)
+                {
+                    int comboDamage = 0;
+                    int combo = Combos[Team[i].attr_id][MainAttCombo];
+                    if (combo != 0)
+                    {
+                        comboDamage = (int)(Team[i].cur_atk * (1 + (0.25 * (combo - 3))));
+                        comboCount++;
+                    }
+                }
+            }
+            switch (Team[1].sub_attr_id)
+            {
+                case 0:
+                    lblTotalDamage.Text = "0";
+                    break;
+            }
         }
 
         private void img1_Click(object sender, EventArgs e)
@@ -417,6 +530,53 @@ namespace PAD
             loadMonster.ShowDialog();
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(6, loadMonster.SelectedMonster);
         }
+
+        private void nmLVL1_ValueChanged(object sender, EventArgs e)
+        {
+            Team[0].level = (int)nmLVL1.Value;
+            int card_atk = (int)Math.Round(Team[0].min_atk + ((Team[0].max_atk - Team[0].min_atk) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].atk_exponent)));
+            card_atk += (int)nmATK1.Value * 5;
+            int card_rcv = (int)Math.Round(Team[0].min_rcv + ((Team[0].max_rcv - Team[0].min_rcv) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].rcv_exponent)));
+            card_rcv += (int)nmRCV1.Value * 3;
+            int card_hp = (int)Math.Round(Team[0].min_hp + ((Team[0].max_hp - Team[0].min_hp) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].hp_exponent)));
+            card_hp += (int)nmHP1.Value * 10;
+            lblATK1.Text = card_atk.ToString();
+            lblHP1.Text = card_hp.ToString();
+            lblRCV1.Text = card_rcv.ToString();
+        }
+    }
+    public enum LeaderSkillTypes : int
+    {
+        //Static Multiplier
+        //Arguments is a list of applicable types
+        //First argument is multiplier
+        //Second argument is 1 for All Required 0 for Any Required
+        //Third argument is:
+        //  Add 10 for color
+        //  Add 100 for type 
+        static_mult = 0,
+        //Combo Multiplier
+        //Arguments are:
+        //0: starting combo count
+        //1: starting multiplier
+        //2: scaling
+        //3: max multiplier
+        combo=1,
+        //Sparkle Mult
+        //To Implement
+        sparkle=2,
+        //Linked Orbs Mult
+        //To Implement
+        linked_orbs=3
+    };
+    public class LeaderSkillItem
+    {
+        public LeaderSkillTypes skill_type;
+        public List<double> arguments;
+        public LeaderSkillItem()
+        {
+            arguments = new List<double>();
+        }
     }
     public class CombinedCard : PadMonster
     {
@@ -451,19 +611,24 @@ namespace PAD
         public bool is_collab { get; set; }
         public bool is_ult { get; set; }
         public int leader_skill_id { get; set; }
+        public int level { get; set; }
         public int limit_mult { get; set; }
         public int max_atk { get; set; }
         public int max_hp { get; set; }
         public int max_rcv { get; set; }
+        public int max_level { get; set; }
         public int min_atk { get; set; }
         public int min_hp { get; set; }
         public int min_rcv { get; set; }
+        public int cur_atk { get; set; }
+        public int cur_hp { get; set; }
+        public int cur_rcv { get; set; }
         public string name { get; set; }
         public int rarity { get; set; }
         public double rcv_exponent { get; set; }
         public bool released_status { get; set; }
         public int sell_mp { get; set; }
-        public int subb_attr_id { get; set; }
+        public int sub_attr_id { get; set; }
         public List<int> super_awakenings;
         public int type_1_id { get; set; }
         public int type_2_id { get; set; }
@@ -503,19 +668,24 @@ namespace PAD
             this.is_collab = toCopy.is_collab;
             this.is_ult = toCopy.is_ult;
             this.leader_skill_id = toCopy.leader_skill_id;
+            this.level = toCopy.level;
             this.limit_mult = toCopy.limit_mult;
             this.max_atk = toCopy.max_atk;
             this.max_hp = toCopy.max_hp;
             this.max_rcv = toCopy.max_rcv;
+            this.max_level = toCopy.max_level;
             this.min_atk = toCopy.min_atk;
             this.min_hp = toCopy.min_hp;
             this.min_rcv = toCopy.min_rcv;
+            this.cur_atk = toCopy.cur_atk;
+            this.cur_hp = toCopy.cur_hp;
+            this.cur_rcv = toCopy.cur_rcv;
             this.name = toCopy.name;
             this.rarity = toCopy.rarity;
             this.rcv_exponent = toCopy.rcv_exponent;
             this.released_status = toCopy.released_status;
             this.sell_mp = toCopy.sell_mp;
-            this.subb_attr_id = toCopy.subb_attr_id;
+            this.sub_attr_id = toCopy.sub_attr_id;
             this.super_awakenings = toCopy.super_awakenings;
             this.type_1_id = toCopy.type_1_id;
             this.type_2_id = toCopy.type_2_id;
