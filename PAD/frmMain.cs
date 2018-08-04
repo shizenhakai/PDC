@@ -383,6 +383,11 @@ namespace PAD
             List<List<int>> Enhance = new List<List<int>>();
             List<int> OE = new List<int>();
             List<int> Rows = new List<int>();
+            List<int> Crosses = new List<int>();
+            List<List<int>> Ls = new List<List<int>>();
+            List<int> Boxes = new List<int>();
+            List<int> TPAs = new List<int>();
+            int comboCount = 0;
             OE.Add(0);
             OE.Add(0);
             OE.Add(0);
@@ -408,13 +413,16 @@ namespace PAD
                     if (Team[i].awakenings[j] == 25) Rows[3]++;
                     if (Team[i].awakenings[j] == 26) Rows[4]++;
                 }
-                int convertedInt = 0;
                 List<int> colorCombo = new List<int>();
                 List<int> colorEnhance = new List<int>();
                 List<int> colorOE = new List<int>();
+                List<int> colorL = new List<int>();
+                int colorTPAs = 0;
+                int colorCross = 0;
+                int colorBox = 0;
                 for (int j = 1; j < 5; j++)
                 {
-                    string colorName = "txt";
+                    string colorName = "";
                     switch(i)
                     {
                         case 0: //Red
@@ -439,12 +447,27 @@ namespace PAD
                     }
                     if (colorName == "ERROR")
                         return;
-                    //Get Color Combos
-                    //Get Color Enhances
-
+                    ComboSelect cmb = this.Controls.Find(colorName + "Combo" + j.ToString(), false).FirstOrDefault() as ComboSelect;
+                    if (cmb.num_orbs != 0)
+                    {
+                        ComboSelect enhance = this.Controls.Find(colorName + "Enhance" + j.ToString(), false).FirstOrDefault() as ComboSelect;
+                        if (enhance.num_orbs > cmb.num_orbs) enhance.num_orbs = cmb.num_orbs;
+                        colorEnhance.Add(enhance.num_orbs);
+                        colorCombo.Add(cmb.num_orbs);
+                        comboCount++;
+                        if (cmb.l == true) colorL.Add(1);
+                        else colorL.Add(0);
+                    }
+                    if (cmb.cross == true) colorCross++;
+                    if (cmb.num_orbs == 4) colorTPAs++;
+                    if (cmb.box == true) colorBox++;
                 }
                 Combos.Add(colorCombo);
                 Enhance.Add(colorEnhance);
+                Crosses.Add(colorCross);
+                Ls.Add(colorL);
+                Boxes.Add(colorBox);
+                TPAs.Add(colorTPAs);
             }
             LeaderSkillItem Noctis = new LeaderSkillItem();
             Noctis.skill_type = LeaderSkillTypes.static_mult;
@@ -462,27 +485,111 @@ namespace PAD
             Noctis.arguments.Add(4.5f);
             Noctis.arguments.Add(1);
             Noctis.arguments.Add(7.5f);
-            int comboCount = 0;
-            int numRow = 0; // TODO: add row support
+            LeaderSkill.Add(Noctis);
+            //int numRow = 0; // TODO: add row support
+            List<int> MainAttDamage = new List<int>();
+            List<int> SubAttDamage = new List<int>();
             for (int i = 0; i < Team.Count - 1; i++)
             {
                 if (i > 0) break; //Just doing first member for now
                 //Do Main Att Combos
                 int numTPA = 0;
+                int num7c = 0;
+                int numVDP = 0;
+                int numL = 0;
+                int num10c = 0;
+                int numLowHP = 0;
+                int numHighHP = 0;
                 for (int j =0;j<Team[i].awakenings.Count-1;j++)
                 {
                     if (Team[i].awakenings[j] == 27) numTPA++;
+                    if (Team[i].awakenings[j] == 48) numVDP++;
+                    if (Team[i].awakenings[j] == 43) num7c++;
+                    if (Team[i].awakenings[j] == 60) numL++;
+                    if (Team[i].awakenings[j] == 61) num10c++;
+                    if (Team[i].awakenings[j] == 57) numHighHP++;
+                    if (Team[i].awakenings[j] == 58) numLowHP++;
                 }
-                for(int MainAttCombo=0;MainAttCombo<5;MainAttCombo++)
+                double comboDamage = 0;
+                int color = Team[i].attr_id;
+                for (int j=0;j<Combos[color].Count;j++)
                 {
-                    int comboDamage = 0;
-                    int combo = Combos[Team[i].attr_id][MainAttCombo];
-                    if (combo != 0)
+                    double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
+                    double tpa_mult = Math.Pow(1.5, numTPA) * TPAs[color];
+                    double OE_mult;
+                    double L_mult; 
+                    if (vdp_mult == 0) vdp_mult = 1;
+                    if (tpa_mult == 0) tpa_mult = 1;
+                    if (Ls[color][j] == 1) L_mult = numL * 2.5;
+                    else L_mult = 1;
+                    if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
+                    else OE_mult = 1;
+                    //if (Combos[Team[i].attr_id]) ;
+                    comboDamage += Team[i].cur_atk *
+                        (1 + (0.25 * (Combos[color][j] - 3))) *
+                        (tpa_mult) *
+                        (vdp_mult) *
+                        (OE_mult) *
+                        (L_mult);
+
+                }
+                double low_hp_mult = 1;
+                double high_hp_mult = 1;
+                double row_mult = 1;
+                double _7c_mult = 1;
+                double SFU_mult = 1;
+                double LS_mult = 1;
+                bool valid = false;
+                foreach (LeaderSkillItem item in LeaderSkill)
+                {
+                    switch(item.skill_type)
                     {
-                        //comboDamage = (int)(Team[i].cur_atk * (1 + (0.25 * (combo - 3)))*(1+(0.1*numRow*Rows[Team[i].attr_id]))*());
-                        comboCount++;
+                        case LeaderSkillTypes.static_mult:
+                            valid = false;
+                            if (item.arguments[1] == 1) valid = true;
+                            for (int j = 2; j < item.arguments.Count; j++)
+                            {
+                                if (item.arguments[1] == 0)
+                                {
+                                    if (item.arguments[j] == Team[i].attr_id + 10) valid = true;
+                                }
+                                else
+                                {
+                                    if (item.arguments[j] > 99)//check type
+                                    {
+                                        int item_type = (int)item.arguments[j] - 100;
+                                        if ((Team[i].type_1_id != item_type) || (Team[i].type_2_id != item_type) || (Team[i].type_3_id != item_type))
+                                            valid = false;
+                                    }
+                                    if (item.arguments[j] < 99)//check color
+                                    {
+                                        int item_color = (int)item.arguments[j] - 10;
+                                        if ((Team[i].attr_id != item_color) || (Team[i].sub_attr_id != item_color))
+                                            valid = false;
+                                    }
+                                }
+                            }
+                            if (valid) LS_mult = LS_mult * item.arguments[0];
+                            break;
+                        case LeaderSkillTypes.combo:
+                            double combo_mult = 1;
+                            if (comboCount >= item.arguments[0])
+                                combo_mult = item.arguments[1] + (comboCount - item.arguments[0]) * item.arguments[2];
+                            if (combo_mult > item.arguments[3]) combo_mult = item.arguments[3];
+                            LS_mult = LS_mult * combo_mult;
+                            break;
                     }
                 }
+                if (comboCount > 6) _7c_mult = Math.Pow(2, num7c);
+                if (numLowHP > 0) low_hp_mult = Math.Pow(2, numLowHP);
+                if (numHighHP > 0) high_hp_mult = Math.Pow(1.5, numHighHP);
+                double TotalDamge = (1 + 0.255 * (comboCount - 1)) *
+                    row_mult *
+                    _7c_mult *
+                    SFU_mult *
+                    low_hp_mult *
+                    high_hp_mult *
+                    LS_mult;
             }
             switch (Team[1].sub_attr_id)
             {
