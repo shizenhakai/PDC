@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Resources;
 using Newtonsoft.Json;
 
 
@@ -555,7 +556,7 @@ namespace PAD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int num_orbs = imgLightCombo1.num_orbs;
+            int num_orbs = LightCombo1.num_orbs;
             lblMain1.Text = num_orbs.ToString();
 
         }
@@ -584,31 +585,38 @@ namespace PAD
         public bool cross = false;
         public bool l = false;
         public bool box = false;
+        
         protected override void OnMouseUp(MouseEventArgs e)
         {
             base.OnMouseUp(e);
-            
             PictureBox picture = new PictureBox();
-            picture.Load("E:\\PadSync\\ui_images\\popup_grid.png");
+            picture.Image = Properties.Resources.popup_grid;
+            picture.Refresh();
+
             picture.Width = 206;
             picture.Height = 206;
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             picture.BorderStyle = BorderStyle.FixedSingle;
             picture.MouseUp += (object event_sender, MouseEventArgs event_e) =>
             {
+                cross = false;
+                l = false;
+                box = false;
                 int X = (event_e.X - (event_e.X % (picture.Width / 6))) / (picture.Width / 6);
                 int Y = (event_e.Y - (event_e.Y % (picture.Height / 6))) / (picture.Height / 6);
-                if (X == 0 && Y == 0) num_orbs = 0;
+                if (X == 0 && Y == 0)                    num_orbs = 0;
                 if (X == 1 && Y == 0) num_orbs = 3;
                 if (X == 2 && Y == 0) num_orbs = 4;
                 if (X == 3 && Y == 0) num_orbs = 5;
                 if (X == 4 && Y == 0)
                 {
                     num_orbs = 5;
+                    this.Image = (Image)Properties.Resources.cross;
                     cross = true;
                 }
                 if(X == 5 && Y == 0)
                 {
+                    this.Image = (Image)Properties.Resources.L;
                     num_orbs = 5;
                     l = true;
                 }
@@ -618,8 +626,8 @@ namespace PAD
                 if (X == 3 && Y == 1) num_orbs = 9;
                 if (X == 4 && Y == 1)
                 {
+                    this.Image = (Image)Properties.Resources.box;
                     num_orbs = 9;
-                    
                     box = true;
                 }
                 if (X == 5 && Y == 1) num_orbs = 10;
@@ -647,6 +655,10 @@ namespace PAD
 
                 if (X == 0 && Y == 5) num_orbs = 29;
                 if (X == 1 && Y == 5) num_orbs = 30;
+                if(box==false&&cross==false&&l==false)
+                {
+                    this.Image = (Image)Properties.Resources.ResourceManager.GetObject("_" + num_orbs.ToString() + "_orbs");
+                }
 
                 PopupForm parent = (PopupForm)picture.Parent;
                 parent.Close();

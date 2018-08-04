@@ -151,19 +151,12 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.lblMain1 = new System.Windows.Forms.Label();
-            this.cmbRedCross = new System.Windows.Forms.ComboBox();
             this.cmbRedRows = new System.Windows.Forms.ComboBox();
-            this.cmbBlueCross = new System.Windows.Forms.ComboBox();
             this.cmbBlueRows = new System.Windows.Forms.ComboBox();
-            this.cmbJammerCross = new System.Windows.Forms.ComboBox();
             this.cmbJammerRows = new System.Windows.Forms.ComboBox();
-            this.cmbPoisonCross = new System.Windows.Forms.ComboBox();
             this.cmdPoisonRows = new System.Windows.Forms.ComboBox();
-            this.cmbHealCross = new System.Windows.Forms.ComboBox();
             this.cmbHealRows = new System.Windows.Forms.ComboBox();
-            this.cmbGreenCross = new System.Windows.Forms.ComboBox();
             this.cmbGreenRows = new System.Windows.Forms.ComboBox();
-            this.cmbDarkCross = new System.Windows.Forms.ComboBox();
             this.cmbDarkRows = new System.Windows.Forms.ComboBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -193,9 +186,77 @@
             this.lblTotalDamage = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.cmbLightCross = new System.Windows.Forms.ComboBox();
             this.cmbLightRows = new System.Windows.Forms.ComboBox();
-            this.imgLightCombo1 = new PAD.ComboSelect();
+            this.LightCombo1 = new PAD.ComboSelect();
+            this.LightEnhance1 = new PAD.ComboSelect();
+            this.LightEnhance2 = new PAD.ComboSelect();
+            this.LightCombo2 = new PAD.ComboSelect();
+            this.LightEnhance3 = new PAD.ComboSelect();
+            this.LightCombo3 = new PAD.ComboSelect();
+            this.LightEnhance4 = new PAD.ComboSelect();
+            this.LightCombo4 = new PAD.ComboSelect();
+            this.LightEnhance5 = new PAD.ComboSelect();
+            this.LightCombo5 = new PAD.ComboSelect();
+            this.RedEnhance5 = new PAD.ComboSelect();
+            this.RedCombo5 = new PAD.ComboSelect();
+            this.RedEnhance4 = new PAD.ComboSelect();
+            this.RedCombo4 = new PAD.ComboSelect();
+            this.RedEnhance3 = new PAD.ComboSelect();
+            this.RedCombo3 = new PAD.ComboSelect();
+            this.RedEnhance2 = new PAD.ComboSelect();
+            this.RedCombo2 = new PAD.ComboSelect();
+            this.RedEnhance1 = new PAD.ComboSelect();
+            this.RedCombo1 = new PAD.ComboSelect();
+            this.BlueEnhance5 = new PAD.ComboSelect();
+            this.BlueCombo5 = new PAD.ComboSelect();
+            this.BlueEnhance4 = new PAD.ComboSelect();
+            this.BlueCombo4 = new PAD.ComboSelect();
+            this.BlueEnhance3 = new PAD.ComboSelect();
+            this.BlueCombo3 = new PAD.ComboSelect();
+            this.BlueEnhance2 = new PAD.ComboSelect();
+            this.BlueCombo2 = new PAD.ComboSelect();
+            this.BlueEnhance1 = new PAD.ComboSelect();
+            this.BlueCombo1 = new PAD.ComboSelect();
+            this.JammerCombo5 = new PAD.ComboSelect();
+            this.JammerCombo4 = new PAD.ComboSelect();
+            this.JammerCombo3 = new PAD.ComboSelect();
+            this.JammerCombo2 = new PAD.ComboSelect();
+            this.JammerCombo1 = new PAD.ComboSelect();
+            this.DarkEnhance5 = new PAD.ComboSelect();
+            this.DarkCombo5 = new PAD.ComboSelect();
+            this.DarkEnhance4 = new PAD.ComboSelect();
+            this.DarkCombo4 = new PAD.ComboSelect();
+            this.DarkEnhance3 = new PAD.ComboSelect();
+            this.DarkCombo3 = new PAD.ComboSelect();
+            this.DarkEnhance2 = new PAD.ComboSelect();
+            this.DarkCombo2 = new PAD.ComboSelect();
+            this.DarkEnhance1 = new PAD.ComboSelect();
+            this.DarkCombo1 = new PAD.ComboSelect();
+            this.GreenEnhance5 = new PAD.ComboSelect();
+            this.GreenCombo5 = new PAD.ComboSelect();
+            this.GreenEnhance4 = new PAD.ComboSelect();
+            this.GreenCombo4 = new PAD.ComboSelect();
+            this.GreenEnhance3 = new PAD.ComboSelect();
+            this.GreenCombo3 = new PAD.ComboSelect();
+            this.GreenEnhance2 = new PAD.ComboSelect();
+            this.GreenCombo2 = new PAD.ComboSelect();
+            this.GreenEnhance1 = new PAD.ComboSelect();
+            this.GreenCombo1 = new PAD.ComboSelect();
+            this.HeartEnhance5 = new PAD.ComboSelect();
+            this.HeartCombo5 = new PAD.ComboSelect();
+            this.HeartEnhance4 = new PAD.ComboSelect();
+            this.HeartCombo4 = new PAD.ComboSelect();
+            this.HeartEnhance3 = new PAD.ComboSelect();
+            this.HeartCombo3 = new PAD.ComboSelect();
+            this.HeartEnhance2 = new PAD.ComboSelect();
+            this.HeartCombo2 = new PAD.ComboSelect();
+            this.HeartEnhance1 = new PAD.ComboSelect();
+            this.HeartCombo1 = new PAD.ComboSelect();
+            this.comboSelect62 = new PAD.ComboSelect();
+            this.comboSelect64 = new PAD.ComboSelect();
+            this.comboSelect66 = new PAD.ComboSelect();
+            this.comboSelect68 = new PAD.ComboSelect();
+            this.comboSelect70 = new PAD.ComboSelect();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
@@ -269,7 +330,76 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLightCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect62)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect64)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect66)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect68)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect70)).BeginInit();
             this.SuspendLayout();
             // 
             // img3
@@ -1012,7 +1142,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(711, 257);
+            this.button1.Location = new System.Drawing.Point(711, 320);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 96;
@@ -1561,36 +1691,36 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.pictureBox1.Location = new System.Drawing.Point(377, 70);
+            this.pictureBox1.Location = new System.Drawing.Point(377, 84);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox1.Size = new System.Drawing.Size(195, 62);
             this.pictureBox1.TabIndex = 196;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.pictureBox2.Location = new System.Drawing.Point(580, 70);
+            this.pictureBox2.Location = new System.Drawing.Point(580, 84);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox2.Size = new System.Drawing.Size(195, 62);
             this.pictureBox2.TabIndex = 207;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pictureBox3.Location = new System.Drawing.Point(580, 131);
+            this.pictureBox3.Location = new System.Drawing.Point(580, 154);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox3.Size = new System.Drawing.Size(195, 62);
             this.pictureBox3.TabIndex = 229;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.pictureBox4.Location = new System.Drawing.Point(377, 131);
+            this.pictureBox4.Location = new System.Drawing.Point(377, 154);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox4.Size = new System.Drawing.Size(195, 62);
             this.pictureBox4.TabIndex = 218;
             this.pictureBox4.TabStop = false;
             // 
@@ -1599,7 +1729,7 @@
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.pictureBox5.Location = new System.Drawing.Point(580, 9);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox5.Size = new System.Drawing.Size(195, 62);
             this.pictureBox5.TabIndex = 251;
             this.pictureBox5.TabStop = false;
             // 
@@ -1608,25 +1738,25 @@
             this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.pictureBox6.Location = new System.Drawing.Point(377, 9);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox6.Size = new System.Drawing.Size(195, 62);
             this.pictureBox6.TabIndex = 240;
             this.pictureBox6.TabStop = false;
             // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Purple;
-            this.pictureBox7.Location = new System.Drawing.Point(580, 191);
+            this.pictureBox7.Location = new System.Drawing.Point(580, 224);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox7.Size = new System.Drawing.Size(195, 37);
             this.pictureBox7.TabIndex = 273;
             this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Black;
-            this.pictureBox8.Location = new System.Drawing.Point(377, 191);
+            this.pictureBox8.Location = new System.Drawing.Point(377, 224);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(195, 55);
+            this.pictureBox8.Size = new System.Drawing.Size(195, 37);
             this.pictureBox8.TabIndex = 262;
             this.pictureBox8.TabStop = false;
             // 
@@ -1634,7 +1764,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(499, 290);
+            this.label21.Location = new System.Drawing.Point(499, 353);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(95, 26);
             this.label21.TabIndex = 292;
@@ -1643,128 +1773,65 @@
             // lblMain1
             // 
             this.lblMain1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain1.Location = new System.Drawing.Point(497, 318);
+            this.lblMain1.Location = new System.Drawing.Point(497, 381);
             this.lblMain1.Name = "lblMain1";
             this.lblMain1.Size = new System.Drawing.Size(145, 29);
             this.lblMain1.TabIndex = 293;
             this.lblMain1.Text = "2147483647";
             // 
-            // cmbRedCross
-            // 
-            this.cmbRedCross.FormattingEnabled = true;
-            this.cmbRedCross.Location = new System.Drawing.Point(531, 99);
-            this.cmbRedCross.Name = "cmbRedCross";
-            this.cmbRedCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbRedCross.TabIndex = 297;
-            this.cmbRedCross.Text = "0";
-            // 
             // cmbRedRows
             // 
             this.cmbRedRows.FormattingEnabled = true;
-            this.cmbRedRows.Location = new System.Drawing.Point(531, 75);
+            this.cmbRedRows.Location = new System.Drawing.Point(531, 89);
             this.cmbRedRows.Name = "cmbRedRows";
             this.cmbRedRows.Size = new System.Drawing.Size(35, 21);
             this.cmbRedRows.TabIndex = 296;
             this.cmbRedRows.Text = "0";
             // 
-            // cmbBlueCross
-            // 
-            this.cmbBlueCross.FormattingEnabled = true;
-            this.cmbBlueCross.Location = new System.Drawing.Point(531, 159);
-            this.cmbBlueCross.Name = "cmbBlueCross";
-            this.cmbBlueCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbBlueCross.TabIndex = 299;
-            this.cmbBlueCross.Text = "0";
-            // 
             // cmbBlueRows
             // 
             this.cmbBlueRows.FormattingEnabled = true;
-            this.cmbBlueRows.Location = new System.Drawing.Point(531, 135);
+            this.cmbBlueRows.Location = new System.Drawing.Point(531, 158);
             this.cmbBlueRows.Name = "cmbBlueRows";
             this.cmbBlueRows.Size = new System.Drawing.Size(35, 21);
             this.cmbBlueRows.TabIndex = 298;
             this.cmbBlueRows.Text = "0";
             // 
-            // cmbJammerCross
-            // 
-            this.cmbJammerCross.FormattingEnabled = true;
-            this.cmbJammerCross.Location = new System.Drawing.Point(531, 219);
-            this.cmbJammerCross.Name = "cmbJammerCross";
-            this.cmbJammerCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbJammerCross.TabIndex = 301;
-            this.cmbJammerCross.Text = "0";
-            // 
             // cmbJammerRows
             // 
             this.cmbJammerRows.FormattingEnabled = true;
-            this.cmbJammerRows.Location = new System.Drawing.Point(531, 195);
+            this.cmbJammerRows.Location = new System.Drawing.Point(531, 228);
             this.cmbJammerRows.Name = "cmbJammerRows";
             this.cmbJammerRows.Size = new System.Drawing.Size(35, 21);
             this.cmbJammerRows.TabIndex = 300;
             this.cmbJammerRows.Text = "0";
             // 
-            // cmbPoisonCross
-            // 
-            this.cmbPoisonCross.FormattingEnabled = true;
-            this.cmbPoisonCross.Location = new System.Drawing.Point(734, 219);
-            this.cmbPoisonCross.Name = "cmbPoisonCross";
-            this.cmbPoisonCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbPoisonCross.TabIndex = 309;
-            this.cmbPoisonCross.Text = "0";
-            // 
             // cmdPoisonRows
             // 
             this.cmdPoisonRows.FormattingEnabled = true;
-            this.cmdPoisonRows.Location = new System.Drawing.Point(734, 195);
+            this.cmdPoisonRows.Location = new System.Drawing.Point(734, 228);
             this.cmdPoisonRows.Name = "cmdPoisonRows";
             this.cmdPoisonRows.Size = new System.Drawing.Size(35, 21);
             this.cmdPoisonRows.TabIndex = 308;
             this.cmdPoisonRows.Text = "0";
             // 
-            // cmbHealCross
-            // 
-            this.cmbHealCross.FormattingEnabled = true;
-            this.cmbHealCross.Location = new System.Drawing.Point(734, 159);
-            this.cmbHealCross.Name = "cmbHealCross";
-            this.cmbHealCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbHealCross.TabIndex = 307;
-            this.cmbHealCross.Text = "0";
-            // 
             // cmbHealRows
             // 
             this.cmbHealRows.FormattingEnabled = true;
-            this.cmbHealRows.Location = new System.Drawing.Point(734, 135);
+            this.cmbHealRows.Location = new System.Drawing.Point(734, 158);
             this.cmbHealRows.Name = "cmbHealRows";
             this.cmbHealRows.Size = new System.Drawing.Size(35, 21);
             this.cmbHealRows.TabIndex = 306;
             this.cmbHealRows.Text = "0";
             // 
-            // cmbGreenCross
-            // 
-            this.cmbGreenCross.FormattingEnabled = true;
-            this.cmbGreenCross.Location = new System.Drawing.Point(734, 99);
-            this.cmbGreenCross.Name = "cmbGreenCross";
-            this.cmbGreenCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbGreenCross.TabIndex = 305;
-            this.cmbGreenCross.Text = "0";
-            // 
             // cmbGreenRows
             // 
             this.cmbGreenRows.FormattingEnabled = true;
-            this.cmbGreenRows.Location = new System.Drawing.Point(734, 75);
+            this.cmbGreenRows.Location = new System.Drawing.Point(734, 89);
             this.cmbGreenRows.Name = "cmbGreenRows";
             this.cmbGreenRows.Size = new System.Drawing.Size(35, 21);
             this.cmbGreenRows.TabIndex = 304;
             this.cmbGreenRows.Text = "0";
-            // 
-            // cmbDarkCross
-            // 
-            this.cmbDarkCross.FormattingEnabled = true;
-            this.cmbDarkCross.Location = new System.Drawing.Point(734, 38);
-            this.cmbDarkCross.Name = "cmbDarkCross";
-            this.cmbDarkCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbDarkCross.TabIndex = 303;
-            this.cmbDarkCross.Text = "0";
             // 
             // cmbDarkRows
             // 
@@ -1778,7 +1845,7 @@
             // pictureBox9
             // 
             this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(350, 9);
+            this.pictureBox9.Location = new System.Drawing.Point(350, 12);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(24, 25);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1788,7 +1855,7 @@
             // pictureBox10
             // 
             this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(350, 39);
+            this.pictureBox10.Location = new System.Drawing.Point(350, 42);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(24, 25);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1798,7 +1865,7 @@
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(350, 100);
+            this.pictureBox11.Location = new System.Drawing.Point(350, 114);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(24, 25);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1808,7 +1875,7 @@
             // pictureBox12
             // 
             this.pictureBox12.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox12.Image")));
-            this.pictureBox12.Location = new System.Drawing.Point(350, 70);
+            this.pictureBox12.Location = new System.Drawing.Point(350, 84);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(24, 25);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1818,7 +1885,7 @@
             // pictureBox13
             // 
             this.pictureBox13.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox13.Image")));
-            this.pictureBox13.Location = new System.Drawing.Point(350, 161);
+            this.pictureBox13.Location = new System.Drawing.Point(350, 184);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(24, 25);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1828,7 +1895,7 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(350, 131);
+            this.pictureBox14.Location = new System.Drawing.Point(350, 154);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(24, 25);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1838,7 +1905,7 @@
             // pictureBox16
             // 
             this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
-            this.pictureBox16.Location = new System.Drawing.Point(350, 191);
+            this.pictureBox16.Location = new System.Drawing.Point(350, 224);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(24, 25);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1848,7 +1915,7 @@
             // pictureBox18
             // 
             this.pictureBox18.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox18.Image")));
-            this.pictureBox18.Location = new System.Drawing.Point(778, 191);
+            this.pictureBox18.Location = new System.Drawing.Point(778, 224);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(24, 25);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1858,7 +1925,7 @@
             // pictureBox19
             // 
             this.pictureBox19.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox19.Image")));
-            this.pictureBox19.Location = new System.Drawing.Point(778, 161);
+            this.pictureBox19.Location = new System.Drawing.Point(778, 184);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(24, 25);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1868,7 +1935,7 @@
             // pictureBox20
             // 
             this.pictureBox20.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox20.Image")));
-            this.pictureBox20.Location = new System.Drawing.Point(778, 131);
+            this.pictureBox20.Location = new System.Drawing.Point(778, 154);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(24, 25);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1878,7 +1945,7 @@
             // pictureBox21
             // 
             this.pictureBox21.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox21.Image")));
-            this.pictureBox21.Location = new System.Drawing.Point(778, 100);
+            this.pictureBox21.Location = new System.Drawing.Point(778, 114);
             this.pictureBox21.Name = "pictureBox21";
             this.pictureBox21.Size = new System.Drawing.Size(24, 25);
             this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1888,7 +1955,7 @@
             // pictureBox22
             // 
             this.pictureBox22.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox22.Image")));
-            this.pictureBox22.Location = new System.Drawing.Point(778, 70);
+            this.pictureBox22.Location = new System.Drawing.Point(778, 84);
             this.pictureBox22.Name = "pictureBox22";
             this.pictureBox22.Size = new System.Drawing.Size(24, 25);
             this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1918,7 +1985,7 @@
             // lblMain2
             // 
             this.lblMain2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain2.Location = new System.Drawing.Point(497, 347);
+            this.lblMain2.Location = new System.Drawing.Point(497, 410);
             this.lblMain2.Name = "lblMain2";
             this.lblMain2.Size = new System.Drawing.Size(145, 29);
             this.lblMain2.TabIndex = 325;
@@ -1927,7 +1994,7 @@
             // lblMain3
             // 
             this.lblMain3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain3.Location = new System.Drawing.Point(497, 375);
+            this.lblMain3.Location = new System.Drawing.Point(497, 438);
             this.lblMain3.Name = "lblMain3";
             this.lblMain3.Size = new System.Drawing.Size(145, 29);
             this.lblMain3.TabIndex = 326;
@@ -1936,7 +2003,7 @@
             // lblMain4
             // 
             this.lblMain4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain4.Location = new System.Drawing.Point(497, 402);
+            this.lblMain4.Location = new System.Drawing.Point(497, 465);
             this.lblMain4.Name = "lblMain4";
             this.lblMain4.Size = new System.Drawing.Size(145, 29);
             this.lblMain4.TabIndex = 327;
@@ -1945,7 +2012,7 @@
             // lblMain5
             // 
             this.lblMain5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain5.Location = new System.Drawing.Point(497, 427);
+            this.lblMain5.Location = new System.Drawing.Point(497, 490);
             this.lblMain5.Name = "lblMain5";
             this.lblMain5.Size = new System.Drawing.Size(145, 29);
             this.lblMain5.TabIndex = 328;
@@ -1954,7 +2021,7 @@
             // lblMain6
             // 
             this.lblMain6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMain6.Location = new System.Drawing.Point(497, 456);
+            this.lblMain6.Location = new System.Drawing.Point(497, 519);
             this.lblMain6.Name = "lblMain6";
             this.lblMain6.Size = new System.Drawing.Size(145, 29);
             this.lblMain6.TabIndex = 329;
@@ -1963,7 +2030,7 @@
             // lblSub6
             // 
             this.lblSub6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub6.Location = new System.Drawing.Point(635, 456);
+            this.lblSub6.Location = new System.Drawing.Point(635, 519);
             this.lblSub6.Name = "lblSub6";
             this.lblSub6.Size = new System.Drawing.Size(145, 29);
             this.lblSub6.TabIndex = 335;
@@ -1972,7 +2039,7 @@
             // lblSub5
             // 
             this.lblSub5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub5.Location = new System.Drawing.Point(635, 427);
+            this.lblSub5.Location = new System.Drawing.Point(635, 490);
             this.lblSub5.Name = "lblSub5";
             this.lblSub5.Size = new System.Drawing.Size(145, 29);
             this.lblSub5.TabIndex = 334;
@@ -1981,7 +2048,7 @@
             // lblSub4
             // 
             this.lblSub4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub4.Location = new System.Drawing.Point(635, 402);
+            this.lblSub4.Location = new System.Drawing.Point(635, 465);
             this.lblSub4.Name = "lblSub4";
             this.lblSub4.Size = new System.Drawing.Size(145, 29);
             this.lblSub4.TabIndex = 333;
@@ -1990,7 +2057,7 @@
             // lblSub3
             // 
             this.lblSub3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub3.Location = new System.Drawing.Point(635, 375);
+            this.lblSub3.Location = new System.Drawing.Point(635, 438);
             this.lblSub3.Name = "lblSub3";
             this.lblSub3.Size = new System.Drawing.Size(145, 29);
             this.lblSub3.TabIndex = 332;
@@ -1999,7 +2066,7 @@
             // lblSub2
             // 
             this.lblSub2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub2.Location = new System.Drawing.Point(635, 347);
+            this.lblSub2.Location = new System.Drawing.Point(635, 410);
             this.lblSub2.Name = "lblSub2";
             this.lblSub2.Size = new System.Drawing.Size(145, 29);
             this.lblSub2.TabIndex = 331;
@@ -2008,7 +2075,7 @@
             // lblSub1
             // 
             this.lblSub1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSub1.Location = new System.Drawing.Point(635, 318);
+            this.lblSub1.Location = new System.Drawing.Point(635, 381);
             this.lblSub1.Name = "lblSub1";
             this.lblSub1.Size = new System.Drawing.Size(145, 29);
             this.lblSub1.TabIndex = 330;
@@ -2017,7 +2084,7 @@
             // lblTotalDamage
             // 
             this.lblTotalDamage.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalDamage.Location = new System.Drawing.Point(635, 492);
+            this.lblTotalDamage.Location = new System.Drawing.Point(635, 555);
             this.lblTotalDamage.Name = "lblTotalDamage";
             this.lblTotalDamage.Size = new System.Drawing.Size(145, 29);
             this.lblTotalDamage.TabIndex = 337;
@@ -2026,7 +2093,7 @@
             // label51
             // 
             this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(497, 492);
+            this.label51.Location = new System.Drawing.Point(497, 555);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(145, 29);
             this.label51.TabIndex = 336;
@@ -2034,22 +2101,13 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(396, 526);
+            this.button2.Location = new System.Drawing.Point(396, 589);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 339;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // cmbLightCross
-            // 
-            this.cmbLightCross.FormattingEnabled = true;
-            this.cmbLightCross.Location = new System.Drawing.Point(531, 38);
-            this.cmbLightCross.Name = "cmbLightCross";
-            this.cmbLightCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbLightCross.TabIndex = 295;
-            this.cmbLightCross.Text = "0";
             // 
             // cmbLightRows
             // 
@@ -2060,23 +2118,923 @@
             this.cmbLightRows.TabIndex = 294;
             this.cmbLightRows.Text = "0";
             // 
-            // imgLightCombo1
+            // LightCombo1
             // 
-            this.imgLightCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.imgLightCombo1.Location = new System.Drawing.Point(396, 319);
-            this.imgLightCombo1.Name = "imgLightCombo1";
-            this.imgLightCombo1.Size = new System.Drawing.Size(28, 27);
-            this.imgLightCombo1.TabIndex = 340;
-            this.imgLightCombo1.TabStop = false;
-            this.imgLightCombo1.Click += new System.EventHandler(this.imgLightCombo1_Click);
-            this.imgLightCombo1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.imgLightCombo1_MouseUp);
+            this.LightCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightCombo1.Image = ((System.Drawing.Image)(resources.GetObject("LightCombo1.Image")));
+            this.LightCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightCombo1.InitialImage")));
+            this.LightCombo1.Location = new System.Drawing.Point(382, 14);
+            this.LightCombo1.Name = "LightCombo1";
+            this.LightCombo1.Size = new System.Drawing.Size(25, 25);
+            this.LightCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightCombo1.TabIndex = 340;
+            this.LightCombo1.TabStop = false;
+            this.LightCombo1.Click += new System.EventHandler(this.imgLightCombo1_Click);
+            this.LightCombo1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.imgLightCombo1_MouseUp);
+            // 
+            // LightEnhance1
+            // 
+            this.LightEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("LightEnhance1.Image")));
+            this.LightEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightEnhance1.InitialImage")));
+            this.LightEnhance1.Location = new System.Drawing.Point(382, 41);
+            this.LightEnhance1.Name = "LightEnhance1";
+            this.LightEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.LightEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightEnhance1.TabIndex = 341;
+            this.LightEnhance1.TabStop = false;
+            // 
+            // LightEnhance2
+            // 
+            this.LightEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("LightEnhance2.Image")));
+            this.LightEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightEnhance2.InitialImage")));
+            this.LightEnhance2.Location = new System.Drawing.Point(412, 41);
+            this.LightEnhance2.Name = "LightEnhance2";
+            this.LightEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.LightEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightEnhance2.TabIndex = 343;
+            this.LightEnhance2.TabStop = false;
+            // 
+            // LightCombo2
+            // 
+            this.LightCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightCombo2.Image = ((System.Drawing.Image)(resources.GetObject("LightCombo2.Image")));
+            this.LightCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightCombo2.InitialImage")));
+            this.LightCombo2.Location = new System.Drawing.Point(412, 14);
+            this.LightCombo2.Name = "LightCombo2";
+            this.LightCombo2.Size = new System.Drawing.Size(25, 25);
+            this.LightCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightCombo2.TabIndex = 342;
+            this.LightCombo2.TabStop = false;
+            // 
+            // LightEnhance3
+            // 
+            this.LightEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("LightEnhance3.Image")));
+            this.LightEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightEnhance3.InitialImage")));
+            this.LightEnhance3.Location = new System.Drawing.Point(442, 41);
+            this.LightEnhance3.Name = "LightEnhance3";
+            this.LightEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.LightEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightEnhance3.TabIndex = 345;
+            this.LightEnhance3.TabStop = false;
+            // 
+            // LightCombo3
+            // 
+            this.LightCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightCombo3.Image = ((System.Drawing.Image)(resources.GetObject("LightCombo3.Image")));
+            this.LightCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightCombo3.InitialImage")));
+            this.LightCombo3.Location = new System.Drawing.Point(442, 14);
+            this.LightCombo3.Name = "LightCombo3";
+            this.LightCombo3.Size = new System.Drawing.Size(25, 25);
+            this.LightCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightCombo3.TabIndex = 344;
+            this.LightCombo3.TabStop = false;
+            // 
+            // LightEnhance4
+            // 
+            this.LightEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("LightEnhance4.Image")));
+            this.LightEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightEnhance4.InitialImage")));
+            this.LightEnhance4.Location = new System.Drawing.Point(472, 41);
+            this.LightEnhance4.Name = "LightEnhance4";
+            this.LightEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.LightEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightEnhance4.TabIndex = 347;
+            this.LightEnhance4.TabStop = false;
+            // 
+            // LightCombo4
+            // 
+            this.LightCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightCombo4.Image = ((System.Drawing.Image)(resources.GetObject("LightCombo4.Image")));
+            this.LightCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightCombo4.InitialImage")));
+            this.LightCombo4.Location = new System.Drawing.Point(472, 14);
+            this.LightCombo4.Name = "LightCombo4";
+            this.LightCombo4.Size = new System.Drawing.Size(25, 25);
+            this.LightCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightCombo4.TabIndex = 346;
+            this.LightCombo4.TabStop = false;
+            // 
+            // LightEnhance5
+            // 
+            this.LightEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("LightEnhance5.Image")));
+            this.LightEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightEnhance5.InitialImage")));
+            this.LightEnhance5.Location = new System.Drawing.Point(502, 41);
+            this.LightEnhance5.Name = "LightEnhance5";
+            this.LightEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.LightEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightEnhance5.TabIndex = 349;
+            this.LightEnhance5.TabStop = false;
+            // 
+            // LightCombo5
+            // 
+            this.LightCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LightCombo5.Image = ((System.Drawing.Image)(resources.GetObject("LightCombo5.Image")));
+            this.LightCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("LightCombo5.InitialImage")));
+            this.LightCombo5.Location = new System.Drawing.Point(502, 14);
+            this.LightCombo5.Name = "LightCombo5";
+            this.LightCombo5.Size = new System.Drawing.Size(25, 25);
+            this.LightCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LightCombo5.TabIndex = 348;
+            this.LightCombo5.TabStop = false;
+            // 
+            // RedEnhance5
+            // 
+            this.RedEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("RedEnhance5.Image")));
+            this.RedEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedEnhance5.InitialImage")));
+            this.RedEnhance5.Location = new System.Drawing.Point(502, 117);
+            this.RedEnhance5.Name = "RedEnhance5";
+            this.RedEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.RedEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedEnhance5.TabIndex = 359;
+            this.RedEnhance5.TabStop = false;
+            // 
+            // RedCombo5
+            // 
+            this.RedCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedCombo5.Image = ((System.Drawing.Image)(resources.GetObject("RedCombo5.Image")));
+            this.RedCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedCombo5.InitialImage")));
+            this.RedCombo5.Location = new System.Drawing.Point(502, 90);
+            this.RedCombo5.Name = "RedCombo5";
+            this.RedCombo5.Size = new System.Drawing.Size(25, 25);
+            this.RedCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedCombo5.TabIndex = 358;
+            this.RedCombo5.TabStop = false;
+            // 
+            // RedEnhance4
+            // 
+            this.RedEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("RedEnhance4.Image")));
+            this.RedEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedEnhance4.InitialImage")));
+            this.RedEnhance4.Location = new System.Drawing.Point(472, 117);
+            this.RedEnhance4.Name = "RedEnhance4";
+            this.RedEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.RedEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedEnhance4.TabIndex = 357;
+            this.RedEnhance4.TabStop = false;
+            // 
+            // RedCombo4
+            // 
+            this.RedCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedCombo4.Image = ((System.Drawing.Image)(resources.GetObject("RedCombo4.Image")));
+            this.RedCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedCombo4.InitialImage")));
+            this.RedCombo4.Location = new System.Drawing.Point(472, 90);
+            this.RedCombo4.Name = "RedCombo4";
+            this.RedCombo4.Size = new System.Drawing.Size(25, 25);
+            this.RedCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedCombo4.TabIndex = 356;
+            this.RedCombo4.TabStop = false;
+            // 
+            // RedEnhance3
+            // 
+            this.RedEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("RedEnhance3.Image")));
+            this.RedEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedEnhance3.InitialImage")));
+            this.RedEnhance3.Location = new System.Drawing.Point(442, 117);
+            this.RedEnhance3.Name = "RedEnhance3";
+            this.RedEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.RedEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedEnhance3.TabIndex = 355;
+            this.RedEnhance3.TabStop = false;
+            // 
+            // RedCombo3
+            // 
+            this.RedCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedCombo3.Image = ((System.Drawing.Image)(resources.GetObject("RedCombo3.Image")));
+            this.RedCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedCombo3.InitialImage")));
+            this.RedCombo3.Location = new System.Drawing.Point(442, 90);
+            this.RedCombo3.Name = "RedCombo3";
+            this.RedCombo3.Size = new System.Drawing.Size(25, 25);
+            this.RedCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedCombo3.TabIndex = 354;
+            this.RedCombo3.TabStop = false;
+            // 
+            // RedEnhance2
+            // 
+            this.RedEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("RedEnhance2.Image")));
+            this.RedEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedEnhance2.InitialImage")));
+            this.RedEnhance2.Location = new System.Drawing.Point(412, 117);
+            this.RedEnhance2.Name = "RedEnhance2";
+            this.RedEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.RedEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedEnhance2.TabIndex = 353;
+            this.RedEnhance2.TabStop = false;
+            // 
+            // RedCombo2
+            // 
+            this.RedCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedCombo2.Image = ((System.Drawing.Image)(resources.GetObject("RedCombo2.Image")));
+            this.RedCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedCombo2.InitialImage")));
+            this.RedCombo2.Location = new System.Drawing.Point(412, 90);
+            this.RedCombo2.Name = "RedCombo2";
+            this.RedCombo2.Size = new System.Drawing.Size(25, 25);
+            this.RedCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedCombo2.TabIndex = 352;
+            this.RedCombo2.TabStop = false;
+            // 
+            // RedEnhance1
+            // 
+            this.RedEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("RedEnhance1.Image")));
+            this.RedEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedEnhance1.InitialImage")));
+            this.RedEnhance1.Location = new System.Drawing.Point(382, 117);
+            this.RedEnhance1.Name = "RedEnhance1";
+            this.RedEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.RedEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedEnhance1.TabIndex = 351;
+            this.RedEnhance1.TabStop = false;
+            // 
+            // RedCombo1
+            // 
+            this.RedCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RedCombo1.Image = ((System.Drawing.Image)(resources.GetObject("RedCombo1.Image")));
+            this.RedCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("RedCombo1.InitialImage")));
+            this.RedCombo1.Location = new System.Drawing.Point(382, 90);
+            this.RedCombo1.Name = "RedCombo1";
+            this.RedCombo1.Size = new System.Drawing.Size(25, 25);
+            this.RedCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.RedCombo1.TabIndex = 350;
+            this.RedCombo1.TabStop = false;
+            // 
+            // BlueEnhance5
+            // 
+            this.BlueEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("BlueEnhance5.Image")));
+            this.BlueEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueEnhance5.InitialImage")));
+            this.BlueEnhance5.Location = new System.Drawing.Point(502, 185);
+            this.BlueEnhance5.Name = "BlueEnhance5";
+            this.BlueEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.BlueEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueEnhance5.TabIndex = 369;
+            this.BlueEnhance5.TabStop = false;
+            // 
+            // BlueCombo5
+            // 
+            this.BlueCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueCombo5.Image = ((System.Drawing.Image)(resources.GetObject("BlueCombo5.Image")));
+            this.BlueCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueCombo5.InitialImage")));
+            this.BlueCombo5.Location = new System.Drawing.Point(502, 158);
+            this.BlueCombo5.Name = "BlueCombo5";
+            this.BlueCombo5.Size = new System.Drawing.Size(25, 25);
+            this.BlueCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueCombo5.TabIndex = 368;
+            this.BlueCombo5.TabStop = false;
+            // 
+            // BlueEnhance4
+            // 
+            this.BlueEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("BlueEnhance4.Image")));
+            this.BlueEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueEnhance4.InitialImage")));
+            this.BlueEnhance4.Location = new System.Drawing.Point(472, 185);
+            this.BlueEnhance4.Name = "BlueEnhance4";
+            this.BlueEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.BlueEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueEnhance4.TabIndex = 367;
+            this.BlueEnhance4.TabStop = false;
+            // 
+            // BlueCombo4
+            // 
+            this.BlueCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueCombo4.Image = ((System.Drawing.Image)(resources.GetObject("BlueCombo4.Image")));
+            this.BlueCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueCombo4.InitialImage")));
+            this.BlueCombo4.Location = new System.Drawing.Point(472, 158);
+            this.BlueCombo4.Name = "BlueCombo4";
+            this.BlueCombo4.Size = new System.Drawing.Size(25, 25);
+            this.BlueCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueCombo4.TabIndex = 366;
+            this.BlueCombo4.TabStop = false;
+            // 
+            // BlueEnhance3
+            // 
+            this.BlueEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("BlueEnhance3.Image")));
+            this.BlueEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueEnhance3.InitialImage")));
+            this.BlueEnhance3.Location = new System.Drawing.Point(442, 185);
+            this.BlueEnhance3.Name = "BlueEnhance3";
+            this.BlueEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.BlueEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueEnhance3.TabIndex = 365;
+            this.BlueEnhance3.TabStop = false;
+            // 
+            // BlueCombo3
+            // 
+            this.BlueCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueCombo3.Image = ((System.Drawing.Image)(resources.GetObject("BlueCombo3.Image")));
+            this.BlueCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueCombo3.InitialImage")));
+            this.BlueCombo3.Location = new System.Drawing.Point(442, 158);
+            this.BlueCombo3.Name = "BlueCombo3";
+            this.BlueCombo3.Size = new System.Drawing.Size(25, 25);
+            this.BlueCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueCombo3.TabIndex = 364;
+            this.BlueCombo3.TabStop = false;
+            // 
+            // BlueEnhance2
+            // 
+            this.BlueEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("BlueEnhance2.Image")));
+            this.BlueEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueEnhance2.InitialImage")));
+            this.BlueEnhance2.Location = new System.Drawing.Point(412, 185);
+            this.BlueEnhance2.Name = "BlueEnhance2";
+            this.BlueEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.BlueEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueEnhance2.TabIndex = 363;
+            this.BlueEnhance2.TabStop = false;
+            // 
+            // BlueCombo2
+            // 
+            this.BlueCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueCombo2.Image = ((System.Drawing.Image)(resources.GetObject("BlueCombo2.Image")));
+            this.BlueCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueCombo2.InitialImage")));
+            this.BlueCombo2.Location = new System.Drawing.Point(412, 158);
+            this.BlueCombo2.Name = "BlueCombo2";
+            this.BlueCombo2.Size = new System.Drawing.Size(25, 25);
+            this.BlueCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueCombo2.TabIndex = 362;
+            this.BlueCombo2.TabStop = false;
+            // 
+            // BlueEnhance1
+            // 
+            this.BlueEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("BlueEnhance1.Image")));
+            this.BlueEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueEnhance1.InitialImage")));
+            this.BlueEnhance1.Location = new System.Drawing.Point(382, 185);
+            this.BlueEnhance1.Name = "BlueEnhance1";
+            this.BlueEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.BlueEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueEnhance1.TabIndex = 361;
+            this.BlueEnhance1.TabStop = false;
+            // 
+            // BlueCombo1
+            // 
+            this.BlueCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BlueCombo1.Image = ((System.Drawing.Image)(resources.GetObject("BlueCombo1.Image")));
+            this.BlueCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("BlueCombo1.InitialImage")));
+            this.BlueCombo1.Location = new System.Drawing.Point(382, 158);
+            this.BlueCombo1.Name = "BlueCombo1";
+            this.BlueCombo1.Size = new System.Drawing.Size(25, 25);
+            this.BlueCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BlueCombo1.TabIndex = 360;
+            this.BlueCombo1.TabStop = false;
+            // 
+            // JammerCombo5
+            // 
+            this.JammerCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JammerCombo5.Image = ((System.Drawing.Image)(resources.GetObject("JammerCombo5.Image")));
+            this.JammerCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("JammerCombo5.InitialImage")));
+            this.JammerCombo5.Location = new System.Drawing.Point(502, 228);
+            this.JammerCombo5.Name = "JammerCombo5";
+            this.JammerCombo5.Size = new System.Drawing.Size(25, 25);
+            this.JammerCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JammerCombo5.TabIndex = 378;
+            this.JammerCombo5.TabStop = false;
+            // 
+            // JammerCombo4
+            // 
+            this.JammerCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JammerCombo4.Image = ((System.Drawing.Image)(resources.GetObject("JammerCombo4.Image")));
+            this.JammerCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("JammerCombo4.InitialImage")));
+            this.JammerCombo4.Location = new System.Drawing.Point(472, 228);
+            this.JammerCombo4.Name = "JammerCombo4";
+            this.JammerCombo4.Size = new System.Drawing.Size(25, 25);
+            this.JammerCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JammerCombo4.TabIndex = 376;
+            this.JammerCombo4.TabStop = false;
+            // 
+            // JammerCombo3
+            // 
+            this.JammerCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JammerCombo3.Image = ((System.Drawing.Image)(resources.GetObject("JammerCombo3.Image")));
+            this.JammerCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("JammerCombo3.InitialImage")));
+            this.JammerCombo3.Location = new System.Drawing.Point(442, 228);
+            this.JammerCombo3.Name = "JammerCombo3";
+            this.JammerCombo3.Size = new System.Drawing.Size(25, 25);
+            this.JammerCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JammerCombo3.TabIndex = 374;
+            this.JammerCombo3.TabStop = false;
+            // 
+            // JammerCombo2
+            // 
+            this.JammerCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JammerCombo2.Image = ((System.Drawing.Image)(resources.GetObject("JammerCombo2.Image")));
+            this.JammerCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("JammerCombo2.InitialImage")));
+            this.JammerCombo2.Location = new System.Drawing.Point(412, 228);
+            this.JammerCombo2.Name = "JammerCombo2";
+            this.JammerCombo2.Size = new System.Drawing.Size(25, 25);
+            this.JammerCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JammerCombo2.TabIndex = 372;
+            this.JammerCombo2.TabStop = false;
+            // 
+            // JammerCombo1
+            // 
+            this.JammerCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JammerCombo1.Image = ((System.Drawing.Image)(resources.GetObject("JammerCombo1.Image")));
+            this.JammerCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("JammerCombo1.InitialImage")));
+            this.JammerCombo1.Location = new System.Drawing.Point(382, 228);
+            this.JammerCombo1.Name = "JammerCombo1";
+            this.JammerCombo1.Size = new System.Drawing.Size(25, 25);
+            this.JammerCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.JammerCombo1.TabIndex = 370;
+            this.JammerCombo1.TabStop = false;
+            // 
+            // DarkEnhance5
+            // 
+            this.DarkEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("DarkEnhance5.Image")));
+            this.DarkEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkEnhance5.InitialImage")));
+            this.DarkEnhance5.Location = new System.Drawing.Point(705, 41);
+            this.DarkEnhance5.Name = "DarkEnhance5";
+            this.DarkEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.DarkEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkEnhance5.TabIndex = 389;
+            this.DarkEnhance5.TabStop = false;
+            // 
+            // DarkCombo5
+            // 
+            this.DarkCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkCombo5.Image = ((System.Drawing.Image)(resources.GetObject("DarkCombo5.Image")));
+            this.DarkCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkCombo5.InitialImage")));
+            this.DarkCombo5.Location = new System.Drawing.Point(705, 14);
+            this.DarkCombo5.Name = "DarkCombo5";
+            this.DarkCombo5.Size = new System.Drawing.Size(25, 25);
+            this.DarkCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkCombo5.TabIndex = 388;
+            this.DarkCombo5.TabStop = false;
+            // 
+            // DarkEnhance4
+            // 
+            this.DarkEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("DarkEnhance4.Image")));
+            this.DarkEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkEnhance4.InitialImage")));
+            this.DarkEnhance4.Location = new System.Drawing.Point(675, 41);
+            this.DarkEnhance4.Name = "DarkEnhance4";
+            this.DarkEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.DarkEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkEnhance4.TabIndex = 387;
+            this.DarkEnhance4.TabStop = false;
+            // 
+            // DarkCombo4
+            // 
+            this.DarkCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkCombo4.Image = ((System.Drawing.Image)(resources.GetObject("DarkCombo4.Image")));
+            this.DarkCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkCombo4.InitialImage")));
+            this.DarkCombo4.Location = new System.Drawing.Point(675, 14);
+            this.DarkCombo4.Name = "DarkCombo4";
+            this.DarkCombo4.Size = new System.Drawing.Size(25, 25);
+            this.DarkCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkCombo4.TabIndex = 386;
+            this.DarkCombo4.TabStop = false;
+            // 
+            // DarkEnhance3
+            // 
+            this.DarkEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("DarkEnhance3.Image")));
+            this.DarkEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkEnhance3.InitialImage")));
+            this.DarkEnhance3.Location = new System.Drawing.Point(645, 41);
+            this.DarkEnhance3.Name = "DarkEnhance3";
+            this.DarkEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.DarkEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkEnhance3.TabIndex = 385;
+            this.DarkEnhance3.TabStop = false;
+            // 
+            // DarkCombo3
+            // 
+            this.DarkCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkCombo3.Image = ((System.Drawing.Image)(resources.GetObject("DarkCombo3.Image")));
+            this.DarkCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkCombo3.InitialImage")));
+            this.DarkCombo3.Location = new System.Drawing.Point(645, 14);
+            this.DarkCombo3.Name = "DarkCombo3";
+            this.DarkCombo3.Size = new System.Drawing.Size(25, 25);
+            this.DarkCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkCombo3.TabIndex = 384;
+            this.DarkCombo3.TabStop = false;
+            // 
+            // DarkEnhance2
+            // 
+            this.DarkEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("DarkEnhance2.Image")));
+            this.DarkEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkEnhance2.InitialImage")));
+            this.DarkEnhance2.Location = new System.Drawing.Point(615, 41);
+            this.DarkEnhance2.Name = "DarkEnhance2";
+            this.DarkEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.DarkEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkEnhance2.TabIndex = 383;
+            this.DarkEnhance2.TabStop = false;
+            // 
+            // DarkCombo2
+            // 
+            this.DarkCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkCombo2.Image = ((System.Drawing.Image)(resources.GetObject("DarkCombo2.Image")));
+            this.DarkCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkCombo2.InitialImage")));
+            this.DarkCombo2.Location = new System.Drawing.Point(615, 14);
+            this.DarkCombo2.Name = "DarkCombo2";
+            this.DarkCombo2.Size = new System.Drawing.Size(25, 25);
+            this.DarkCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkCombo2.TabIndex = 382;
+            this.DarkCombo2.TabStop = false;
+            // 
+            // DarkEnhance1
+            // 
+            this.DarkEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("DarkEnhance1.Image")));
+            this.DarkEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkEnhance1.InitialImage")));
+            this.DarkEnhance1.Location = new System.Drawing.Point(585, 41);
+            this.DarkEnhance1.Name = "DarkEnhance1";
+            this.DarkEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.DarkEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkEnhance1.TabIndex = 381;
+            this.DarkEnhance1.TabStop = false;
+            // 
+            // DarkCombo1
+            // 
+            this.DarkCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DarkCombo1.Image = ((System.Drawing.Image)(resources.GetObject("DarkCombo1.Image")));
+            this.DarkCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("DarkCombo1.InitialImage")));
+            this.DarkCombo1.Location = new System.Drawing.Point(585, 14);
+            this.DarkCombo1.Name = "DarkCombo1";
+            this.DarkCombo1.Size = new System.Drawing.Size(25, 25);
+            this.DarkCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DarkCombo1.TabIndex = 380;
+            this.DarkCombo1.TabStop = false;
+            // 
+            // GreenEnhance5
+            // 
+            this.GreenEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("GreenEnhance5.Image")));
+            this.GreenEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenEnhance5.InitialImage")));
+            this.GreenEnhance5.Location = new System.Drawing.Point(705, 116);
+            this.GreenEnhance5.Name = "GreenEnhance5";
+            this.GreenEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.GreenEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenEnhance5.TabIndex = 399;
+            this.GreenEnhance5.TabStop = false;
+            // 
+            // GreenCombo5
+            // 
+            this.GreenCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenCombo5.Image = ((System.Drawing.Image)(resources.GetObject("GreenCombo5.Image")));
+            this.GreenCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenCombo5.InitialImage")));
+            this.GreenCombo5.Location = new System.Drawing.Point(705, 89);
+            this.GreenCombo5.Name = "GreenCombo5";
+            this.GreenCombo5.Size = new System.Drawing.Size(25, 25);
+            this.GreenCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenCombo5.TabIndex = 398;
+            this.GreenCombo5.TabStop = false;
+            // 
+            // GreenEnhance4
+            // 
+            this.GreenEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("GreenEnhance4.Image")));
+            this.GreenEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenEnhance4.InitialImage")));
+            this.GreenEnhance4.Location = new System.Drawing.Point(675, 116);
+            this.GreenEnhance4.Name = "GreenEnhance4";
+            this.GreenEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.GreenEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenEnhance4.TabIndex = 397;
+            this.GreenEnhance4.TabStop = false;
+            // 
+            // GreenCombo4
+            // 
+            this.GreenCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenCombo4.Image = ((System.Drawing.Image)(resources.GetObject("GreenCombo4.Image")));
+            this.GreenCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenCombo4.InitialImage")));
+            this.GreenCombo4.Location = new System.Drawing.Point(675, 89);
+            this.GreenCombo4.Name = "GreenCombo4";
+            this.GreenCombo4.Size = new System.Drawing.Size(25, 25);
+            this.GreenCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenCombo4.TabIndex = 396;
+            this.GreenCombo4.TabStop = false;
+            // 
+            // GreenEnhance3
+            // 
+            this.GreenEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("GreenEnhance3.Image")));
+            this.GreenEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenEnhance3.InitialImage")));
+            this.GreenEnhance3.Location = new System.Drawing.Point(645, 116);
+            this.GreenEnhance3.Name = "GreenEnhance3";
+            this.GreenEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.GreenEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenEnhance3.TabIndex = 395;
+            this.GreenEnhance3.TabStop = false;
+            // 
+            // GreenCombo3
+            // 
+            this.GreenCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenCombo3.Image = ((System.Drawing.Image)(resources.GetObject("GreenCombo3.Image")));
+            this.GreenCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenCombo3.InitialImage")));
+            this.GreenCombo3.Location = new System.Drawing.Point(645, 89);
+            this.GreenCombo3.Name = "GreenCombo3";
+            this.GreenCombo3.Size = new System.Drawing.Size(25, 25);
+            this.GreenCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenCombo3.TabIndex = 394;
+            this.GreenCombo3.TabStop = false;
+            // 
+            // GreenEnhance2
+            // 
+            this.GreenEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("GreenEnhance2.Image")));
+            this.GreenEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenEnhance2.InitialImage")));
+            this.GreenEnhance2.Location = new System.Drawing.Point(615, 116);
+            this.GreenEnhance2.Name = "GreenEnhance2";
+            this.GreenEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.GreenEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenEnhance2.TabIndex = 393;
+            this.GreenEnhance2.TabStop = false;
+            // 
+            // GreenCombo2
+            // 
+            this.GreenCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenCombo2.Image = ((System.Drawing.Image)(resources.GetObject("GreenCombo2.Image")));
+            this.GreenCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenCombo2.InitialImage")));
+            this.GreenCombo2.Location = new System.Drawing.Point(615, 89);
+            this.GreenCombo2.Name = "GreenCombo2";
+            this.GreenCombo2.Size = new System.Drawing.Size(25, 25);
+            this.GreenCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenCombo2.TabIndex = 392;
+            this.GreenCombo2.TabStop = false;
+            // 
+            // GreenEnhance1
+            // 
+            this.GreenEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("GreenEnhance1.Image")));
+            this.GreenEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenEnhance1.InitialImage")));
+            this.GreenEnhance1.Location = new System.Drawing.Point(585, 116);
+            this.GreenEnhance1.Name = "GreenEnhance1";
+            this.GreenEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.GreenEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenEnhance1.TabIndex = 391;
+            this.GreenEnhance1.TabStop = false;
+            // 
+            // GreenCombo1
+            // 
+            this.GreenCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.GreenCombo1.Image = ((System.Drawing.Image)(resources.GetObject("GreenCombo1.Image")));
+            this.GreenCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("GreenCombo1.InitialImage")));
+            this.GreenCombo1.Location = new System.Drawing.Point(585, 89);
+            this.GreenCombo1.Name = "GreenCombo1";
+            this.GreenCombo1.Size = new System.Drawing.Size(25, 25);
+            this.GreenCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.GreenCombo1.TabIndex = 390;
+            this.GreenCombo1.TabStop = false;
+            // 
+            // HeartEnhance5
+            // 
+            this.HeartEnhance5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartEnhance5.Image = ((System.Drawing.Image)(resources.GetObject("HeartEnhance5.Image")));
+            this.HeartEnhance5.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartEnhance5.InitialImage")));
+            this.HeartEnhance5.Location = new System.Drawing.Point(705, 185);
+            this.HeartEnhance5.Name = "HeartEnhance5";
+            this.HeartEnhance5.Size = new System.Drawing.Size(25, 25);
+            this.HeartEnhance5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartEnhance5.TabIndex = 409;
+            this.HeartEnhance5.TabStop = false;
+            // 
+            // HeartCombo5
+            // 
+            this.HeartCombo5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartCombo5.Image = ((System.Drawing.Image)(resources.GetObject("HeartCombo5.Image")));
+            this.HeartCombo5.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartCombo5.InitialImage")));
+            this.HeartCombo5.Location = new System.Drawing.Point(705, 158);
+            this.HeartCombo5.Name = "HeartCombo5";
+            this.HeartCombo5.Size = new System.Drawing.Size(25, 25);
+            this.HeartCombo5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartCombo5.TabIndex = 408;
+            this.HeartCombo5.TabStop = false;
+            // 
+            // HeartEnhance4
+            // 
+            this.HeartEnhance4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartEnhance4.Image = ((System.Drawing.Image)(resources.GetObject("HeartEnhance4.Image")));
+            this.HeartEnhance4.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartEnhance4.InitialImage")));
+            this.HeartEnhance4.Location = new System.Drawing.Point(675, 185);
+            this.HeartEnhance4.Name = "HeartEnhance4";
+            this.HeartEnhance4.Size = new System.Drawing.Size(25, 25);
+            this.HeartEnhance4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartEnhance4.TabIndex = 407;
+            this.HeartEnhance4.TabStop = false;
+            // 
+            // HeartCombo4
+            // 
+            this.HeartCombo4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartCombo4.Image = ((System.Drawing.Image)(resources.GetObject("HeartCombo4.Image")));
+            this.HeartCombo4.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartCombo4.InitialImage")));
+            this.HeartCombo4.Location = new System.Drawing.Point(675, 158);
+            this.HeartCombo4.Name = "HeartCombo4";
+            this.HeartCombo4.Size = new System.Drawing.Size(25, 25);
+            this.HeartCombo4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartCombo4.TabIndex = 406;
+            this.HeartCombo4.TabStop = false;
+            // 
+            // HeartEnhance3
+            // 
+            this.HeartEnhance3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartEnhance3.Image = ((System.Drawing.Image)(resources.GetObject("HeartEnhance3.Image")));
+            this.HeartEnhance3.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartEnhance3.InitialImage")));
+            this.HeartEnhance3.Location = new System.Drawing.Point(645, 185);
+            this.HeartEnhance3.Name = "HeartEnhance3";
+            this.HeartEnhance3.Size = new System.Drawing.Size(25, 25);
+            this.HeartEnhance3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartEnhance3.TabIndex = 405;
+            this.HeartEnhance3.TabStop = false;
+            // 
+            // HeartCombo3
+            // 
+            this.HeartCombo3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartCombo3.Image = ((System.Drawing.Image)(resources.GetObject("HeartCombo3.Image")));
+            this.HeartCombo3.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartCombo3.InitialImage")));
+            this.HeartCombo3.Location = new System.Drawing.Point(645, 158);
+            this.HeartCombo3.Name = "HeartCombo3";
+            this.HeartCombo3.Size = new System.Drawing.Size(25, 25);
+            this.HeartCombo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartCombo3.TabIndex = 404;
+            this.HeartCombo3.TabStop = false;
+            // 
+            // HeartEnhance2
+            // 
+            this.HeartEnhance2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartEnhance2.Image = ((System.Drawing.Image)(resources.GetObject("HeartEnhance2.Image")));
+            this.HeartEnhance2.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartEnhance2.InitialImage")));
+            this.HeartEnhance2.Location = new System.Drawing.Point(615, 185);
+            this.HeartEnhance2.Name = "HeartEnhance2";
+            this.HeartEnhance2.Size = new System.Drawing.Size(25, 25);
+            this.HeartEnhance2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartEnhance2.TabIndex = 403;
+            this.HeartEnhance2.TabStop = false;
+            // 
+            // HeartCombo2
+            // 
+            this.HeartCombo2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartCombo2.Image = ((System.Drawing.Image)(resources.GetObject("HeartCombo2.Image")));
+            this.HeartCombo2.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartCombo2.InitialImage")));
+            this.HeartCombo2.Location = new System.Drawing.Point(615, 158);
+            this.HeartCombo2.Name = "HeartCombo2";
+            this.HeartCombo2.Size = new System.Drawing.Size(25, 25);
+            this.HeartCombo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartCombo2.TabIndex = 402;
+            this.HeartCombo2.TabStop = false;
+            // 
+            // HeartEnhance1
+            // 
+            this.HeartEnhance1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartEnhance1.Image = ((System.Drawing.Image)(resources.GetObject("HeartEnhance1.Image")));
+            this.HeartEnhance1.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartEnhance1.InitialImage")));
+            this.HeartEnhance1.Location = new System.Drawing.Point(585, 185);
+            this.HeartEnhance1.Name = "HeartEnhance1";
+            this.HeartEnhance1.Size = new System.Drawing.Size(25, 25);
+            this.HeartEnhance1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartEnhance1.TabIndex = 401;
+            this.HeartEnhance1.TabStop = false;
+            // 
+            // HeartCombo1
+            // 
+            this.HeartCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.HeartCombo1.Image = ((System.Drawing.Image)(resources.GetObject("HeartCombo1.Image")));
+            this.HeartCombo1.InitialImage = ((System.Drawing.Image)(resources.GetObject("HeartCombo1.InitialImage")));
+            this.HeartCombo1.Location = new System.Drawing.Point(585, 158);
+            this.HeartCombo1.Name = "HeartCombo1";
+            this.HeartCombo1.Size = new System.Drawing.Size(25, 25);
+            this.HeartCombo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.HeartCombo1.TabIndex = 400;
+            this.HeartCombo1.TabStop = false;
+            // 
+            // comboSelect62
+            // 
+            this.comboSelect62.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.comboSelect62.Image = ((System.Drawing.Image)(resources.GetObject("comboSelect62.Image")));
+            this.comboSelect62.InitialImage = ((System.Drawing.Image)(resources.GetObject("comboSelect62.InitialImage")));
+            this.comboSelect62.Location = new System.Drawing.Point(705, 228);
+            this.comboSelect62.Name = "comboSelect62";
+            this.comboSelect62.Size = new System.Drawing.Size(25, 25);
+            this.comboSelect62.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.comboSelect62.TabIndex = 418;
+            this.comboSelect62.TabStop = false;
+            // 
+            // comboSelect64
+            // 
+            this.comboSelect64.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.comboSelect64.Image = ((System.Drawing.Image)(resources.GetObject("comboSelect64.Image")));
+            this.comboSelect64.InitialImage = ((System.Drawing.Image)(resources.GetObject("comboSelect64.InitialImage")));
+            this.comboSelect64.Location = new System.Drawing.Point(675, 228);
+            this.comboSelect64.Name = "comboSelect64";
+            this.comboSelect64.Size = new System.Drawing.Size(25, 25);
+            this.comboSelect64.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.comboSelect64.TabIndex = 416;
+            this.comboSelect64.TabStop = false;
+            // 
+            // comboSelect66
+            // 
+            this.comboSelect66.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.comboSelect66.Image = ((System.Drawing.Image)(resources.GetObject("comboSelect66.Image")));
+            this.comboSelect66.InitialImage = ((System.Drawing.Image)(resources.GetObject("comboSelect66.InitialImage")));
+            this.comboSelect66.Location = new System.Drawing.Point(645, 228);
+            this.comboSelect66.Name = "comboSelect66";
+            this.comboSelect66.Size = new System.Drawing.Size(25, 25);
+            this.comboSelect66.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.comboSelect66.TabIndex = 414;
+            this.comboSelect66.TabStop = false;
+            // 
+            // comboSelect68
+            // 
+            this.comboSelect68.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.comboSelect68.Image = ((System.Drawing.Image)(resources.GetObject("comboSelect68.Image")));
+            this.comboSelect68.InitialImage = ((System.Drawing.Image)(resources.GetObject("comboSelect68.InitialImage")));
+            this.comboSelect68.Location = new System.Drawing.Point(615, 228);
+            this.comboSelect68.Name = "comboSelect68";
+            this.comboSelect68.Size = new System.Drawing.Size(25, 25);
+            this.comboSelect68.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.comboSelect68.TabIndex = 412;
+            this.comboSelect68.TabStop = false;
+            // 
+            // comboSelect70
+            // 
+            this.comboSelect70.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.comboSelect70.Image = ((System.Drawing.Image)(resources.GetObject("comboSelect70.Image")));
+            this.comboSelect70.InitialImage = ((System.Drawing.Image)(resources.GetObject("comboSelect70.InitialImage")));
+            this.comboSelect70.Location = new System.Drawing.Point(585, 228);
+            this.comboSelect70.Name = "comboSelect70";
+            this.comboSelect70.Size = new System.Drawing.Size(25, 25);
+            this.comboSelect70.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.comboSelect70.TabIndex = 410;
+            this.comboSelect70.TabStop = false;
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 729);
-            this.Controls.Add(this.imgLightCombo1);
+            this.Controls.Add(this.comboSelect62);
+            this.Controls.Add(this.comboSelect64);
+            this.Controls.Add(this.comboSelect66);
+            this.Controls.Add(this.comboSelect68);
+            this.Controls.Add(this.comboSelect70);
+            this.Controls.Add(this.HeartEnhance5);
+            this.Controls.Add(this.HeartCombo5);
+            this.Controls.Add(this.HeartEnhance4);
+            this.Controls.Add(this.HeartCombo4);
+            this.Controls.Add(this.HeartEnhance3);
+            this.Controls.Add(this.HeartCombo3);
+            this.Controls.Add(this.HeartEnhance2);
+            this.Controls.Add(this.HeartCombo2);
+            this.Controls.Add(this.HeartEnhance1);
+            this.Controls.Add(this.HeartCombo1);
+            this.Controls.Add(this.GreenEnhance5);
+            this.Controls.Add(this.GreenCombo5);
+            this.Controls.Add(this.GreenEnhance4);
+            this.Controls.Add(this.GreenCombo4);
+            this.Controls.Add(this.GreenEnhance3);
+            this.Controls.Add(this.GreenCombo3);
+            this.Controls.Add(this.GreenEnhance2);
+            this.Controls.Add(this.GreenCombo2);
+            this.Controls.Add(this.GreenEnhance1);
+            this.Controls.Add(this.GreenCombo1);
+            this.Controls.Add(this.DarkEnhance5);
+            this.Controls.Add(this.DarkCombo5);
+            this.Controls.Add(this.DarkEnhance4);
+            this.Controls.Add(this.DarkCombo4);
+            this.Controls.Add(this.DarkEnhance3);
+            this.Controls.Add(this.DarkCombo3);
+            this.Controls.Add(this.DarkEnhance2);
+            this.Controls.Add(this.DarkCombo2);
+            this.Controls.Add(this.DarkEnhance1);
+            this.Controls.Add(this.DarkCombo1);
+            this.Controls.Add(this.JammerCombo5);
+            this.Controls.Add(this.JammerCombo4);
+            this.Controls.Add(this.JammerCombo3);
+            this.Controls.Add(this.JammerCombo2);
+            this.Controls.Add(this.JammerCombo1);
+            this.Controls.Add(this.BlueEnhance5);
+            this.Controls.Add(this.BlueCombo5);
+            this.Controls.Add(this.BlueEnhance4);
+            this.Controls.Add(this.BlueCombo4);
+            this.Controls.Add(this.BlueEnhance3);
+            this.Controls.Add(this.BlueCombo3);
+            this.Controls.Add(this.BlueEnhance2);
+            this.Controls.Add(this.BlueCombo2);
+            this.Controls.Add(this.BlueEnhance1);
+            this.Controls.Add(this.BlueCombo1);
+            this.Controls.Add(this.RedEnhance5);
+            this.Controls.Add(this.RedCombo5);
+            this.Controls.Add(this.RedEnhance4);
+            this.Controls.Add(this.RedCombo4);
+            this.Controls.Add(this.RedEnhance3);
+            this.Controls.Add(this.RedCombo3);
+            this.Controls.Add(this.RedEnhance2);
+            this.Controls.Add(this.RedCombo2);
+            this.Controls.Add(this.RedEnhance1);
+            this.Controls.Add(this.RedCombo1);
+            this.Controls.Add(this.LightEnhance5);
+            this.Controls.Add(this.LightCombo5);
+            this.Controls.Add(this.LightEnhance4);
+            this.Controls.Add(this.LightCombo4);
+            this.Controls.Add(this.LightEnhance3);
+            this.Controls.Add(this.LightCombo3);
+            this.Controls.Add(this.LightEnhance2);
+            this.Controls.Add(this.LightCombo2);
+            this.Controls.Add(this.LightEnhance1);
+            this.Controls.Add(this.LightCombo1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTotalDamage);
             this.Controls.Add(this.label51);
@@ -2105,21 +3063,13 @@
             this.Controls.Add(this.pictureBox12);
             this.Controls.Add(this.pictureBox10);
             this.Controls.Add(this.pictureBox9);
-            this.Controls.Add(this.cmbPoisonCross);
             this.Controls.Add(this.cmdPoisonRows);
-            this.Controls.Add(this.cmbHealCross);
             this.Controls.Add(this.cmbHealRows);
-            this.Controls.Add(this.cmbGreenCross);
             this.Controls.Add(this.cmbGreenRows);
-            this.Controls.Add(this.cmbDarkCross);
             this.Controls.Add(this.cmbDarkRows);
-            this.Controls.Add(this.cmbJammerCross);
             this.Controls.Add(this.cmbJammerRows);
-            this.Controls.Add(this.cmbBlueCross);
             this.Controls.Add(this.cmbBlueRows);
-            this.Controls.Add(this.cmbRedCross);
             this.Controls.Add(this.cmbRedRows);
-            this.Controls.Add(this.cmbLightCross);
             this.Controls.Add(this.cmbLightRows);
             this.Controls.Add(this.lblMain1);
             this.Controls.Add(this.label21);
@@ -2318,7 +3268,76 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLightCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LightCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RedCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BlueCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.JammerCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DarkCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GreenCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartEnhance1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HeartCombo1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect62)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect64)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect66)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect68)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comboSelect70)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2448,19 +3467,12 @@
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblMain1;
-        private System.Windows.Forms.ComboBox cmbRedCross;
         private System.Windows.Forms.ComboBox cmbRedRows;
-        private System.Windows.Forms.ComboBox cmbBlueCross;
         private System.Windows.Forms.ComboBox cmbBlueRows;
-        private System.Windows.Forms.ComboBox cmbJammerCross;
         private System.Windows.Forms.ComboBox cmbJammerRows;
-        private System.Windows.Forms.ComboBox cmbPoisonCross;
         private System.Windows.Forms.ComboBox cmdPoisonRows;
-        private System.Windows.Forms.ComboBox cmbHealCross;
         private System.Windows.Forms.ComboBox cmbHealRows;
-        private System.Windows.Forms.ComboBox cmbGreenCross;
         private System.Windows.Forms.ComboBox cmbGreenRows;
-        private System.Windows.Forms.ComboBox cmbDarkCross;
         private System.Windows.Forms.ComboBox cmbDarkRows;
         private System.Windows.Forms.PictureBox pictureBox9;
         private System.Windows.Forms.PictureBox pictureBox10;
@@ -2490,9 +3502,77 @@
         private System.Windows.Forms.Label lblTotalDamage;
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox cmbLightCross;
         private System.Windows.Forms.ComboBox cmbLightRows;
-        private ComboSelect imgLightCombo1;
+        private ComboSelect LightCombo1;
+        private ComboSelect LightEnhance1;
+        private ComboSelect LightEnhance2;
+        private ComboSelect LightCombo2;
+        private ComboSelect LightEnhance3;
+        private ComboSelect LightCombo3;
+        private ComboSelect LightEnhance4;
+        private ComboSelect LightCombo4;
+        private ComboSelect LightEnhance5;
+        private ComboSelect LightCombo5;
+        private ComboSelect RedEnhance5;
+        private ComboSelect RedCombo5;
+        private ComboSelect RedEnhance4;
+        private ComboSelect RedCombo4;
+        private ComboSelect RedEnhance3;
+        private ComboSelect RedCombo3;
+        private ComboSelect RedEnhance2;
+        private ComboSelect RedCombo2;
+        private ComboSelect RedEnhance1;
+        private ComboSelect RedCombo1;
+        private ComboSelect BlueEnhance5;
+        private ComboSelect BlueCombo5;
+        private ComboSelect BlueEnhance4;
+        private ComboSelect BlueCombo4;
+        private ComboSelect BlueEnhance3;
+        private ComboSelect BlueCombo3;
+        private ComboSelect BlueEnhance2;
+        private ComboSelect BlueCombo2;
+        private ComboSelect BlueEnhance1;
+        private ComboSelect BlueCombo1;
+        private ComboSelect JammerCombo5;
+        private ComboSelect JammerCombo4;
+        private ComboSelect JammerCombo3;
+        private ComboSelect JammerCombo2;
+        private ComboSelect JammerCombo1;
+        private ComboSelect DarkEnhance5;
+        private ComboSelect DarkCombo5;
+        private ComboSelect DarkEnhance4;
+        private ComboSelect DarkCombo4;
+        private ComboSelect DarkEnhance3;
+        private ComboSelect DarkCombo3;
+        private ComboSelect DarkEnhance2;
+        private ComboSelect DarkCombo2;
+        private ComboSelect DarkEnhance1;
+        private ComboSelect DarkCombo1;
+        private ComboSelect GreenEnhance5;
+        private ComboSelect GreenCombo5;
+        private ComboSelect GreenEnhance4;
+        private ComboSelect GreenCombo4;
+        private ComboSelect GreenEnhance3;
+        private ComboSelect GreenCombo3;
+        private ComboSelect GreenEnhance2;
+        private ComboSelect GreenCombo2;
+        private ComboSelect GreenEnhance1;
+        private ComboSelect GreenCombo1;
+        private ComboSelect HeartEnhance5;
+        private ComboSelect HeartCombo5;
+        private ComboSelect HeartEnhance4;
+        private ComboSelect HeartCombo4;
+        private ComboSelect HeartEnhance3;
+        private ComboSelect HeartCombo3;
+        private ComboSelect HeartEnhance2;
+        private ComboSelect HeartCombo2;
+        private ComboSelect HeartEnhance1;
+        private ComboSelect HeartCombo1;
+        private ComboSelect comboSelect62;
+        private ComboSelect comboSelect64;
+        private ComboSelect comboSelect66;
+        private ComboSelect comboSelect68;
+        private ComboSelect comboSelect70;
     }
 }
 
