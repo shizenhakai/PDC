@@ -141,88 +141,16 @@
             this.img1Latent1 = new System.Windows.Forms.PictureBox();
             this.img1Latent2 = new System.Windows.Forms.PictureBox();
             this.imt1Latent3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.txtGreenCombo5 = new System.Windows.Forms.TextBox();
-            this.txtGreenCombo4 = new System.Windows.Forms.TextBox();
-            this.txtGreenCombo3 = new System.Windows.Forms.TextBox();
-            this.txtGreenCombo2 = new System.Windows.Forms.TextBox();
-            this.txtGreenCombo1 = new System.Windows.Forms.TextBox();
-            this.txtGreenEnhance5 = new System.Windows.Forms.TextBox();
-            this.txtGreenEnhance4 = new System.Windows.Forms.TextBox();
-            this.txtGreenEnhance3 = new System.Windows.Forms.TextBox();
-            this.txtGreenEnhance2 = new System.Windows.Forms.TextBox();
-            this.txtGreenEnhance1 = new System.Windows.Forms.TextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtHeartCombo5 = new System.Windows.Forms.TextBox();
-            this.txtHeartCombo4 = new System.Windows.Forms.TextBox();
-            this.txtHeartCombo3 = new System.Windows.Forms.TextBox();
-            this.txtHeartCombo2 = new System.Windows.Forms.TextBox();
-            this.txtHeartCombo1 = new System.Windows.Forms.TextBox();
-            this.textBox26 = new System.Windows.Forms.TextBox();
-            this.textBox27 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
-            this.textBox29 = new System.Windows.Forms.TextBox();
-            this.textBox30 = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtBlueCombo5 = new System.Windows.Forms.TextBox();
-            this.txtBlueCombo4 = new System.Windows.Forms.TextBox();
-            this.txtBlueCombo3 = new System.Windows.Forms.TextBox();
-            this.txtBlueCombo2 = new System.Windows.Forms.TextBox();
-            this.txtBlueCombo1 = new System.Windows.Forms.TextBox();
-            this.txtBlueEnhance5 = new System.Windows.Forms.TextBox();
-            this.txtBlueEnhance4 = new System.Windows.Forms.TextBox();
-            this.txtBlueEnhance3 = new System.Windows.Forms.TextBox();
-            this.txtBlueEnhance2 = new System.Windows.Forms.TextBox();
-            this.txtBlueEnhance1 = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtDarkCombo5 = new System.Windows.Forms.TextBox();
-            this.txtDarkCombo4 = new System.Windows.Forms.TextBox();
-            this.txtDarkCombo3 = new System.Windows.Forms.TextBox();
-            this.txtDarkCombo2 = new System.Windows.Forms.TextBox();
-            this.txtDarkCombo1 = new System.Windows.Forms.TextBox();
-            this.txtDarkEnhance5 = new System.Windows.Forms.TextBox();
-            this.txtDarkEnhance4 = new System.Windows.Forms.TextBox();
-            this.txtDarkEnhance3 = new System.Windows.Forms.TextBox();
-            this.txtDarkEnhance2 = new System.Windows.Forms.TextBox();
-            this.txtDarkEnhance1 = new System.Windows.Forms.TextBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox60 = new System.Windows.Forms.TextBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.textBox64 = new System.Windows.Forms.TextBox();
-            this.textBox65 = new System.Windows.Forms.TextBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBox71 = new System.Windows.Forms.TextBox();
-            this.textBox72 = new System.Windows.Forms.TextBox();
-            this.textBox73 = new System.Windows.Forms.TextBox();
-            this.textBox74 = new System.Windows.Forms.TextBox();
-            this.textBox75 = new System.Windows.Forms.TextBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.lblMain1 = new System.Windows.Forms.Label();
-            this.cmbLightRows = new System.Windows.Forms.ComboBox();
-            this.cmbLightCross = new System.Windows.Forms.ComboBox();
             this.cmbRedCross = new System.Windows.Forms.ComboBox();
             this.cmbRedRows = new System.Windows.Forms.ComboBox();
             this.cmbBlueCross = new System.Windows.Forms.ComboBox();
@@ -251,26 +179,6 @@
             this.pictureBox22 = new System.Windows.Forms.PictureBox();
             this.pictureBox23 = new System.Windows.Forms.PictureBox();
             this.pictureBox24 = new System.Windows.Forms.PictureBox();
-            this.txtRedEnhance1 = new System.Windows.Forms.TextBox();
-            this.txtRedEnhance2 = new System.Windows.Forms.TextBox();
-            this.txtRedEnhance3 = new System.Windows.Forms.TextBox();
-            this.txtRedEnhance4 = new System.Windows.Forms.TextBox();
-            this.txtRedEnhance5 = new System.Windows.Forms.TextBox();
-            this.txtRedCombo1 = new System.Windows.Forms.TextBox();
-            this.txtRedCombo2 = new System.Windows.Forms.TextBox();
-            this.txtRedCombo3 = new System.Windows.Forms.TextBox();
-            this.txtRedCombo4 = new System.Windows.Forms.TextBox();
-            this.txtRedCombo5 = new System.Windows.Forms.TextBox();
-            this.txtLightEnhance1 = new System.Windows.Forms.TextBox();
-            this.txtLightEnhance2 = new System.Windows.Forms.TextBox();
-            this.txtLightEnhance3 = new System.Windows.Forms.TextBox();
-            this.txtLightEnhance4 = new System.Windows.Forms.TextBox();
-            this.txtLightEnhance5 = new System.Windows.Forms.TextBox();
-            this.txtLightCombo1 = new System.Windows.Forms.TextBox();
-            this.txtLightCombo2 = new System.Windows.Forms.TextBox();
-            this.txtLightCombo3 = new System.Windows.Forms.TextBox();
-            this.txtLightCombo4 = new System.Windows.Forms.TextBox();
-            this.txtLightCombo5 = new System.Windows.Forms.TextBox();
             this.lblMain2 = new System.Windows.Forms.Label();
             this.lblMain3 = new System.Windows.Forms.Label();
             this.lblMain4 = new System.Windows.Forms.Label();
@@ -284,6 +192,10 @@
             this.lblSub1 = new System.Windows.Forms.Label();
             this.lblTotalDamage = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cmbLightCross = new System.Windows.Forms.ComboBox();
+            this.cmbLightRows = new System.Windows.Forms.ComboBox();
+            this.imgLightCombo1 = new PAD.ComboSelect();
             ((System.ComponentModel.ISupportInitialize)(this.img3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img4)).BeginInit();
@@ -357,6 +269,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLightCombo1)).BeginInit();
             this.SuspendLayout();
             // 
             // img3
@@ -1645,46 +1558,6 @@
             this.imt1Latent3.TabIndex = 135;
             this.imt1Latent3.TabStop = false;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(382, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(25, 20);
-            this.textBox1.TabIndex = 136;
-            this.textBox1.Text = "0";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(412, 100);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(25, 20);
-            this.textBox2.TabIndex = 137;
-            this.textBox2.Text = "0";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(442, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(25, 20);
-            this.textBox3.TabIndex = 138;
-            this.textBox3.Text = "0";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(472, 100);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(25, 20);
-            this.textBox4.TabIndex = 139;
-            this.textBox4.Text = "0";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(502, 100);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(25, 20);
-            this.textBox5.TabIndex = 140;
-            this.textBox5.Text = "0";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -1693,136 +1566,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(195, 55);
             this.pictureBox1.TabIndex = 196;
             this.pictureBox1.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(502, 75);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(25, 20);
-            this.textBox6.TabIndex = 201;
-            this.textBox6.Text = "0";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(472, 75);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(25, 20);
-            this.textBox7.TabIndex = 200;
-            this.textBox7.Text = "0";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(442, 75);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(25, 20);
-            this.textBox8.TabIndex = 199;
-            this.textBox8.Text = "0";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(412, 75);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(25, 20);
-            this.textBox9.TabIndex = 198;
-            this.textBox9.Text = "0";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(382, 75);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(25, 20);
-            this.textBox10.TabIndex = 197;
-            this.textBox10.Text = "0";
-            // 
-            // txtGreenCombo5
-            // 
-            this.txtGreenCombo5.Location = new System.Drawing.Point(705, 75);
-            this.txtGreenCombo5.Name = "txtGreenCombo5";
-            this.txtGreenCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenCombo5.TabIndex = 212;
-            this.txtGreenCombo5.Text = "0";
-            this.txtGreenCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenCombo4
-            // 
-            this.txtGreenCombo4.Location = new System.Drawing.Point(675, 75);
-            this.txtGreenCombo4.Name = "txtGreenCombo4";
-            this.txtGreenCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenCombo4.TabIndex = 211;
-            this.txtGreenCombo4.Text = "0";
-            this.txtGreenCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenCombo3
-            // 
-            this.txtGreenCombo3.Location = new System.Drawing.Point(645, 75);
-            this.txtGreenCombo3.Name = "txtGreenCombo3";
-            this.txtGreenCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenCombo3.TabIndex = 210;
-            this.txtGreenCombo3.Text = "0";
-            this.txtGreenCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenCombo2
-            // 
-            this.txtGreenCombo2.Location = new System.Drawing.Point(615, 75);
-            this.txtGreenCombo2.Name = "txtGreenCombo2";
-            this.txtGreenCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenCombo2.TabIndex = 209;
-            this.txtGreenCombo2.Text = "0";
-            this.txtGreenCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenCombo1
-            // 
-            this.txtGreenCombo1.Location = new System.Drawing.Point(585, 75);
-            this.txtGreenCombo1.Name = "txtGreenCombo1";
-            this.txtGreenCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenCombo1.TabIndex = 208;
-            this.txtGreenCombo1.Text = "0";
-            this.txtGreenCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenEnhance5
-            // 
-            this.txtGreenEnhance5.Location = new System.Drawing.Point(705, 100);
-            this.txtGreenEnhance5.Name = "txtGreenEnhance5";
-            this.txtGreenEnhance5.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenEnhance5.TabIndex = 206;
-            this.txtGreenEnhance5.Text = "0";
-            this.txtGreenEnhance5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenEnhance4
-            // 
-            this.txtGreenEnhance4.Location = new System.Drawing.Point(675, 100);
-            this.txtGreenEnhance4.Name = "txtGreenEnhance4";
-            this.txtGreenEnhance4.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenEnhance4.TabIndex = 205;
-            this.txtGreenEnhance4.Text = "0";
-            this.txtGreenEnhance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenEnhance3
-            // 
-            this.txtGreenEnhance3.Location = new System.Drawing.Point(645, 100);
-            this.txtGreenEnhance3.Name = "txtGreenEnhance3";
-            this.txtGreenEnhance3.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenEnhance3.TabIndex = 204;
-            this.txtGreenEnhance3.Text = "0";
-            this.txtGreenEnhance3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenEnhance2
-            // 
-            this.txtGreenEnhance2.Location = new System.Drawing.Point(615, 100);
-            this.txtGreenEnhance2.Name = "txtGreenEnhance2";
-            this.txtGreenEnhance2.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenEnhance2.TabIndex = 203;
-            this.txtGreenEnhance2.Text = "0";
-            this.txtGreenEnhance2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtGreenEnhance1
-            // 
-            this.txtGreenEnhance1.Location = new System.Drawing.Point(585, 100);
-            this.txtGreenEnhance1.Name = "txtGreenEnhance1";
-            this.txtGreenEnhance1.Size = new System.Drawing.Size(25, 20);
-            this.txtGreenEnhance1.TabIndex = 202;
-            this.txtGreenEnhance1.Text = "0";
-            this.txtGreenEnhance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox2
             // 
@@ -1833,96 +1576,6 @@
             this.pictureBox2.TabIndex = 207;
             this.pictureBox2.TabStop = false;
             // 
-            // txtHeartCombo5
-            // 
-            this.txtHeartCombo5.Location = new System.Drawing.Point(705, 136);
-            this.txtHeartCombo5.Name = "txtHeartCombo5";
-            this.txtHeartCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtHeartCombo5.TabIndex = 234;
-            this.txtHeartCombo5.Text = "0";
-            this.txtHeartCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHeartCombo4
-            // 
-            this.txtHeartCombo4.Location = new System.Drawing.Point(675, 136);
-            this.txtHeartCombo4.Name = "txtHeartCombo4";
-            this.txtHeartCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtHeartCombo4.TabIndex = 233;
-            this.txtHeartCombo4.Text = "0";
-            this.txtHeartCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHeartCombo3
-            // 
-            this.txtHeartCombo3.Location = new System.Drawing.Point(645, 136);
-            this.txtHeartCombo3.Name = "txtHeartCombo3";
-            this.txtHeartCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtHeartCombo3.TabIndex = 232;
-            this.txtHeartCombo3.Text = "0";
-            this.txtHeartCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHeartCombo2
-            // 
-            this.txtHeartCombo2.Location = new System.Drawing.Point(615, 136);
-            this.txtHeartCombo2.Name = "txtHeartCombo2";
-            this.txtHeartCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtHeartCombo2.TabIndex = 231;
-            this.txtHeartCombo2.Text = "0";
-            this.txtHeartCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtHeartCombo1
-            // 
-            this.txtHeartCombo1.Location = new System.Drawing.Point(585, 136);
-            this.txtHeartCombo1.Name = "txtHeartCombo1";
-            this.txtHeartCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtHeartCombo1.TabIndex = 230;
-            this.txtHeartCombo1.Text = "0";
-            this.txtHeartCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox26
-            // 
-            this.textBox26.Location = new System.Drawing.Point(705, 161);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(25, 20);
-            this.textBox26.TabIndex = 228;
-            this.textBox26.Text = "0";
-            this.textBox26.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox27
-            // 
-            this.textBox27.Location = new System.Drawing.Point(675, 161);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(25, 20);
-            this.textBox27.TabIndex = 227;
-            this.textBox27.Text = "0";
-            this.textBox27.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox28
-            // 
-            this.textBox28.Location = new System.Drawing.Point(645, 161);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(25, 20);
-            this.textBox28.TabIndex = 226;
-            this.textBox28.Text = "0";
-            this.textBox28.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox29
-            // 
-            this.textBox29.Location = new System.Drawing.Point(615, 161);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(25, 20);
-            this.textBox29.TabIndex = 225;
-            this.textBox29.Text = "0";
-            this.textBox29.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox30
-            // 
-            this.textBox30.Location = new System.Drawing.Point(585, 161);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(25, 20);
-            this.textBox30.TabIndex = 224;
-            this.textBox30.Text = "0";
-            this.textBox30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
@@ -1931,96 +1584,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(195, 55);
             this.pictureBox3.TabIndex = 229;
             this.pictureBox3.TabStop = false;
-            // 
-            // txtBlueCombo5
-            // 
-            this.txtBlueCombo5.Location = new System.Drawing.Point(502, 136);
-            this.txtBlueCombo5.Name = "txtBlueCombo5";
-            this.txtBlueCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueCombo5.TabIndex = 223;
-            this.txtBlueCombo5.Text = "0";
-            this.txtBlueCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueCombo4
-            // 
-            this.txtBlueCombo4.Location = new System.Drawing.Point(472, 136);
-            this.txtBlueCombo4.Name = "txtBlueCombo4";
-            this.txtBlueCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueCombo4.TabIndex = 222;
-            this.txtBlueCombo4.Text = "0";
-            this.txtBlueCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueCombo3
-            // 
-            this.txtBlueCombo3.Location = new System.Drawing.Point(442, 136);
-            this.txtBlueCombo3.Name = "txtBlueCombo3";
-            this.txtBlueCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueCombo3.TabIndex = 221;
-            this.txtBlueCombo3.Text = "0";
-            this.txtBlueCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueCombo2
-            // 
-            this.txtBlueCombo2.Location = new System.Drawing.Point(412, 136);
-            this.txtBlueCombo2.Name = "txtBlueCombo2";
-            this.txtBlueCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueCombo2.TabIndex = 220;
-            this.txtBlueCombo2.Text = "0";
-            this.txtBlueCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueCombo1
-            // 
-            this.txtBlueCombo1.Location = new System.Drawing.Point(382, 136);
-            this.txtBlueCombo1.Name = "txtBlueCombo1";
-            this.txtBlueCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueCombo1.TabIndex = 219;
-            this.txtBlueCombo1.Text = "0";
-            this.txtBlueCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueEnhance5
-            // 
-            this.txtBlueEnhance5.Location = new System.Drawing.Point(502, 161);
-            this.txtBlueEnhance5.Name = "txtBlueEnhance5";
-            this.txtBlueEnhance5.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueEnhance5.TabIndex = 217;
-            this.txtBlueEnhance5.Text = "0";
-            this.txtBlueEnhance5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueEnhance4
-            // 
-            this.txtBlueEnhance4.Location = new System.Drawing.Point(472, 161);
-            this.txtBlueEnhance4.Name = "txtBlueEnhance4";
-            this.txtBlueEnhance4.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueEnhance4.TabIndex = 216;
-            this.txtBlueEnhance4.Text = "0";
-            this.txtBlueEnhance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueEnhance3
-            // 
-            this.txtBlueEnhance3.Location = new System.Drawing.Point(442, 161);
-            this.txtBlueEnhance3.Name = "txtBlueEnhance3";
-            this.txtBlueEnhance3.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueEnhance3.TabIndex = 215;
-            this.txtBlueEnhance3.Text = "0";
-            this.txtBlueEnhance3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueEnhance2
-            // 
-            this.txtBlueEnhance2.Location = new System.Drawing.Point(412, 161);
-            this.txtBlueEnhance2.Name = "txtBlueEnhance2";
-            this.txtBlueEnhance2.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueEnhance2.TabIndex = 214;
-            this.txtBlueEnhance2.Text = "0";
-            this.txtBlueEnhance2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtBlueEnhance1
-            // 
-            this.txtBlueEnhance1.Location = new System.Drawing.Point(382, 161);
-            this.txtBlueEnhance1.Name = "txtBlueEnhance1";
-            this.txtBlueEnhance1.Size = new System.Drawing.Size(25, 20);
-            this.txtBlueEnhance1.TabIndex = 213;
-            this.txtBlueEnhance1.Text = "0";
-            this.txtBlueEnhance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox4
             // 
@@ -2031,96 +1594,6 @@
             this.pictureBox4.TabIndex = 218;
             this.pictureBox4.TabStop = false;
             // 
-            // txtDarkCombo5
-            // 
-            this.txtDarkCombo5.Location = new System.Drawing.Point(705, 14);
-            this.txtDarkCombo5.Name = "txtDarkCombo5";
-            this.txtDarkCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkCombo5.TabIndex = 256;
-            this.txtDarkCombo5.Text = "0";
-            this.txtDarkCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkCombo4
-            // 
-            this.txtDarkCombo4.Location = new System.Drawing.Point(675, 14);
-            this.txtDarkCombo4.Name = "txtDarkCombo4";
-            this.txtDarkCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkCombo4.TabIndex = 255;
-            this.txtDarkCombo4.Text = "0";
-            this.txtDarkCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkCombo3
-            // 
-            this.txtDarkCombo3.Location = new System.Drawing.Point(645, 14);
-            this.txtDarkCombo3.Name = "txtDarkCombo3";
-            this.txtDarkCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkCombo3.TabIndex = 254;
-            this.txtDarkCombo3.Text = "0";
-            this.txtDarkCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkCombo2
-            // 
-            this.txtDarkCombo2.Location = new System.Drawing.Point(615, 14);
-            this.txtDarkCombo2.Name = "txtDarkCombo2";
-            this.txtDarkCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkCombo2.TabIndex = 253;
-            this.txtDarkCombo2.Text = "0";
-            this.txtDarkCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkCombo1
-            // 
-            this.txtDarkCombo1.Location = new System.Drawing.Point(585, 14);
-            this.txtDarkCombo1.Name = "txtDarkCombo1";
-            this.txtDarkCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkCombo1.TabIndex = 252;
-            this.txtDarkCombo1.Text = "0";
-            this.txtDarkCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkEnhance5
-            // 
-            this.txtDarkEnhance5.Location = new System.Drawing.Point(705, 39);
-            this.txtDarkEnhance5.Name = "txtDarkEnhance5";
-            this.txtDarkEnhance5.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkEnhance5.TabIndex = 250;
-            this.txtDarkEnhance5.Text = "0";
-            this.txtDarkEnhance5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkEnhance4
-            // 
-            this.txtDarkEnhance4.Location = new System.Drawing.Point(675, 39);
-            this.txtDarkEnhance4.Name = "txtDarkEnhance4";
-            this.txtDarkEnhance4.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkEnhance4.TabIndex = 249;
-            this.txtDarkEnhance4.Text = "0";
-            this.txtDarkEnhance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkEnhance3
-            // 
-            this.txtDarkEnhance3.Location = new System.Drawing.Point(645, 39);
-            this.txtDarkEnhance3.Name = "txtDarkEnhance3";
-            this.txtDarkEnhance3.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkEnhance3.TabIndex = 248;
-            this.txtDarkEnhance3.Text = "0";
-            this.txtDarkEnhance3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkEnhance2
-            // 
-            this.txtDarkEnhance2.Location = new System.Drawing.Point(615, 39);
-            this.txtDarkEnhance2.Name = "txtDarkEnhance2";
-            this.txtDarkEnhance2.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkEnhance2.TabIndex = 247;
-            this.txtDarkEnhance2.Text = "0";
-            this.txtDarkEnhance2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtDarkEnhance1
-            // 
-            this.txtDarkEnhance1.Location = new System.Drawing.Point(585, 39);
-            this.txtDarkEnhance1.Name = "txtDarkEnhance1";
-            this.txtDarkEnhance1.Size = new System.Drawing.Size(25, 20);
-            this.txtDarkEnhance1.TabIndex = 246;
-            this.txtDarkEnhance1.Text = "0";
-            this.txtDarkEnhance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -2129,86 +1602,6 @@
             this.pictureBox5.Size = new System.Drawing.Size(195, 55);
             this.pictureBox5.TabIndex = 251;
             this.pictureBox5.TabStop = false;
-            // 
-            // textBox51
-            // 
-            this.textBox51.Location = new System.Drawing.Point(502, 14);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(25, 20);
-            this.textBox51.TabIndex = 245;
-            this.textBox51.Text = "0";
-            // 
-            // textBox52
-            // 
-            this.textBox52.Location = new System.Drawing.Point(472, 14);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(25, 20);
-            this.textBox52.TabIndex = 244;
-            this.textBox52.Text = "0";
-            // 
-            // textBox53
-            // 
-            this.textBox53.Location = new System.Drawing.Point(442, 14);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(25, 20);
-            this.textBox53.TabIndex = 243;
-            this.textBox53.Text = "0";
-            // 
-            // textBox54
-            // 
-            this.textBox54.Location = new System.Drawing.Point(412, 14);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(25, 20);
-            this.textBox54.TabIndex = 242;
-            this.textBox54.Text = "0";
-            // 
-            // textBox55
-            // 
-            this.textBox55.Location = new System.Drawing.Point(382, 14);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(25, 20);
-            this.textBox55.TabIndex = 241;
-            this.textBox55.Text = "0";
-            // 
-            // textBox56
-            // 
-            this.textBox56.Location = new System.Drawing.Point(502, 39);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(25, 20);
-            this.textBox56.TabIndex = 239;
-            this.textBox56.Text = "0";
-            // 
-            // textBox57
-            // 
-            this.textBox57.Location = new System.Drawing.Point(472, 39);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(25, 20);
-            this.textBox57.TabIndex = 238;
-            this.textBox57.Text = "0";
-            // 
-            // textBox58
-            // 
-            this.textBox58.Location = new System.Drawing.Point(442, 39);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(25, 20);
-            this.textBox58.TabIndex = 237;
-            this.textBox58.Text = "0";
-            // 
-            // textBox59
-            // 
-            this.textBox59.Location = new System.Drawing.Point(412, 39);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(25, 20);
-            this.textBox59.TabIndex = 236;
-            this.textBox59.Text = "0";
-            // 
-            // textBox60
-            // 
-            this.textBox60.Location = new System.Drawing.Point(382, 39);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(25, 20);
-            this.textBox60.TabIndex = 235;
-            this.textBox60.Text = "0";
             // 
             // pictureBox6
             // 
@@ -2219,51 +1612,6 @@
             this.pictureBox6.TabIndex = 240;
             this.pictureBox6.TabStop = false;
             // 
-            // textBox61
-            // 
-            this.textBox61.Location = new System.Drawing.Point(705, 196);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(25, 20);
-            this.textBox61.TabIndex = 278;
-            this.textBox61.Text = "0";
-            this.textBox61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox62
-            // 
-            this.textBox62.Location = new System.Drawing.Point(675, 196);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(25, 20);
-            this.textBox62.TabIndex = 277;
-            this.textBox62.Text = "0";
-            this.textBox62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox63
-            // 
-            this.textBox63.Location = new System.Drawing.Point(645, 196);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(25, 20);
-            this.textBox63.TabIndex = 276;
-            this.textBox63.Text = "0";
-            this.textBox63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox64
-            // 
-            this.textBox64.Location = new System.Drawing.Point(615, 196);
-            this.textBox64.Name = "textBox64";
-            this.textBox64.Size = new System.Drawing.Size(25, 20);
-            this.textBox64.TabIndex = 275;
-            this.textBox64.Text = "0";
-            this.textBox64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox65
-            // 
-            this.textBox65.Location = new System.Drawing.Point(585, 196);
-            this.textBox65.Name = "textBox65";
-            this.textBox65.Size = new System.Drawing.Size(25, 20);
-            this.textBox65.TabIndex = 274;
-            this.textBox65.Text = "0";
-            this.textBox65.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Purple;
@@ -2272,51 +1620,6 @@
             this.pictureBox7.Size = new System.Drawing.Size(195, 55);
             this.pictureBox7.TabIndex = 273;
             this.pictureBox7.TabStop = false;
-            // 
-            // textBox71
-            // 
-            this.textBox71.Location = new System.Drawing.Point(502, 196);
-            this.textBox71.Name = "textBox71";
-            this.textBox71.Size = new System.Drawing.Size(25, 20);
-            this.textBox71.TabIndex = 267;
-            this.textBox71.Text = "0";
-            this.textBox71.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox72
-            // 
-            this.textBox72.Location = new System.Drawing.Point(472, 196);
-            this.textBox72.Name = "textBox72";
-            this.textBox72.Size = new System.Drawing.Size(25, 20);
-            this.textBox72.TabIndex = 266;
-            this.textBox72.Text = "0";
-            this.textBox72.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox73
-            // 
-            this.textBox73.Location = new System.Drawing.Point(442, 196);
-            this.textBox73.Name = "textBox73";
-            this.textBox73.Size = new System.Drawing.Size(25, 20);
-            this.textBox73.TabIndex = 265;
-            this.textBox73.Text = "0";
-            this.textBox73.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox74
-            // 
-            this.textBox74.Location = new System.Drawing.Point(412, 196);
-            this.textBox74.Name = "textBox74";
-            this.textBox74.Size = new System.Drawing.Size(25, 20);
-            this.textBox74.TabIndex = 264;
-            this.textBox74.Text = "0";
-            this.textBox74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox75
-            // 
-            this.textBox75.Location = new System.Drawing.Point(382, 196);
-            this.textBox75.Name = "textBox75";
-            this.textBox75.Size = new System.Drawing.Size(25, 20);
-            this.textBox75.TabIndex = 263;
-            this.textBox75.Text = "0";
-            this.textBox75.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // pictureBox8
             // 
@@ -2345,24 +1648,6 @@
             this.lblMain1.Size = new System.Drawing.Size(145, 29);
             this.lblMain1.TabIndex = 293;
             this.lblMain1.Text = "2147483647";
-            // 
-            // cmbLightRows
-            // 
-            this.cmbLightRows.FormattingEnabled = true;
-            this.cmbLightRows.Location = new System.Drawing.Point(531, 14);
-            this.cmbLightRows.Name = "cmbLightRows";
-            this.cmbLightRows.Size = new System.Drawing.Size(35, 21);
-            this.cmbLightRows.TabIndex = 294;
-            this.cmbLightRows.Text = "0";
-            // 
-            // cmbLightCross
-            // 
-            this.cmbLightCross.FormattingEnabled = true;
-            this.cmbLightCross.Location = new System.Drawing.Point(531, 38);
-            this.cmbLightCross.Name = "cmbLightCross";
-            this.cmbLightCross.Size = new System.Drawing.Size(35, 21);
-            this.cmbLightCross.TabIndex = 295;
-            this.cmbLightCross.Text = "0";
             // 
             // cmbRedCross
             // 
@@ -2630,186 +1915,6 @@
             this.pictureBox24.TabIndex = 318;
             this.pictureBox24.TabStop = false;
             // 
-            // txtRedEnhance1
-            // 
-            this.txtRedEnhance1.Location = new System.Drawing.Point(382, 101);
-            this.txtRedEnhance1.Name = "txtRedEnhance1";
-            this.txtRedEnhance1.Size = new System.Drawing.Size(25, 20);
-            this.txtRedEnhance1.TabIndex = 136;
-            this.txtRedEnhance1.Text = "0";
-            this.txtRedEnhance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedEnhance2
-            // 
-            this.txtRedEnhance2.Location = new System.Drawing.Point(412, 101);
-            this.txtRedEnhance2.Name = "txtRedEnhance2";
-            this.txtRedEnhance2.Size = new System.Drawing.Size(25, 20);
-            this.txtRedEnhance2.TabIndex = 137;
-            this.txtRedEnhance2.Text = "0";
-            this.txtRedEnhance2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedEnhance3
-            // 
-            this.txtRedEnhance3.Location = new System.Drawing.Point(442, 101);
-            this.txtRedEnhance3.Name = "txtRedEnhance3";
-            this.txtRedEnhance3.Size = new System.Drawing.Size(25, 20);
-            this.txtRedEnhance3.TabIndex = 138;
-            this.txtRedEnhance3.Text = "0";
-            this.txtRedEnhance3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedEnhance4
-            // 
-            this.txtRedEnhance4.Location = new System.Drawing.Point(472, 101);
-            this.txtRedEnhance4.Name = "txtRedEnhance4";
-            this.txtRedEnhance4.Size = new System.Drawing.Size(25, 20);
-            this.txtRedEnhance4.TabIndex = 139;
-            this.txtRedEnhance4.Text = "0";
-            this.txtRedEnhance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedEnhance5
-            // 
-            this.txtRedEnhance5.Location = new System.Drawing.Point(502, 101);
-            this.txtRedEnhance5.Name = "txtRedEnhance5";
-            this.txtRedEnhance5.Size = new System.Drawing.Size(25, 20);
-            this.txtRedEnhance5.TabIndex = 140;
-            this.txtRedEnhance5.Text = "0";
-            this.txtRedEnhance5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedCombo1
-            // 
-            this.txtRedCombo1.Location = new System.Drawing.Point(382, 76);
-            this.txtRedCombo1.Name = "txtRedCombo1";
-            this.txtRedCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtRedCombo1.TabIndex = 197;
-            this.txtRedCombo1.Text = "0";
-            this.txtRedCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedCombo2
-            // 
-            this.txtRedCombo2.Location = new System.Drawing.Point(412, 76);
-            this.txtRedCombo2.Name = "txtRedCombo2";
-            this.txtRedCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtRedCombo2.TabIndex = 198;
-            this.txtRedCombo2.Text = "0";
-            this.txtRedCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedCombo3
-            // 
-            this.txtRedCombo3.Location = new System.Drawing.Point(442, 76);
-            this.txtRedCombo3.Name = "txtRedCombo3";
-            this.txtRedCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtRedCombo3.TabIndex = 199;
-            this.txtRedCombo3.Text = "0";
-            this.txtRedCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedCombo4
-            // 
-            this.txtRedCombo4.Location = new System.Drawing.Point(472, 76);
-            this.txtRedCombo4.Name = "txtRedCombo4";
-            this.txtRedCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtRedCombo4.TabIndex = 200;
-            this.txtRedCombo4.Text = "0";
-            this.txtRedCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtRedCombo5
-            // 
-            this.txtRedCombo5.Location = new System.Drawing.Point(502, 76);
-            this.txtRedCombo5.Name = "txtRedCombo5";
-            this.txtRedCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtRedCombo5.TabIndex = 201;
-            this.txtRedCombo5.Text = "0";
-            this.txtRedCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightEnhance1
-            // 
-            this.txtLightEnhance1.Location = new System.Drawing.Point(382, 40);
-            this.txtLightEnhance1.Name = "txtLightEnhance1";
-            this.txtLightEnhance1.Size = new System.Drawing.Size(25, 20);
-            this.txtLightEnhance1.TabIndex = 235;
-            this.txtLightEnhance1.Text = "0";
-            this.txtLightEnhance1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightEnhance2
-            // 
-            this.txtLightEnhance2.Location = new System.Drawing.Point(412, 40);
-            this.txtLightEnhance2.Name = "txtLightEnhance2";
-            this.txtLightEnhance2.Size = new System.Drawing.Size(25, 20);
-            this.txtLightEnhance2.TabIndex = 236;
-            this.txtLightEnhance2.Text = "0";
-            this.txtLightEnhance2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightEnhance3
-            // 
-            this.txtLightEnhance3.Location = new System.Drawing.Point(442, 40);
-            this.txtLightEnhance3.Name = "txtLightEnhance3";
-            this.txtLightEnhance3.Size = new System.Drawing.Size(25, 20);
-            this.txtLightEnhance3.TabIndex = 237;
-            this.txtLightEnhance3.Text = "0";
-            this.txtLightEnhance3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightEnhance4
-            // 
-            this.txtLightEnhance4.Location = new System.Drawing.Point(472, 40);
-            this.txtLightEnhance4.Name = "txtLightEnhance4";
-            this.txtLightEnhance4.Size = new System.Drawing.Size(25, 20);
-            this.txtLightEnhance4.TabIndex = 238;
-            this.txtLightEnhance4.Text = "0";
-            this.txtLightEnhance4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightEnhance5
-            // 
-            this.txtLightEnhance5.Location = new System.Drawing.Point(502, 40);
-            this.txtLightEnhance5.Name = "txtLightEnhance5";
-            this.txtLightEnhance5.Size = new System.Drawing.Size(25, 20);
-            this.txtLightEnhance5.TabIndex = 239;
-            this.txtLightEnhance5.Text = "0";
-            this.txtLightEnhance5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightCombo1
-            // 
-            this.txtLightCombo1.Location = new System.Drawing.Point(382, 15);
-            this.txtLightCombo1.Name = "txtLightCombo1";
-            this.txtLightCombo1.Size = new System.Drawing.Size(25, 20);
-            this.txtLightCombo1.TabIndex = 241;
-            this.txtLightCombo1.Text = "0";
-            this.txtLightCombo1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightCombo2
-            // 
-            this.txtLightCombo2.Location = new System.Drawing.Point(412, 15);
-            this.txtLightCombo2.Name = "txtLightCombo2";
-            this.txtLightCombo2.Size = new System.Drawing.Size(25, 20);
-            this.txtLightCombo2.TabIndex = 242;
-            this.txtLightCombo2.Text = "0";
-            this.txtLightCombo2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightCombo3
-            // 
-            this.txtLightCombo3.Location = new System.Drawing.Point(442, 15);
-            this.txtLightCombo3.Name = "txtLightCombo3";
-            this.txtLightCombo3.Size = new System.Drawing.Size(25, 20);
-            this.txtLightCombo3.TabIndex = 243;
-            this.txtLightCombo3.Text = "0";
-            this.txtLightCombo3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightCombo4
-            // 
-            this.txtLightCombo4.Location = new System.Drawing.Point(472, 15);
-            this.txtLightCombo4.Name = "txtLightCombo4";
-            this.txtLightCombo4.Size = new System.Drawing.Size(25, 20);
-            this.txtLightCombo4.TabIndex = 244;
-            this.txtLightCombo4.Text = "0";
-            this.txtLightCombo4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // txtLightCombo5
-            // 
-            this.txtLightCombo5.Location = new System.Drawing.Point(502, 15);
-            this.txtLightCombo5.Name = "txtLightCombo5";
-            this.txtLightCombo5.Size = new System.Drawing.Size(25, 20);
-            this.txtLightCombo5.TabIndex = 245;
-            this.txtLightCombo5.Text = "0";
-            this.txtLightCombo5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // lblMain2
             // 
             this.lblMain2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -2927,11 +2032,52 @@
             this.label51.TabIndex = 336;
             this.label51.Text = "Total Damage";
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(396, 526);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 339;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // cmbLightCross
+            // 
+            this.cmbLightCross.FormattingEnabled = true;
+            this.cmbLightCross.Location = new System.Drawing.Point(531, 38);
+            this.cmbLightCross.Name = "cmbLightCross";
+            this.cmbLightCross.Size = new System.Drawing.Size(35, 21);
+            this.cmbLightCross.TabIndex = 295;
+            this.cmbLightCross.Text = "0";
+            // 
+            // cmbLightRows
+            // 
+            this.cmbLightRows.FormattingEnabled = true;
+            this.cmbLightRows.Location = new System.Drawing.Point(531, 14);
+            this.cmbLightRows.Name = "cmbLightRows";
+            this.cmbLightRows.Size = new System.Drawing.Size(35, 21);
+            this.cmbLightRows.TabIndex = 294;
+            this.cmbLightRows.Text = "0";
+            // 
+            // imgLightCombo1
+            // 
+            this.imgLightCombo1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.imgLightCombo1.Location = new System.Drawing.Point(396, 319);
+            this.imgLightCombo1.Name = "imgLightCombo1";
+            this.imgLightCombo1.Size = new System.Drawing.Size(28, 27);
+            this.imgLightCombo1.TabIndex = 340;
+            this.imgLightCombo1.TabStop = false;
+            this.imgLightCombo1.Click += new System.EventHandler(this.imgLightCombo1_Click);
+            this.imgLightCombo1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.imgLightCombo1_MouseUp);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(817, 729);
+            this.Controls.Add(this.imgLightCombo1);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lblTotalDamage);
             this.Controls.Add(this.label51);
             this.Controls.Add(this.lblSub6);
@@ -2977,103 +2123,13 @@
             this.Controls.Add(this.cmbLightRows);
             this.Controls.Add(this.lblMain1);
             this.Controls.Add(this.label21);
-            this.Controls.Add(this.textBox61);
-            this.Controls.Add(this.textBox62);
-            this.Controls.Add(this.textBox63);
-            this.Controls.Add(this.textBox64);
-            this.Controls.Add(this.textBox65);
             this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.textBox71);
-            this.Controls.Add(this.textBox72);
-            this.Controls.Add(this.textBox73);
-            this.Controls.Add(this.textBox74);
-            this.Controls.Add(this.textBox75);
             this.Controls.Add(this.pictureBox8);
-            this.Controls.Add(this.txtDarkCombo5);
-            this.Controls.Add(this.txtDarkCombo4);
-            this.Controls.Add(this.txtDarkCombo3);
-            this.Controls.Add(this.txtDarkCombo2);
-            this.Controls.Add(this.txtDarkCombo1);
-            this.Controls.Add(this.txtDarkEnhance5);
-            this.Controls.Add(this.txtDarkEnhance4);
-            this.Controls.Add(this.txtDarkEnhance3);
-            this.Controls.Add(this.txtDarkEnhance2);
-            this.Controls.Add(this.txtDarkEnhance1);
             this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.txtLightCombo5);
-            this.Controls.Add(this.textBox51);
-            this.Controls.Add(this.txtLightCombo4);
-            this.Controls.Add(this.textBox52);
-            this.Controls.Add(this.txtLightCombo3);
-            this.Controls.Add(this.textBox53);
-            this.Controls.Add(this.txtLightCombo2);
-            this.Controls.Add(this.textBox54);
-            this.Controls.Add(this.txtLightCombo1);
-            this.Controls.Add(this.txtLightEnhance5);
-            this.Controls.Add(this.textBox55);
-            this.Controls.Add(this.txtLightEnhance4);
-            this.Controls.Add(this.textBox56);
-            this.Controls.Add(this.txtLightEnhance3);
-            this.Controls.Add(this.textBox57);
-            this.Controls.Add(this.txtLightEnhance2);
-            this.Controls.Add(this.textBox58);
-            this.Controls.Add(this.txtLightEnhance1);
-            this.Controls.Add(this.textBox59);
-            this.Controls.Add(this.textBox60);
             this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.txtHeartCombo5);
-            this.Controls.Add(this.txtHeartCombo4);
-            this.Controls.Add(this.txtHeartCombo3);
-            this.Controls.Add(this.txtHeartCombo2);
-            this.Controls.Add(this.txtHeartCombo1);
-            this.Controls.Add(this.textBox26);
-            this.Controls.Add(this.textBox27);
-            this.Controls.Add(this.textBox28);
-            this.Controls.Add(this.textBox29);
-            this.Controls.Add(this.textBox30);
             this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.txtBlueCombo5);
-            this.Controls.Add(this.txtBlueCombo4);
-            this.Controls.Add(this.txtBlueCombo3);
-            this.Controls.Add(this.txtBlueCombo2);
-            this.Controls.Add(this.txtBlueCombo1);
-            this.Controls.Add(this.txtBlueEnhance5);
-            this.Controls.Add(this.txtBlueEnhance4);
-            this.Controls.Add(this.txtBlueEnhance3);
-            this.Controls.Add(this.txtBlueEnhance2);
-            this.Controls.Add(this.txtBlueEnhance1);
             this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.txtGreenCombo5);
-            this.Controls.Add(this.txtGreenCombo4);
-            this.Controls.Add(this.txtGreenCombo3);
-            this.Controls.Add(this.txtGreenCombo2);
-            this.Controls.Add(this.txtGreenCombo1);
-            this.Controls.Add(this.txtGreenEnhance5);
-            this.Controls.Add(this.txtGreenEnhance4);
-            this.Controls.Add(this.txtGreenEnhance3);
-            this.Controls.Add(this.txtGreenEnhance2);
-            this.Controls.Add(this.txtGreenEnhance1);
-            this.Controls.Add(this.txtRedCombo5);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.txtRedCombo4);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.txtRedCombo3);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.txtRedCombo2);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.txtRedCombo1);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.txtRedEnhance5);
-            this.Controls.Add(this.textBox10);
-            this.Controls.Add(this.txtRedEnhance4);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.txtRedEnhance3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.txtRedEnhance2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.txtRedEnhance1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.imt1Latent3);
             this.Controls.Add(this.img1Latent2);
             this.Controls.Add(this.img1Latent1);
@@ -3262,6 +2318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLightCombo1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3381,88 +2438,16 @@
         private System.Windows.Forms.PictureBox img1Latent1;
         private System.Windows.Forms.PictureBox img1Latent2;
         private System.Windows.Forms.PictureBox imt1Latent3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox txtGreenCombo5;
-        private System.Windows.Forms.TextBox txtGreenCombo4;
-        private System.Windows.Forms.TextBox txtGreenCombo3;
-        private System.Windows.Forms.TextBox txtGreenCombo2;
-        private System.Windows.Forms.TextBox txtGreenCombo1;
-        private System.Windows.Forms.TextBox txtGreenEnhance5;
-        private System.Windows.Forms.TextBox txtGreenEnhance4;
-        private System.Windows.Forms.TextBox txtGreenEnhance3;
-        private System.Windows.Forms.TextBox txtGreenEnhance2;
-        private System.Windows.Forms.TextBox txtGreenEnhance1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox txtHeartCombo5;
-        private System.Windows.Forms.TextBox txtHeartCombo4;
-        private System.Windows.Forms.TextBox txtHeartCombo3;
-        private System.Windows.Forms.TextBox txtHeartCombo2;
-        private System.Windows.Forms.TextBox txtHeartCombo1;
-        private System.Windows.Forms.TextBox textBox26;
-        private System.Windows.Forms.TextBox textBox27;
-        private System.Windows.Forms.TextBox textBox28;
-        private System.Windows.Forms.TextBox textBox29;
-        private System.Windows.Forms.TextBox textBox30;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.TextBox txtBlueCombo5;
-        private System.Windows.Forms.TextBox txtBlueCombo4;
-        private System.Windows.Forms.TextBox txtBlueCombo3;
-        private System.Windows.Forms.TextBox txtBlueCombo2;
-        private System.Windows.Forms.TextBox txtBlueCombo1;
-        private System.Windows.Forms.TextBox txtBlueEnhance5;
-        private System.Windows.Forms.TextBox txtBlueEnhance4;
-        private System.Windows.Forms.TextBox txtBlueEnhance3;
-        private System.Windows.Forms.TextBox txtBlueEnhance2;
-        private System.Windows.Forms.TextBox txtBlueEnhance1;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TextBox txtDarkCombo5;
-        private System.Windows.Forms.TextBox txtDarkCombo4;
-        private System.Windows.Forms.TextBox txtDarkCombo3;
-        private System.Windows.Forms.TextBox txtDarkCombo2;
-        private System.Windows.Forms.TextBox txtDarkCombo1;
-        private System.Windows.Forms.TextBox txtDarkEnhance5;
-        private System.Windows.Forms.TextBox txtDarkEnhance4;
-        private System.Windows.Forms.TextBox txtDarkEnhance3;
-        private System.Windows.Forms.TextBox txtDarkEnhance2;
-        private System.Windows.Forms.TextBox txtDarkEnhance1;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.TextBox textBox51;
-        private System.Windows.Forms.TextBox textBox52;
-        private System.Windows.Forms.TextBox textBox53;
-        private System.Windows.Forms.TextBox textBox54;
-        private System.Windows.Forms.TextBox textBox55;
-        private System.Windows.Forms.TextBox textBox56;
-        private System.Windows.Forms.TextBox textBox57;
-        private System.Windows.Forms.TextBox textBox58;
-        private System.Windows.Forms.TextBox textBox59;
-        private System.Windows.Forms.TextBox textBox60;
         private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.TextBox textBox61;
-        private System.Windows.Forms.TextBox textBox62;
-        private System.Windows.Forms.TextBox textBox63;
-        private System.Windows.Forms.TextBox textBox64;
-        private System.Windows.Forms.TextBox textBox65;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TextBox textBox71;
-        private System.Windows.Forms.TextBox textBox72;
-        private System.Windows.Forms.TextBox textBox73;
-        private System.Windows.Forms.TextBox textBox74;
-        private System.Windows.Forms.TextBox textBox75;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lblMain1;
-        private System.Windows.Forms.ComboBox cmbLightRows;
-        private System.Windows.Forms.ComboBox cmbLightCross;
         private System.Windows.Forms.ComboBox cmbRedCross;
         private System.Windows.Forms.ComboBox cmbRedRows;
         private System.Windows.Forms.ComboBox cmbBlueCross;
@@ -3491,26 +2476,6 @@
         private System.Windows.Forms.PictureBox pictureBox22;
         private System.Windows.Forms.PictureBox pictureBox23;
         private System.Windows.Forms.PictureBox pictureBox24;
-        private System.Windows.Forms.TextBox txtRedEnhance1;
-        private System.Windows.Forms.TextBox txtRedEnhance2;
-        private System.Windows.Forms.TextBox txtRedEnhance3;
-        private System.Windows.Forms.TextBox txtRedEnhance4;
-        private System.Windows.Forms.TextBox txtRedEnhance5;
-        private System.Windows.Forms.TextBox txtRedCombo1;
-        private System.Windows.Forms.TextBox txtRedCombo2;
-        private System.Windows.Forms.TextBox txtRedCombo3;
-        private System.Windows.Forms.TextBox txtRedCombo4;
-        private System.Windows.Forms.TextBox txtRedCombo5;
-        private System.Windows.Forms.TextBox txtLightEnhance1;
-        private System.Windows.Forms.TextBox txtLightEnhance2;
-        private System.Windows.Forms.TextBox txtLightEnhance3;
-        private System.Windows.Forms.TextBox txtLightEnhance4;
-        private System.Windows.Forms.TextBox txtLightEnhance5;
-        private System.Windows.Forms.TextBox txtLightCombo1;
-        private System.Windows.Forms.TextBox txtLightCombo2;
-        private System.Windows.Forms.TextBox txtLightCombo3;
-        private System.Windows.Forms.TextBox txtLightCombo4;
-        private System.Windows.Forms.TextBox txtLightCombo5;
         private System.Windows.Forms.Label lblMain2;
         private System.Windows.Forms.Label lblMain3;
         private System.Windows.Forms.Label lblMain4;
@@ -3524,6 +2489,10 @@
         private System.Windows.Forms.Label lblSub1;
         private System.Windows.Forms.Label lblTotalDamage;
         private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ComboBox cmbLightCross;
+        private System.Windows.Forms.ComboBox cmbLightRows;
+        private ComboSelect imgLightCombo1;
     }
 }
 

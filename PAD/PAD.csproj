@@ -128,5 +128,42 @@
   <ItemGroup>
     <None Include="Resources\15.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\0_orbs.png" />
+    <Content Include="Resources\10_orbs.png" />
+    <Content Include="Resources\11_orbs.png" />
+    <Content Include="Resources\12_orbs.png" />
+    <Content Include="Resources\13_orbs.png" />
+    <Content Include="Resources\14_orbs.png" />
+    <Content Include="Resources\15_orbs.png" />
+    <Content Include="Resources\16_orbs.png" />
+    <Content Include="Resources\17_orbs.png" />
+    <Content Include="Resources\18_orbs.png" />
+    <Content Include="Resources\19_orbs.png" />
+    <Content Include="Resources\1_orbs.png" />
+    <Content Include="Resources\20_orbs.png" />
+    <Content Include="Resources\21_orbs.png" />
+    <Content Include="Resources\22_orbs.png" />
+    <Content Include="Resources\23_orbs.png" />
+    <Content Include="Resources\24_orbs.png" />
+    <Content Include="Resources\25_orbs.png" />
+    <Content Include="Resources\26_orbs.png" />
+    <Content Include="Resources\27_orbs.png" />
+    <Content Include="Resources\28_orbs.png" />
+    <Content Include="Resources\29_orbs.png" />
+    <Content Include="Resources\2_orbs.png" />
+    <Content Include="Resources\30_orbs.png" />
+    <Content Include="Resources\3_orbs.png" />
+    <Content Include="Resources\4_orbs.png" />
+    <Content Include="Resources\5_orbs.png" />
+    <Content Include="Resources\6_orbs.png" />
+    <Content Include="Resources\7_orbs.png" />
+    <Content Include="Resources\8_orbs.png" />
+    <Content Include="Resources\9_orbs.png" />
+    <Content Include="Resources\box.png" />
+    <Content Include="Resources\cross.png" />
+    <Content Include="Resources\L.png" />
+    <Content Include="Resources\popup_grid.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

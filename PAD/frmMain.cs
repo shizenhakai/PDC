@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using Newtonsoft.Json;
 
+
 namespace PAD
 {
     public partial class frmMain : Form
@@ -380,11 +381,17 @@ namespace PAD
             List<List<int>> Combos = new List<List<int>>();
             List<List<int>> Enhance = new List<List<int>>();
             List<int> OE = new List<int>();
+            List<int> Rows = new List<int>();
             OE.Add(0);
             OE.Add(0);
             OE.Add(0);
             OE.Add(0);
             OE.Add(0);
+            Rows.Add(0);
+            Rows.Add(0);
+            Rows.Add(0);
+            Rows.Add(0);
+            Rows.Add(0);
             for (int i = 0; i < 5; i++)
             {
                 for (int j = 1; j < Team[i].awakenings.Count-1; j++)
@@ -394,6 +401,11 @@ namespace PAD
                     if (Team[i].awakenings[j] == 16) OE[2]++;
                     if (Team[i].awakenings[j] == 17) OE[3]++;
                     if (Team[i].awakenings[j] == 18) OE[4]++;
+                    if (Team[i].awakenings[j] == 22) Rows[0]++;
+                    if (Team[i].awakenings[j] == 23) Rows[1]++;
+                    if (Team[i].awakenings[j] == 24) Rows[2]++;
+                    if (Team[i].awakenings[j] == 25) Rows[3]++;
+                    if (Team[i].awakenings[j] == 26) Rows[4]++;
                 }
                 int convertedInt = 0;
                 List<int> colorCombo = new List<int>();
@@ -408,16 +420,16 @@ namespace PAD
                             colorName += "Red";
                             break;
                         case 1: //Blue
-                            colorName += "Red";
+                            colorName += "Blue";
                             break;
                         case 2: //Green
-                            colorName += "Red";
+                            colorName += "Green";
                             break;
                         case 3: //Light
-                            colorName += "Red";
+                            colorName += "Light";
                             break;
                         case 4: //Dark
-                            colorName += "Red";
+                            colorName += "Dark";
                             break;
                         default:
                             colorName = "ERROR";
@@ -426,13 +438,8 @@ namespace PAD
                     }
                     if (colorName == "ERROR")
                         return;
-                    TextBox textBox = this.Controls.Find("txt" + colorName + "Combo" + i.ToString(), false).FirstOrDefault() as TextBox;
-                    int.TryParse(textBox.Text, out convertedInt);
-                    colorCombo.Add(convertedInt);
-
-                    textBox = this.Controls.Find("txt" + colorName + "Enhance" + i.ToString(), false).FirstOrDefault() as TextBox;
-                    int.TryParse(textBox.Text, out convertedInt);
-                    colorEnhance.Add(convertedInt);
+                    //Get Color Combos
+                    //Get Color Enhances
 
                 }
                 Combos.Add(colorCombo);
@@ -455,6 +462,7 @@ namespace PAD
             Noctis.arguments.Add(1);
             Noctis.arguments.Add(7.5f);
             int comboCount = 0;
+            int numRow = 0; // TODO: add row support
             for (int i = 0; i < Team.Count - 1; i++)
             {
                 if (i > 0) break; //Just doing first member for now
@@ -470,7 +478,7 @@ namespace PAD
                     int combo = Combos[Team[i].attr_id][MainAttCombo];
                     if (combo != 0)
                     {
-                        comboDamage = (int)(Team[i].cur_atk * (1 + (0.25 * (combo - 3))));
+                        //comboDamage = (int)(Team[i].cur_atk * (1 + (0.25 * (combo - 3)))*(1+(0.1*numRow*Rows[Team[i].attr_id]))*());
                         comboCount++;
                     }
                 }
@@ -544,7 +552,161 @@ namespace PAD
             lblHP1.Text = card_hp.ToString();
             lblRCV1.Text = card_rcv.ToString();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int num_orbs = imgLightCombo1.num_orbs;
+            lblMain1.Text = num_orbs.ToString();
+
+        }
+
+        private void cmbLightCombo1_MouseDown(object sender, MouseEventArgs e)
+        {
+        }
+
+        private void cmbLightCombo1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imgLightCombo1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void imgLightCombo1_MouseUp(object sender, MouseEventArgs e)
+        {
+        }
     }
+
+    public class ComboSelect : PictureBox
+    {
+        public int num_orbs;
+        public bool cross = false;
+        public bool l = false;
+        public bool box = false;
+        protected override void OnMouseUp(MouseEventArgs e)
+        {
+            base.OnMouseUp(e);
+            
+            PictureBox picture = new PictureBox();
+            picture.Load("E:\\PadSync\\ui_images\\popup_grid.png");
+            picture.Width = 206;
+            picture.Height = 206;
+            picture.SizeMode = PictureBoxSizeMode.StretchImage;
+            picture.BorderStyle = BorderStyle.FixedSingle;
+            picture.MouseUp += (object event_sender, MouseEventArgs event_e) =>
+            {
+                int X = (event_e.X - (event_e.X % (picture.Width / 6))) / (picture.Width / 6);
+                int Y = (event_e.Y - (event_e.Y % (picture.Height / 6))) / (picture.Height / 6);
+                if (X == 0 && Y == 0) num_orbs = 0;
+                if (X == 1 && Y == 0) num_orbs = 3;
+                if (X == 2 && Y == 0) num_orbs = 4;
+                if (X == 3 && Y == 0) num_orbs = 5;
+                if (X == 4 && Y == 0)
+                {
+                    num_orbs = 5;
+                    cross = true;
+                }
+                if(X == 5 && Y == 0)
+                {
+                    num_orbs = 5;
+                    l = true;
+                }
+                if (X == 0 && Y == 1) num_orbs = 6;
+                if (X == 1 && Y == 1) num_orbs = 7;
+                if (X == 2 && Y == 1) num_orbs = 8;
+                if (X == 3 && Y == 1) num_orbs = 9;
+                if (X == 4 && Y == 1)
+                {
+                    num_orbs = 9;
+                    
+                    box = true;
+                }
+                if (X == 5 && Y == 1) num_orbs = 10;
+
+                if (X == 0 && Y == 2) num_orbs = 11;
+                if (X == 1 && Y == 2) num_orbs = 12;
+                if (X == 2 && Y == 2) num_orbs = 13;
+                if (X == 3 && Y == 2) num_orbs = 14;
+                if (X == 4 && Y == 2) num_orbs = 15;
+                if (X == 5 && Y == 2) num_orbs = 16;
+
+                if (X == 0 && Y == 3) num_orbs = 17;
+                if (X == 1 && Y == 3) num_orbs = 18;
+                if (X == 2 && Y == 3) num_orbs = 19;
+                if (X == 3 && Y == 3) num_orbs = 20;
+                if (X == 4 && Y == 3) num_orbs = 21;
+                if (X == 5 && Y == 3) num_orbs = 22;
+
+                if (X == 0 && Y == 4) num_orbs = 23;
+                if (X == 1 && Y == 4) num_orbs = 24;
+                if (X == 2 && Y == 4) num_orbs = 25;
+                if (X == 3 && Y == 4) num_orbs = 26;
+                if (X == 4 && Y == 4) num_orbs = 27;
+                if (X == 5 && Y == 4) num_orbs = 28;
+
+                if (X == 0 && Y == 5) num_orbs = 29;
+                if (X == 1 && Y == 5) num_orbs = 30;
+
+                PopupForm parent = (PopupForm)picture.Parent;
+                parent.Close();
+            };
+            PopupForm popup = new PopupForm(picture,
+                new Point(
+                    this.PointToScreen(Point.Empty).X + e.X,
+                    this.PointToScreen(Point.Empty).Y + e.Y), PopUpResponse);
+            popup.Show();
+
+        }
+        private void PopUpResponse() { }
+    }
+
+    public class PopupForm : Form
+    {
+        private Action _OnAccept;
+        private Control _control;
+        private Point _point;
+        public PopupForm(Control control, int x, int y, Action onAccept)
+            : this(control, new Point(x,y), onAccept)
+        {}
+        public PopupForm(Control control, Point point, Action onAccept)
+        {
+            if (control == null) throw new ArgumentNullException("control");
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.ShowInTaskbar = false;
+            this.KeyPreview = true;
+            _point = point;
+            _control = control;
+            _OnAccept = onAccept;
+        }
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+            this.Controls.Add(_control);
+            _control.Location = new Point(0, 0);
+            this.Size = _control.Size;
+            this.Location = _point;
+        }
+        protected override void OnKeyDown(KeyEventArgs e)
+        {
+            base.OnKeyDown(e);
+            if(e.KeyCode==Keys.Enter)
+            {
+                _OnAccept();
+                this.Close();
+            }
+            else if (e.KeyCode==Keys.Escape)
+            {
+                this.Close();
+            }
+        }
+        protected override void OnDeactivate(EventArgs e)
+        {
+            base.OnDeactivate(e);
+            this.Close();
+        }
+    }
+    
     public enum LeaderSkillTypes : int
     {
         //Static Multiplier
