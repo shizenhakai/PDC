@@ -21,10 +21,19 @@ namespace PAD
 
     [FlagsAttribute] public enum MULTI_TYPE : short
     {
+        //NOT VERIFIED
+        EVO = 1,
+        BALANCE=2,
+        PHYSICAL=4,
         HEALER=8,
         DRAGON=16,
         GOD=32,
-        DEVIL=128
+        ATTACKER=64,
+        DEVIL=128,
+        MACHINE=256,
+        AWAKENING=512,
+        ENHANCE=1024,
+        REDEEMABLE=2048
     };
     public enum SINGLE_COLOR : short
     {
@@ -72,7 +81,7 @@ namespace PAD
         active_shuffle_orbs = 10,
         ls_color_atk_mult = 11,
         ls_bonus_attack = 12,
-        ls_bonus_heal_ = 13,
+        ls_bonus_heal = 13,
         ls_resolve = 14,
         ls_flat_movetime = 15,
         ls_unconditional_shield = 16,
@@ -171,8 +180,8 @@ namespace PAD
         ls_hight_hp_stat = 131,
         active_time_extend = 132,
         ls_skilluse = 133,
-        ls_split_color_ls_ = 136,
-        ls_split_type_ls_ = 137,
+        ls_split_color_ls = 136,
+        ls_split_type_ls = 137,
         ls_multi_part_skill = 138,
         ls_hp_scaling = 139,
         active_new_enhance = 140,
@@ -193,7 +202,7 @@ namespace PAD
         active_awakening_based = 156,
         ls_cross_mult = 157,
         ls_min_orbs_match = 158,
-        ls_scaling_linked_match = 159,//same_as_119?
+        ls_scaling_linked_match = 159,
         active_add_combo = 160,
         active_true_gravity = 161,
         ls_7x6_board = 162,
@@ -219,6 +228,12 @@ namespace PAD
         ls_7x6_with_mult = 186,
         active_single_target_true_nuke = 188
     }
+    public enum STAT_TYPE : int
+    {
+        HP=0,
+        ATK=1,
+        RCV=2
+    };
     class Skill
     {
         SKILL_TYPES skill_type;
@@ -230,6 +245,241 @@ namespace PAD
         Skill()
         {
             Arguments = new List<int>();
+        }
+        double GetLeaderskillMultiplier(List<List<int>>Combos, List<List<int>>OrbEnhances, int hp_percentage, bool skill_used, PadMonster monster)
+        {
+            double rcv_mult = 1;
+            double atk_mult = 1;
+            double hp_mult = 1;
+            double shield = 1;
+            int numCombos = 0;
+            for(int i =0;i<Combos.Count-1;i++)
+            {
+                for(int j = 0;j < Combos[i].Count - 1; j++)
+                {
+                    if (Combos[i][j] > 0) numCombos++;
+                }
+            }
+            switch (skill_type)
+            {
+                case SKILL_TYPES.ls_color_atk_mult:
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_bonus_attack:
+                    break;
+                case SKILL_TYPES.ls_bonus_heal:
+                    break;
+                case SKILL_TYPES.ls_resolve:
+                    break;
+                case SKILL_TYPES.ls_flat_movetime:
+                    break;
+                case SKILL_TYPES.ls_unconditional_shield:
+                    break;
+                case SKILL_TYPES.ls_color_damage_reduce:
+                    break;
+                case SKILL_TYPES.ls_type_atk_mult:
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[0])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_type_hp_mult:
+                    break;
+                case SKILL_TYPES.ls_type_rcv_mult:
+                    break;
+                case SKILL_TYPES.ls_generic_atk_mult:
+                    atk_mult = atk_mult * Arguments[0];
+                    break;
+                case SKILL_TYPES.ls_color_atk_and_rcv:
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_color_all_stats:
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_double_type_hp:
+                    break;
+                case SKILL_TYPES.ls_double_type_atk:
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_drum_sounds:
+                    //DRUM SOUNDS!
+                    break;
+                case SKILL_TYPES.ls_double_color_damage_reduce:
+                    //Reduces damage of the two colors
+                    break;
+                case SKILL_TYPES.ls_low_hp_conditional_shield:
+                    break;
+                case SKILL_TYPES.ls_low_hp_mult:
+                    if(hp_percentage <= Arguments[0])
+                    {
+                        if ((Arguments[1] == (int)STAT_TYPE.ATK) || (Arguments[2] == (int)STAT_TYPE.ATK)) atk_mult = atk_mult * Arguments[3];
+                        if ((Arguments[1] == (int)STAT_TYPE.HP) || (Arguments[2] == (int)STAT_TYPE.HP)) hp_mult = hp_mult * Arguments[3];
+                        if ((Arguments[1] == (int)STAT_TYPE.RCV) || (Arguments[2] == (int)STAT_TYPE.RCV)) rcv_mult = rcv_mult * Arguments[3];
+                    }
+                    break;
+                case SKILL_TYPES.ls_double_color_atkmult:
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) ||
+                        (monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1])) atk_mult = atk_mult * Arguments[1];
+                    break;
+                case SKILL_TYPES.ls_counter_attack:
+                    break;
+                case SKILL_TYPES.ls_high_hp_conditional_shield:
+                    break;
+                case SKILL_TYPES.ls_high_hp_stat_mult:
+                    if ((Arguments[1] == (int)STAT_TYPE.ATK) || (Arguments[2] == (int)STAT_TYPE.ATK)) atk_mult = atk_mult * Arguments[3];
+                    if ((Arguments[1] == (int)STAT_TYPE.RCV) || (Arguments[2] == (int)STAT_TYPE.RCV)) rcv_mult = rcv_mult * Arguments[3];
+                    if ((Arguments[1] == (int)STAT_TYPE.HP) || (Arguments[2] == (int)STAT_TYPE.HP)) hp_mult = hp_mult * Arguments[3];
+                    break;
+                case SKILL_TYPES.ls_HP_and_ATK_mult_for_color:
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]))
+                    {
+                        atk_mult = atk_mult * Arguments[1];
+                        hp_mult = hp_mult * Arguments[1];
+                    }
+                    break;
+                case SKILL_TYPES.ls_HP_double_color:
+                    break;
+                case SKILL_TYPES.ls_hp_color:
+                    break;
+                case SKILL_TYPES.ls_rcv_color:
+                    break;
+                case SKILL_TYPES.ls_coin_modifier:
+                    break;
+                case SKILL_TYPES.ls_3_color_activation:
+
+                    break;
+                case SKILL_TYPES.ls_ATK_and_HP_type_mult:
+                    break;
+                case SKILL_TYPES.ls_HP_and_RCV_type_mult:
+                    break;
+                case SKILL_TYPES.ls_ATK_and_RCV_type_mult:
+                    break;
+                case SKILL_TYPES.ls_All_Stats_for_Type:
+                    break;
+                case SKILL_TYPES.ls_combo:
+                    break;
+                case SKILL_TYPES.ls_HP_and_RCV_color:
+                    break;
+                case SKILL_TYPES.ls_ATK_color_and_type:
+                    break;
+                case SKILL_TYPES.ls_ATK_and_HP_color_and_type:
+                    break;
+                case SKILL_TYPES.ls_ATK_and_RCV_color_and_type:
+                    break;
+                case SKILL_TYPES.ls_All_stats_color_and_type:
+                    break;
+                case SKILL_TYPES.ls_ATK_and_HP_double_type:
+                    break;
+                case SKILL_TYPES.ls_ATK_and_RCV_double_type:
+                    break;
+                case SKILL_TYPES.ls_low_hp_color_atk_mult:
+                    break;
+                case SKILL_TYPES.ls_low_hp_type_atk_mult:
+                    break;
+                case SKILL_TYPES.ls_high_hp_color_atk_mult_96:
+	                break;
+                case SKILL_TYPES.ls_high_hp_type_atk_mult:
+                    break;
+                case SKILL_TYPES.ls_scaling_combo:
+                    break;
+                case SKILL_TYPES.ls_skill_use:
+                    break;
+                case SKILL_TYPES.ls_exact_combo:
+                    break;
+                case SKILL_TYPES.ls_double_att_combo:
+                    break;
+                case SKILL_TYPES.ls_color_atk_combo:
+                    break;
+                case SKILL_TYPES.ls_lower_rcv_increase_atk:
+                    break;
+                case SKILL_TYPES.ls_lower_max_hp_increases_atk:
+                    break;
+                case SKILL_TYPES.ls_lower_max_hp:
+                    break;
+                case SKILL_TYPES.ls_lower_max_hp_and_atk:
+                    break;
+                case SKILL_TYPES.ls_linked_orbs_atk:
+                    break;
+                case SKILL_TYPES.ls_HP_and_ATK_double_color:
+                    break;
+                case SKILL_TYPES.ls_all_stats_double_color:
+                    break;
+                case SKILL_TYPES.ls_scaling_linked_orb:
+                    break;
+                case SKILL_TYPES.ls_mult_stat:
+                    break;
+                case SKILL_TYPES.ls_low_hp_atk:
+                    break;
+                case SKILL_TYPES.ls_high_hp_mult_stat:
+                    break;
+                case SKILL_TYPES.ls_multiple_specific_combos:
+                    break;
+                case SKILL_TYPES.ls_required_monster_on_team:
+                    break;
+                case SKILL_TYPES.ls_new_stat:
+                    break;
+                case SKILL_TYPES.ls_low_hp_stat:
+                    break;
+                case SKILL_TYPES.ls_hight_hp_stat:
+                    break;
+                case SKILL_TYPES.ls_skilluse:
+                    break;
+                case SKILL_TYPES.ls_split_color_ls:
+                    break;
+                case SKILL_TYPES.ls_split_type_ls:
+                    break;
+                case SKILL_TYPES.ls_multi_part_skill:
+                    break;
+                case SKILL_TYPES.ls_hp_scaling:
+                    break;
+                case SKILL_TYPES.ls_increased_xp:
+                    break;
+                case SKILL_TYPES.ls_rcv_increased_with_4_hearts:
+                    break;
+                case SKILL_TYPES.ls_atk_with_5o1e:
+                    break;
+                case SKILL_TYPES.ls_heart_cross:
+                    break;
+                case SKILL_TYPES.ls_multiplayer:
+                    break;
+                case SKILL_TYPES.ls_cross_mult:
+                    break;
+                case SKILL_TYPES.ls_min_orbs_match:
+                    break;
+                case SKILL_TYPES.ls_scaling_linked_match:
+                    break;
+                case SKILL_TYPES.ls_7x6_board:
+                    break;
+                case SKILL_TYPES.ls_no_skyfall:
+                    break;
+                case SKILL_TYPES.ls_multiple_color_activation:
+                    break;
+                case SKILL_TYPES.ls_mult_att_match:
+                    break;
+                case SKILL_TYPES.ls_new_combo:
+                    break;
+                case SKILL_TYPES.ls_linked_orbs:
+                    break;
+                case SKILL_TYPES.ls_combo_and_shield:
+                    break;
+                case SKILL_TYPES.ls_multiple_color_activation_and_shield:
+                    break;
+                case SKILL_TYPES.ls_new_multiple_color_activation:
+                    break;
+                case SKILL_TYPES.ls_all_subs_of_a_type:
+                    break;
+                case SKILL_TYPES.ls_orbs_left_on_board:
+                    break;
+                case SKILL_TYPES.ls_fixed_move_time:
+                    break;
+                case SKILL_TYPES.ls_linked_orb_with_shield:
+                    break;
+                case SKILL_TYPES.ls_high_hp_gives_shield:
+                    break;
+                case SKILL_TYPES.ls_movetime_with_mult:
+                    break;
+                case SKILL_TYPES.ls_7x6_with_mult:
+                    break;
+            }
+            return retVal;
         }
     }
 }

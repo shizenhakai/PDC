@@ -540,46 +540,7 @@ namespace PAD
                 double SFU_mult = 1;
                 double LS_mult = 1;
                 bool valid = false;
-                foreach (LeaderSkillItem item in LeaderSkill)
-                {
-                    switch(item.skill_type)
-                    {
-                        case LeaderSkillTypes.static_mult:
-                            valid = false;
-                            if (item.arguments[1] == 1) valid = true;
-                            for (int j = 2; j < item.arguments.Count; j++)
-                            {
-                                if (item.arguments[1] == 0)
-                                {
-                                    if (item.arguments[j] == Team[i].attr_id + 10) valid = true;
-                                }
-                                else
-                                {
-                                    if (item.arguments[j] > 99)//check type
-                                    {
-                                        int item_type = (int)item.arguments[j] - 100;
-                                        if ((Team[i].type_1_id != item_type) || (Team[i].type_2_id != item_type) || (Team[i].type_3_id != item_type))
-                                            valid = false;
-                                    }
-                                    if (item.arguments[j] < 99)//check color
-                                    {
-                                        int item_color = (int)item.arguments[j] - 10;
-                                        if ((Team[i].attr_id != item_color) || (Team[i].sub_attr_id != item_color))
-                                            valid = false;
-                                    }
-                                }
-                            }
-                            if (valid) LS_mult = LS_mult * item.arguments[0];
-                            break;
-                        case LeaderSkillTypes.combo:
-                            double combo_mult = 1;
-                            if (comboCount >= item.arguments[0])
-                                combo_mult = item.arguments[1] + (comboCount - item.arguments[0]) * item.arguments[2];
-                            if (combo_mult > item.arguments[3]) combo_mult = item.arguments[3];
-                            LS_mult = LS_mult * combo_mult;
-                            break;
-                    }
-                }
+
                 if (comboCount > 6) _7c_mult = Math.Pow(2, num7c);
                 if (numLowHP > 0) low_hp_mult = Math.Pow(2, numLowHP);
                 if (numHighHP > 0) high_hp_mult = Math.Pow(1.5, numHighHP);
@@ -826,30 +787,6 @@ namespace PAD
         }
     }
     
-    public enum LeaderSkillTypes : int
-    {
-        //Static Multiplier
-        //Arguments is a list of applicable types
-        //First argument is multiplier
-        //Second argument is 1 for All Required 0 for Any Required
-        //Third argument is:
-        //  Add 10 for color
-        //  Add 100 for type 
-        static_mult = 0,
-        //Combo Multiplier
-        //Arguments are:
-        //0: starting combo count
-        //1: starting multiplier
-        //2: scaling
-        //3: max multiplier
-        combo=1,
-        //Sparkle Mult
-        //To Implement
-        sparkle=2,
-        //Linked Orbs Mult
-        //To Implement
-        linked_orbs=3
-    };
     public class LeaderSkillItem
     {
         public LeaderSkillTypes skill_type;
