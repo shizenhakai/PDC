@@ -9,14 +9,14 @@ namespace PAD
     [FlagsAttribute] public enum MULTI_COLOR : short
     {
         FIRE = 1,
-        WATER= 2,
-        WOOD=4,
-        LIGHT=8,
-        DARK=16,
-        HEAL=32,
-        JAMMER=64,
-        POISON=128,
-        LETHAL_POISON=256
+        WATER = 2,
+        WOOD = 4,
+        LIGHT = 8,
+        DARK = 16,
+        HEAL = 32,
+        JAMMER = 64,
+        POISON = 128,
+        LETHAL_POISON = 256
     };
 
     [FlagsAttribute] public enum MULTI_TYPE : short
@@ -37,10 +37,10 @@ namespace PAD
     };
     public enum SINGLE_COLOR : short
     {
-        RED=0,
-        BLUE=1,
-        GREEN=2,
-        Light=3,
+        FIRE=0,
+        WATER=1,
+        WOOD=2,
+        LIGHT=3,
         DARK=4
     };
     public enum SINGLE_TYPE : short
@@ -147,7 +147,7 @@ namespace PAD
         active_lead_swap = 93,
         ls_low_hp_color_atk_mult = 94,
         ls_low_hp_type_atk_mult = 95,
-        ls_high_hp_color_atk_mult_96,
+        ls_high_hp_color_atk_mult = 96,
         ls_high_hp_type_atk_mult = 97,
         ls_scaling_combo = 98,
         ls_skill_use = 100,
@@ -157,7 +157,7 @@ namespace PAD
         ls_lower_rcv_increase_atk = 105,
         ls_lower_max_hp_increases_atk = 106,
         ls_lower_max_hp = 107,
-        ls_lower_max_hp_and_atk = 108,
+        ls_lower_max_hp_and_type_atk = 108,
         ls_linked_orbs_atk = 109,
         active_hp_conditional_nuke = 110,
         ls_HP_and_ATK_double_color = 111,
@@ -246,16 +246,17 @@ namespace PAD
         {
             Arguments = new List<int>();
         }
-        double GetLeaderskillMultiplier(List<List<int>>Combos, List<List<int>>OrbEnhances, int hp_percentage, bool skill_used, PadMonster monster)
+        double GetLeaderskillMultiplier(List<List<int>> Combos, List<List<int>> OrbEnhances, int hp_percentage, bool skill_used, PadMonster monster)
         {
             double rcv_mult = 1;
             double atk_mult = 1;
             double hp_mult = 1;
             double shield = 1;
+            int max_link = 0;
             int numCombos = 0;
-            for(int i =0;i<Combos.Count-1;i++)
+            for (int i = 0; i < Combos.Count - 1; i++)
             {
-                for(int j = 0;j < Combos[i].Count - 1; j++)
+                for (int j = 0; j < Combos[i].Count - 1; j++)
                 {
                     if (Combos[i][j] > 0) numCombos++;
                 }
@@ -308,7 +309,7 @@ namespace PAD
                 case SKILL_TYPES.ls_low_hp_conditional_shield:
                     break;
                 case SKILL_TYPES.ls_low_hp_mult:
-                    if(hp_percentage <= Arguments[0])
+                    if (hp_percentage <= Arguments[0])
                     {
                         if ((Arguments[1] == (int)STAT_TYPE.ATK) || (Arguments[2] == (int)STAT_TYPE.ATK)) atk_mult = atk_mult * Arguments[3];
                         if ((Arguments[1] == (int)STAT_TYPE.HP) || (Arguments[2] == (int)STAT_TYPE.HP)) hp_mult = hp_mult * Arguments[3];
@@ -344,73 +345,246 @@ namespace PAD
                 case SKILL_TYPES.ls_coin_modifier:
                     break;
                 case SKILL_TYPES.ls_3_color_activation:
-
+                    //colors, num_requirec,mult
+                    int num_met = 0;
+                    if ((Arguments[0] & (int)MULTI_COLOR.FIRE) == (int)MULTI_COLOR.FIRE) if (Combos[(int)SINGLE_COLOR.FIRE][0] > 0) num_met++;
+                    if ((Arguments[0] & (int)MULTI_COLOR.WATER) == (int)MULTI_COLOR.WATER) if (Combos[(int)SINGLE_COLOR.WATER][0] > 0) num_met++;
+                    if ((Arguments[0] & (int)MULTI_COLOR.WOOD) == (int)MULTI_COLOR.WOOD) if (Combos[(int)SINGLE_COLOR.WOOD][0] > 0) num_met++;
+                    if ((Arguments[0] & (int)MULTI_COLOR.LIGHT) == (int)MULTI_COLOR.LIGHT) if (Combos[(int)SINGLE_COLOR.LIGHT][0] > 0) num_met++;
+                    if ((Arguments[0] & (int)MULTI_COLOR.DARK) == (int)MULTI_COLOR.DARK) if (Combos[(int)SINGLE_COLOR.DARK][0] > 0) num_met++;
+                    if (num_met >= Arguments[1]) atk_mult = atk_mult * Arguments[2];
                     break;
                 case SKILL_TYPES.ls_ATK_and_HP_type_mult:
+                    //type,mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[1];
+                        hp_mult = hp_mult * Arguments[1];
+                    }
                     break;
                 case SKILL_TYPES.ls_HP_and_RCV_type_mult:
+                    //type,mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        rcv_mult = rcv_mult * Arguments[1];
+                        hp_mult = hp_mult * Arguments[1];
+                    }
+
                     break;
                 case SKILL_TYPES.ls_ATK_and_RCV_type_mult:
+                    //type,mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[1];
+                        rcv_mult = rcv_mult * Arguments[1];
+                    }
                     break;
                 case SKILL_TYPES.ls_All_Stats_for_Type:
+                    //type,mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[1];
+                        hp_mult = hp_mult * Arguments[1];
+                        rcv_mult = rcv_mult * Arguments[1];
+                    }
                     break;
                 case SKILL_TYPES.ls_combo:
+                    //combo_req,mult
+                    if (numCombos >= Arguments[0]) atk_mult = atk_mult * Arguments[1];
                     break;
                 case SKILL_TYPES.ls_HP_and_RCV_color:
+                    //color,mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]))
+                    {
+                        hp_mult = hp_mult * Arguments[1];
+                        rcv_mult = rcv_mult * Arguments[1];
+                    }
                     break;
                 case SKILL_TYPES.ls_ATK_color_and_type:
-                    break;
+                    //color,type,mult
+                        if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) ||
+                            (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1]))
+                            atk_mult = atk_mult * Arguments[2];
+                        break;
                 case SKILL_TYPES.ls_ATK_and_HP_color_and_type:
+                    //color,type,mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[2];
+                        hp_mult = hp_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_ATK_and_RCV_color_and_type:
+                    //color,type,mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[2];
+                        rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_All_stats_color_and_type:
+                    //color,type,mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[2];
+                        hp_mult = hp_mult * Arguments[2];
+                        rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_ATK_and_HP_double_type:
+                    //type, type, mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1])) atk_mult = atk_mult * Arguments[2];
                     break;
                 case SKILL_TYPES.ls_ATK_and_RCV_double_type:
+                    //type,type,mult
+                    if ((monster.type_1_id == Arguments[0]) || (monster.type_2_id == Arguments[0]) || (monster.type_3_id == Arguments[0]) ||
+                        (monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[2];
+                        rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_low_hp_color_atk_mult:
+                    //hp,  color,1?,0?,mult
+                    if(hp_percentage<=Arguments[0])
+                    {
+                        if ((monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1])) atk_mult = atk_mult * Arguments[4];
+                    }
                     break;
                 case SKILL_TYPES.ls_low_hp_type_atk_mult:
+                    //hp, type,1?,0?,mult
+                    if (hp_percentage <= Arguments[0])
+                    {
+                        if ((monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1])) atk_mult = atk_mult * Arguments[4];
+                    }
                     break;
-                case SKILL_TYPES.ls_high_hp_color_atk_mult_96:
-	                break;
+                case SKILL_TYPES.ls_high_hp_color_atk_mult:
+                    //hp,  color,1?,0?,mult
+                    if (hp_percentage >= Arguments[0])
+                    {
+                        if ((monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1])) atk_mult = atk_mult * Arguments[4];
+                    }
+                    break;
                 case SKILL_TYPES.ls_high_hp_type_atk_mult:
+                    //hp,  type,1?,0?,mult
+                    if (hp_percentage >= Arguments[0])
+                    {
+                        if ((monster.type_1_id == Arguments[1]) || (monster.type_2_id == Arguments[1]) || (monster.type_3_id == Arguments[1])) atk_mult = atk_mult * Arguments[4];
+                    }
                     break;
                 case SKILL_TYPES.ls_scaling_combo:
+                    //start combo, start mult, scale, max combo
+                    if(numCombos >= Arguments[0])
+                    {
+                        int total_mult = Arguments[1];
+                        if (numCombos > Arguments[3]) total_mult = total_mult + (Arguments[2] * (Arguments[3] - Arguments[0]));
+                        else total_mult = total_mult + (Arguments[2] * (numCombos - Arguments[0]));
+                        atk_mult = atk_mult * total_mult;
+                    }
                     break;
                 case SKILL_TYPES.ls_skill_use:
+                    if (skill_used)
+                    {
+                        if ((Arguments[0] == 1) || (Arguments[1] == 1)) atk_mult = atk_mult * Arguments[2];
+                        if ((Arguments[0] == 2) || (Arguments[1] == 2)) rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_exact_combo:
+                    if (numCombos == Arguments[0]) atk_mult = atk_mult * Arguments[1];
                     break;
                 case SKILL_TYPES.ls_double_att_combo:
+                    //combo,stat,stat,mult
+                    if(numCombos >= Arguments[0])
+                    {
+                        if ((Arguments[0] == 1) || (Arguments[1] == 1)) atk_mult = atk_mult * Arguments[2];
+                        if ((Arguments[0] == 2) || (Arguments[1] == 2)) rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_color_atk_combo:
+                    //combo,colors,1?,0?,mult
+                    if(numCombos >= Arguments[0])
+                    {
+                        if ((monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1])) atk_mult = atk_mult * Arguments[4];
+                    }
                     break;
                 case SKILL_TYPES.ls_lower_rcv_increase_atk:
+                    //rcv reduction%, atk_mult
+                    atk_mult = atk_mult * Arguments[1];
                     break;
                 case SKILL_TYPES.ls_lower_max_hp_increases_atk:
+                    //hp%, atk
+                    atk_mult = atk_mult * Arguments[1];
                     break;
                 case SKILL_TYPES.ls_lower_max_hp:
+                    //hp%
                     break;
-                case SKILL_TYPES.ls_lower_max_hp_and_atk:
+                case SKILL_TYPES.ls_lower_max_hp_and_type_atk:
+                    //hp%, type, mult
+                    if((monster.type_1_id==Arguments[1])||(monster.type_2_id==Arguments[1])||(monster.type_3_id==Arguments[1])) atk_mult = atk_mult * Arguments[2];
                     break;
                 case SKILL_TYPES.ls_linked_orbs_atk:
+                    //color, num_orbs, mult
+                    max_link = 0;
+                    for(int i = 0;i<Combos[Arguments[0]].Count-1;i++)
+                    {
+                        if (Combos[Arguments[0]][i] > max_link) max_link = Combos[Arguments[0]][i];
+                    }
+                    if (max_link >= Arguments[1]) atk_mult = atk_mult * Arguments[2];
                     break;
                 case SKILL_TYPES.ls_HP_and_ATK_double_color:
+                    //color, color, mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) || (monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1])) atk_mult = atk_mult * Arguments[2];
                     break;
                 case SKILL_TYPES.ls_all_stats_double_color:
+                    //color, color, mult
+                    if ((monster.attr_id == Arguments[0]) || (monster.sub_attr_id == Arguments[0]) || (monster.attr_id == Arguments[1]) || (monster.sub_attr_id == Arguments[1]))
+                    {
+                        atk_mult = atk_mult * Arguments[2];
+                        hp_mult = hp_mult * Arguments[2];
+                        rcv_mult = rcv_mult * Arguments[2];
+                    }
                     break;
                 case SKILL_TYPES.ls_scaling_linked_orb:
+                    //mult-color, start_orbs, mult, scale, max-orbs
+                    max_link = 0;
+                    List<int> ColorsToCheck = new List<int>();
+                    if ((Arguments[0] & (int)MULTI_COLOR.FIRE) == (int)MULTI_COLOR.FIRE) ColorsToCheck.Add((int)SINGLE_COLOR.FIRE);
+                    if ((Arguments[0] & (int)MULTI_COLOR.WOOD) == (int)MULTI_COLOR.WOOD) ColorsToCheck.Add((int)SINGLE_COLOR.WOOD);
+                    if ((Arguments[0] & (int)MULTI_COLOR.WATER) == (int)MULTI_COLOR.WATER) ColorsToCheck.Add((int)SINGLE_COLOR.WATER);
+                    if ((Arguments[0] & (int)MULTI_COLOR.LIGHT) == (int)MULTI_COLOR.LIGHT) ColorsToCheck.Add((int)SINGLE_COLOR.LIGHT);
+                    if ((Arguments[0] & (int)MULTI_COLOR.DARK) == (int)MULTI_COLOR.DARK) ColorsToCheck.Add((int)SINGLE_COLOR.DARK);
+                    foreach (int item in ColorsToCheck)
+                    {
+                        for (int i = 0; i < Combos[item].Count - 1; i++)
+                        {
+                            if (Combos[item][i] > max_link) max_link = Combos[item][i];
+                        }
+                    }
+                    if(max_link >= Arguments[0])
+                    {
+                        int total_mult = Arguments[2];
+                        int scale_mult = 0;
+                        if (max_link >= Arguments[4]) scale_mult = Arguments[4] - Arguments[0];
+                        else scale_mult = max_link - Arguments[0];
+                        total_mult = total_mult + (scale_mult * Arguments[3]);
+                        atk_mult = atk_mult * total_mult;
+                    }
                     break;
                 case SKILL_TYPES.ls_mult_stat:
+                    //color, type, hpt, atk, rcv
                     break;
                 case SKILL_TYPES.ls_low_hp_atk:
+                    //percent, color, type, mult
                     break;
                 case SKILL_TYPES.ls_high_hp_mult_stat:
+                    //percent, color, type, atk, rcv
                     break;
                 case SKILL_TYPES.ls_multiple_specific_combos:
+                    //color,color,color,color,color,extra scale, base mult, scale mult
                     break;
                 case SKILL_TYPES.ls_required_monster_on_team:
                     break;
@@ -479,7 +653,7 @@ namespace PAD
                 case SKILL_TYPES.ls_7x6_with_mult:
                     break;
             }
-            return retVal;
+            return atk_mult;
         }
     }
 }
