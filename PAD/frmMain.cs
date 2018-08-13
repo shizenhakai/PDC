@@ -368,7 +368,7 @@ namespace PAD
             }
             Console.WriteLine("Added {0} monsters to dictionary.", list.Count);
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void Calculate_Damage(object sender, EventArgs e)
         {
 
             
@@ -471,7 +471,7 @@ namespace PAD
             //int numRow = 0; // TODO: add row support
             List<int> MainAttDamage = new List<int>();
             List<int> SubAttDamage = new List<int>();
-            for (int i = 0; i < Team.Count - 1; i++)
+            for (int i = 0; i < Team.Count; i++)
             {
                 if (i > 0) break; //Just doing first member for now
                 int numTPA = 0;
@@ -497,21 +497,25 @@ namespace PAD
                 for (int j = 0; j < Combos[color].Count; j++)
                 {
                     double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
-                    double tpa_mult = Math.Pow(1.5, numTPA);
+                    double tpa_mult = 1;
+                    if (Combos[color][j] == 4) tpa_mult = Math.Pow(1.5, numTPA);
                     double OE_mult;
                     double L_mult;
                     if (vdp_mult == 0) vdp_mult = 1;
-                    if (tpa_mult == 0) tpa_mult = 1;
                     if (Ls[color][j] == 1) L_mult = numL * 2.5;
                     else L_mult = 1;
                     if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
                     else OE_mult = 1;
-                    double ComboDamage = Team[i].cur_atk *
-                        (1 + (0.25 * (Combos[color][j] - 3))) *
-                        (vdp_mult) *
-                        (OE_mult) *
-                        (L_mult);
-                    if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
+                    double ComboDamage = Team[i].cur_atk;
+                    ComboDamage *= (1 + (0.25 * (Combos[color][j] - 3))) * OE_mult * vdp_mult * L_mult;
+                    ComboDamage = Math.Round(Math.Ceiling(ComboDamage) * tpa_mult, MidpointRounding.AwayFromZero);
+
+                    //                    double ComboDamage = Team[i].cur_atk *
+                    //                        (1 + (0.25 * (Combos[color][j] - 3))) *
+                    //                       (vdp_mult) *
+                    //                        (OE_mult) *
+                    //                        (L_mult);
+                    //                    if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
                     MainDamage += ComboDamage;
                     
                 }
@@ -523,7 +527,8 @@ namespace PAD
                     for (int j = 0; j < Combos[color].Count; j++)
                     {
                         double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
-                        double tpa_mult = Math.Pow(1.5, numTPA) * TPAs[color];
+                        double tpa_mult = Math.Pow(1.5, numTPA);
+                        if (Combos[color][j] != 4) tpa_mult = 1; 
                         double OE_mult;
                         double L_mult;
                         if (vdp_mult == 0) vdp_mult = 1;
@@ -532,14 +537,15 @@ namespace PAD
                         else L_mult = 1;
                         if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
                         else OE_mult = 1;
-                        double ComboDamage = Team[i].cur_atk *
-                            (1 + (0.25 * (Combos[color][j] - 3))) *
-                            (vdp_mult) *
-                            (OE_mult) *
-                            (L_mult);
-                        if (Team[i].attr_id == Team[i].sub_attr_id) ComboDamage  = ComboDamage * 0.1f;
+                        double ComboDamage = Team[i].cur_atk;
+                        ComboDamage *= Math.Round((1 + (0.25 * (Combos[color][j] - 3))) * tpa_mult);
+                        //ComboDamage *= (1 + (0.25 * (Combos[color][j] - 3)));
+                        //ComboDamage *= (vdp_mult);
+                        //ComboDamage *= (OE_mult);
+                        //ComboDamage *=  (L_mult);
+                        //if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
+                        if (Team[i].attr_id == Team[i].sub_attr_id) ComboDamage = ComboDamage * 0.1f;
                         else ComboDamage = ComboDamage * 0.33f;
-                        if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
                         SubDamage += ComboDamage;
                     }
                 }
@@ -560,16 +566,17 @@ namespace PAD
                 Skill leader_skillB = new Skill();
                 leader_skillB.load_skill("E:\\PadSync\\paddata\\processed\\na_skills.json", Team[5].leader_skill_id);
                 leader_skillB.is_leaderskill = true;
-                LS_mult = leader_skillA.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[0]);
-                LS_mult = LS_mult * leader_skillB.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[0]);
+                LS_mult = leader_skillA.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[i]);
+                LS_mult = LS_mult * leader_skillB.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[i]);
 
-                double TotalMain = MainDamage * (1 + 0.25 * (comboCount - 1)) *
-                    row_mult *
-                    _7c_mult *
-                    SFU_mult *
-                    low_hp_mult *
-                    high_hp_mult *
-                    LS_mult;
+                double TotalMain = MainDamage;
+                TotalMain *= (1 + 0.25 * (comboCount - 1));
+                TotalMain *= row_mult;
+                TotalMain *= LS_mult;
+                TotalMain *= _7c_mult;
+                TotalMain *= SFU_mult;
+                TotalMain *= low_hp_mult;
+                TotalMain *= high_hp_mult;
                 double TotalSub = SubDamage * (1 + 0.25 * (comboCount - 1)) *
                     row_mult *
                     _7c_mult *
@@ -577,11 +584,21 @@ namespace PAD
                     low_hp_mult *
                     high_hp_mult *
                     LS_mult;
-                MainAttDamage.Add((int)TotalMain);
+                MainAttDamage.Add((int)Math.Round(TotalMain, MidpointRounding.AwayFromZero));
                 SubAttDamage.Add((int)TotalSub);
             }
-            lblMain1.Text = MainAttDamage[0].ToString();
-            lblSub1.Text = SubAttDamage[0].ToString();
+            int totalDamage = 0;
+            for (int i = 0; i < Team.Count;i++)
+            {
+                if (i > 0) break;
+                totalDamage += MainAttDamage[i];
+                totalDamage += SubAttDamage[i];
+                Label MainDmg = this.Controls.Find("lblMain" + (i + 1).ToString(), false).FirstOrDefault() as Label;
+                Label SubDmg = this.Controls.Find("lblSub" + (i + 1).ToString(), false).FirstOrDefault() as Label;
+                MainDmg.Text = MainAttDamage[i].ToString();
+                SubDmg.Text = SubAttDamage[i].ToString();
+            }
+            lblTotalDamage.Text = totalDamage.ToString();
         }
 
         private void img1_Click(object sender, EventArgs e)
@@ -632,21 +649,32 @@ namespace PAD
             if (loadMonster.SelectedMonster != 0) SetMonsterSlot(5, loadMonster.SelectedMonster);
         }
 
-        private void nmLVL1_ValueChanged(object sender, EventArgs e)
+        private void level_change(object sender, EventArgs e)
         {
-            Team[0].level = (int)nmLVL1.Value;
-            int card_atk = (int)Math.Round(Team[0].min_atk + ((Team[0].max_atk - Team[0].min_atk) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].atk_exponent)));
+            NumericUpDown lvl = (NumericUpDown)sender;
+            int TeamSlot = 0;
+            int.TryParse(lvl.Name.Substring(5, 1), out TeamSlot);
+            TeamSlot = TeamSlot - 1;
+            Team[TeamSlot].level = (int)lvl.Value;
+            int card_atk = (int)Math.Round(Team[TeamSlot].min_atk + ((Team[TeamSlot].max_atk - Team[TeamSlot].min_atk) * Math.Pow(((double)(Team[TeamSlot].level - 1) / (double)(Team[TeamSlot].max_level - 1)), Team[TeamSlot].atk_exponent)));
             card_atk += (int)nmATK1.Value * 5;
-            int card_rcv = (int)Math.Round(Team[0].min_rcv + ((Team[0].max_rcv - Team[0].min_rcv) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].rcv_exponent)));
+            int card_rcv = (int)Math.Round(Team[TeamSlot].min_rcv + ((Team[TeamSlot].max_rcv - Team[TeamSlot].min_rcv) * Math.Pow(((double)(Team[TeamSlot].level - 1) / (double)(Team[TeamSlot].max_level - 1)), Team[TeamSlot].rcv_exponent)));
             card_rcv += (int)nmRCV1.Value * 3;
-            int card_hp = (int)Math.Round(Team[0].min_hp + ((Team[0].max_hp - Team[0].min_hp) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].hp_exponent)));
+            int card_hp = (int)Math.Round(Team[TeamSlot].min_hp + ((Team[TeamSlot].max_hp - Team[TeamSlot].min_hp) * Math.Pow(((double)(Team[TeamSlot].level - 1) / (double)(Team[TeamSlot].max_level - 1)), Team[TeamSlot].hp_exponent)));
             card_hp += (int)nmHP1.Value * 10;
-            Team[0].cur_atk = card_atk;
-            Team[0].cur_hp = card_hp;
-            Team[0].cur_rcv = card_rcv;
-            lblATK1.Text = card_atk.ToString();
-            lblHP1.Text = card_hp.ToString();
-            lblRCV1.Text = card_rcv.ToString();
+            Team[TeamSlot].cur_atk = card_atk;
+            Team[TeamSlot].cur_hp = card_hp;
+            Team[TeamSlot].cur_rcv = card_rcv;
+            Label atk = this.Controls.Find("lblATK" + (TeamSlot + 1).ToString(), false).FirstOrDefault() as Label;
+            Label hp = this.Controls.Find("lblHP" + (TeamSlot + 1).ToString(), false).FirstOrDefault() as Label;
+            Label rcv = this.Controls.Find("lblRCV" + (TeamSlot + 1).ToString(), false).FirstOrDefault() as Label;
+
+            atk.Text = card_atk.ToString();
+            hp.Text = card_hp.ToString();
+            rcv.Text = card_rcv.ToString();
+            //lblATK1.Text = card_atk.ToString();
+            //lblHP1.Text = card_hp.ToString();
+            //lblRCV1.Text = card_rcv.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)

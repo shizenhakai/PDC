@@ -963,7 +963,6 @@
             // 
             // img1Type1
             // 
-            this.img1Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img1Type1.Location = new System.Drawing.Point(117, 12);
             this.img1Type1.Name = "img1Type1";
             this.img1Type1.Size = new System.Drawing.Size(32, 32);
@@ -973,7 +972,6 @@
             // 
             // img1Type2
             // 
-            this.img1Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img1Type2.Location = new System.Drawing.Point(117, 48);
             this.img1Type2.Name = "img1Type2";
             this.img1Type2.Size = new System.Drawing.Size(32, 32);
@@ -983,7 +981,6 @@
             // 
             // img1Type3
             // 
-            this.img1Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img1Type3.Location = new System.Drawing.Point(117, 85);
             this.img1Type3.Name = "img1Type3";
             this.img1Type3.Size = new System.Drawing.Size(32, 32);
@@ -993,7 +990,6 @@
             // 
             // img2Type3
             // 
-            this.img2Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img2Type3.Location = new System.Drawing.Point(117, 203);
             this.img2Type3.Name = "img2Type3";
             this.img2Type3.Size = new System.Drawing.Size(32, 32);
@@ -1003,7 +999,6 @@
             // 
             // img2Type2
             // 
-            this.img2Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img2Type2.Location = new System.Drawing.Point(117, 166);
             this.img2Type2.Name = "img2Type2";
             this.img2Type2.Size = new System.Drawing.Size(32, 32);
@@ -1013,7 +1008,6 @@
             // 
             // img2Type1
             // 
-            this.img2Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img2Type1.Location = new System.Drawing.Point(117, 130);
             this.img2Type1.Name = "img2Type1";
             this.img2Type1.Size = new System.Drawing.Size(32, 32);
@@ -1023,7 +1017,6 @@
             // 
             // img3Type3
             // 
-            this.img3Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img3Type3.Location = new System.Drawing.Point(117, 321);
             this.img3Type3.Name = "img3Type3";
             this.img3Type3.Size = new System.Drawing.Size(32, 32);
@@ -1033,7 +1026,6 @@
             // 
             // img3Type2
             // 
-            this.img3Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img3Type2.Location = new System.Drawing.Point(117, 284);
             this.img3Type2.Name = "img3Type2";
             this.img3Type2.Size = new System.Drawing.Size(32, 32);
@@ -1043,7 +1035,6 @@
             // 
             // img3Type1
             // 
-            this.img3Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img3Type1.Location = new System.Drawing.Point(117, 248);
             this.img3Type1.Name = "img3Type1";
             this.img3Type1.Size = new System.Drawing.Size(32, 32);
@@ -1053,7 +1044,6 @@
             // 
             // img4Type3
             // 
-            this.img4Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img4Type3.Location = new System.Drawing.Point(117, 439);
             this.img4Type3.Name = "img4Type3";
             this.img4Type3.Size = new System.Drawing.Size(32, 32);
@@ -1063,7 +1053,6 @@
             // 
             // img4Type2
             // 
-            this.img4Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img4Type2.Location = new System.Drawing.Point(117, 402);
             this.img4Type2.Name = "img4Type2";
             this.img4Type2.Size = new System.Drawing.Size(32, 32);
@@ -1073,7 +1062,6 @@
             // 
             // img4Type1
             // 
-            this.img4Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img4Type1.Location = new System.Drawing.Point(117, 366);
             this.img4Type1.Name = "img4Type1";
             this.img4Type1.Size = new System.Drawing.Size(32, 32);
@@ -1083,7 +1071,6 @@
             // 
             // img5Type3
             // 
-            this.img5Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img5Type3.Location = new System.Drawing.Point(117, 557);
             this.img5Type3.Name = "img5Type3";
             this.img5Type3.Size = new System.Drawing.Size(32, 32);
@@ -1093,7 +1080,6 @@
             // 
             // img5Type2
             // 
-            this.img5Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img5Type2.Location = new System.Drawing.Point(117, 520);
             this.img5Type2.Name = "img5Type2";
             this.img5Type2.Size = new System.Drawing.Size(32, 32);
@@ -1103,7 +1089,6 @@
             // 
             // img5Type1
             // 
-            this.img5Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img5Type1.Location = new System.Drawing.Point(117, 484);
             this.img5Type1.Name = "img5Type1";
             this.img5Type1.Size = new System.Drawing.Size(32, 32);
@@ -1113,7 +1098,6 @@
             // 
             // img6Type3
             // 
-            this.img6Type3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img6Type3.Location = new System.Drawing.Point(117, 675);
             this.img6Type3.Name = "img6Type3";
             this.img6Type3.Size = new System.Drawing.Size(32, 32);
@@ -1123,7 +1107,6 @@
             // 
             // img6Type2
             // 
-            this.img6Type2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img6Type2.Location = new System.Drawing.Point(117, 638);
             this.img6Type2.Name = "img6Type2";
             this.img6Type2.Size = new System.Drawing.Size(32, 32);
@@ -1133,7 +1116,6 @@
             // 
             // img6Type1
             // 
-            this.img6Type1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.img6Type1.Location = new System.Drawing.Point(117, 602);
             this.img6Type1.Name = "img6Type1";
             this.img6Type1.Size = new System.Drawing.Size(32, 32);
@@ -1149,7 +1131,7 @@
             this.button1.TabIndex = 96;
             this.button1.Text = "Calculate";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Calculate_Damage);
             // 
             // label1
             // 
@@ -1235,7 +1217,7 @@
             0,
             0,
             0});
-            this.nmLVL1.ValueChanged += new System.EventHandler(this.nmLVL1_ValueChanged);
+            this.nmLVL1.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmLVL2
             // 
@@ -1258,6 +1240,7 @@
             0,
             0,
             0});
+            this.nmLVL2.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmRCV2
             // 
@@ -1334,6 +1317,7 @@
             0,
             0,
             0});
+            this.nmLVL3.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmRCV3
             // 
@@ -1410,6 +1394,7 @@
             0,
             0,
             0});
+            this.nmLVL4.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmRCV4
             // 
@@ -1486,6 +1471,7 @@
             0,
             0,
             0});
+            this.nmLVL5.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmRCV5
             // 
@@ -1562,6 +1548,7 @@
             0,
             0,
             0});
+            this.nmLVL6.ValueChanged += new System.EventHandler(this.level_change);
             // 
             // nmRCV6
             // 
