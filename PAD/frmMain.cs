@@ -81,7 +81,7 @@ namespace PAD
             NumericUpDown PlusATK;
             NumericUpDown PlusRCV;
             Team[TeamSlot] = CombinedList[MonsterNo];
-            string strTeamslot = TeamSlot.ToString();
+            string strTeamslot = (TeamSlot + 1).ToString();
             MonsterPortrait = this.Controls.Find("img" + strTeamslot, false).FirstOrDefault() as PictureBox;
             Type1 = this.Controls.Find("img" + strTeamslot + "Type1", false).FirstOrDefault() as PictureBox;
             Type2 = this.Controls.Find("img" + strTeamslot + "Type2", false).FirstOrDefault() as PictureBox;
@@ -378,7 +378,6 @@ namespace PAD
             //2: green
             //1: blue
             //0: red
-            List<LeaderSkillItem> LeaderSkill= new List<LeaderSkillItem>();
             List<List<int>> Combos = new List<List<int>>();
             List<List<int>> Enhance = new List<List<int>>();
             List<int> OE = new List<int>();
@@ -420,7 +419,7 @@ namespace PAD
                 int colorTPAs = 0;
                 int colorCross = 0;
                 int colorBox = 0;
-                for (int j = 1; j < 5; j++)
+                for (int j = 1; j < 6; j++)
                 {
                     string colorName = "";
                     switch(i)
@@ -469,30 +468,12 @@ namespace PAD
                 Boxes.Add(colorBox);
                 TPAs.Add(colorTPAs);
             }
-            LeaderSkillItem Noctis = new LeaderSkillItem();
-            Noctis.skill_type = LeaderSkillTypes.static_mult;
-            Noctis.arguments.Add(1.5f);
-            Noctis.arguments.Add(0);
-            Noctis.arguments.Add(10);
-            Noctis.arguments.Add(11);
-            Noctis.arguments.Add(12);
-            Noctis.arguments.Add(13);
-            Noctis.arguments.Add(14);
-            LeaderSkill.Add(Noctis);
-            Noctis = new LeaderSkillItem();
-            Noctis.skill_type = LeaderSkillTypes.combo;
-            Noctis.arguments.Add(3);
-            Noctis.arguments.Add(4.5f);
-            Noctis.arguments.Add(1);
-            Noctis.arguments.Add(7.5f);
-            LeaderSkill.Add(Noctis);
             //int numRow = 0; // TODO: add row support
             List<int> MainAttDamage = new List<int>();
             List<int> SubAttDamage = new List<int>();
             for (int i = 0; i < Team.Count - 1; i++)
             {
                 if (i > 0) break; //Just doing first member for now
-                //Do Main Att Combos
                 int numTPA = 0;
                 int num7c = 0;
                 int numVDP = 0;
@@ -510,28 +491,57 @@ namespace PAD
                     if (Team[i].awakenings[j] == 57) numHighHP++;
                     if (Team[i].awakenings[j] == 58) numLowHP++;
                 }
-                double comboDamage = 0;
+                double MainDamage = 0;
                 int color = Team[i].attr_id;
-                for (int j=0;j<Combos[color].Count;j++)
+                //Get Main Att Damage
+                for (int j = 0; j < Combos[color].Count; j++)
                 {
                     double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
-                    double tpa_mult = Math.Pow(1.5, numTPA) * TPAs[color];
+                    double tpa_mult = Math.Pow(1.5, numTPA);
                     double OE_mult;
-                    double L_mult; 
+                    double L_mult;
                     if (vdp_mult == 0) vdp_mult = 1;
                     if (tpa_mult == 0) tpa_mult = 1;
                     if (Ls[color][j] == 1) L_mult = numL * 2.5;
                     else L_mult = 1;
                     if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
                     else OE_mult = 1;
-                    //if (Combos[Team[i].attr_id]) ;
-                    comboDamage += Team[i].cur_atk *
+                    double ComboDamage = Team[i].cur_atk *
                         (1 + (0.25 * (Combos[color][j] - 3))) *
-                        (tpa_mult) *
                         (vdp_mult) *
                         (OE_mult) *
                         (L_mult);
-
+                    if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
+                    MainDamage += ComboDamage;
+                    
+                }
+                //Get Sub Att Damage
+                double SubDamage = 0;
+                color = Team[i].sub_attr_id;
+                if (color != -1)
+                {
+                    for (int j = 0; j < Combos[color].Count; j++)
+                    {
+                        double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
+                        double tpa_mult = Math.Pow(1.5, numTPA) * TPAs[color];
+                        double OE_mult;
+                        double L_mult;
+                        if (vdp_mult == 0) vdp_mult = 1;
+                        if (tpa_mult == 0) tpa_mult = 1;
+                        if (Ls[color][j] == 1) L_mult = numL * 2.5;
+                        else L_mult = 1;
+                        if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
+                        else OE_mult = 1;
+                        double ComboDamage = Team[i].cur_atk *
+                            (1 + (0.25 * (Combos[color][j] - 3))) *
+                            (vdp_mult) *
+                            (OE_mult) *
+                            (L_mult);
+                        if (Team[i].attr_id == Team[i].sub_attr_id) ComboDamage  = ComboDamage * 0.1f;
+                        else ComboDamage = ComboDamage * 0.33f;
+                        if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
+                        SubDamage += ComboDamage;
+                    }
                 }
                 double low_hp_mult = 1;
                 double high_hp_mult = 1;
@@ -539,25 +549,39 @@ namespace PAD
                 double _7c_mult = 1;
                 double SFU_mult = 1;
                 double LS_mult = 1;
-                bool valid = false;
 
                 if (comboCount > 6) _7c_mult = Math.Pow(2, num7c);
                 if (numLowHP > 0) low_hp_mult = Math.Pow(2, numLowHP);
                 if (numHighHP > 0) high_hp_mult = Math.Pow(1.5, numHighHP);
-                double TotalDamge = (1 + 0.255 * (comboCount - 1)) *
+
+                Skill leader_skillA = new Skill();
+                leader_skillA.load_skill("E:\\PadSync\\paddata\\processed\\na_skills.json", Team[0].leader_skill_id);
+                leader_skillA.is_leaderskill = true;
+                Skill leader_skillB = new Skill();
+                leader_skillB.load_skill("E:\\PadSync\\paddata\\processed\\na_skills.json", Team[5].leader_skill_id);
+                leader_skillB.is_leaderskill = true;
+                LS_mult = leader_skillA.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[0]);
+                LS_mult = LS_mult * leader_skillB.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[0]);
+
+                double TotalMain = MainDamage * (1 + 0.25 * (comboCount - 1)) *
                     row_mult *
                     _7c_mult *
                     SFU_mult *
                     low_hp_mult *
                     high_hp_mult *
                     LS_mult;
+                double TotalSub = SubDamage * (1 + 0.25 * (comboCount - 1)) *
+                    row_mult *
+                    _7c_mult *
+                    SFU_mult *
+                    low_hp_mult *
+                    high_hp_mult *
+                    LS_mult;
+                MainAttDamage.Add((int)TotalMain);
+                SubAttDamage.Add((int)TotalSub);
             }
-            switch (Team[1].sub_attr_id)
-            {
-                case 0:
-                    lblTotalDamage.Text = "0";
-                    break;
-            }
+            lblMain1.Text = MainAttDamage[0].ToString();
+            lblSub1.Text = SubAttDamage[0].ToString();
         }
 
         private void img1_Click(object sender, EventArgs e)
@@ -565,7 +589,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if(loadMonster.SelectedMonster!=0) SetMonsterSlot(1, loadMonster.SelectedMonster);
+            if(loadMonster.SelectedMonster!=0) SetMonsterSlot(0, loadMonster.SelectedMonster);
         }
 
         private void img2_Click(object sender, EventArgs e)
@@ -573,7 +597,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(2, loadMonster.SelectedMonster);
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(1, loadMonster.SelectedMonster);
         }
 
         private void img3_Click(object sender, EventArgs e)
@@ -581,7 +605,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(3, loadMonster.SelectedMonster);
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(2, loadMonster.SelectedMonster);
         }
 
         private void img4_Click(object sender, EventArgs e)
@@ -589,7 +613,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(4, loadMonster.SelectedMonster);
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(3, loadMonster.SelectedMonster);
         }
 
         private void img5_Click(object sender, EventArgs e)
@@ -597,7 +621,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(5, loadMonster.SelectedMonster);
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(4, loadMonster.SelectedMonster);
         }
 
         private void img6_Click(object sender, EventArgs e)
@@ -605,7 +629,7 @@ namespace PAD
             frmLoadMonster loadMonster = new frmLoadMonster();
             loadMonster.MonsterList = CombinedList;
             loadMonster.ShowDialog();
-            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(6, loadMonster.SelectedMonster);
+            if (loadMonster.SelectedMonster != 0) SetMonsterSlot(5, loadMonster.SelectedMonster);
         }
 
         private void nmLVL1_ValueChanged(object sender, EventArgs e)
@@ -617,6 +641,9 @@ namespace PAD
             card_rcv += (int)nmRCV1.Value * 3;
             int card_hp = (int)Math.Round(Team[0].min_hp + ((Team[0].max_hp - Team[0].min_hp) * Math.Pow(((double)(Team[0].level - 1) / (double)(Team[0].max_level - 1)), Team[0].hp_exponent)));
             card_hp += (int)nmHP1.Value * 10;
+            Team[0].cur_atk = card_atk;
+            Team[0].cur_hp = card_hp;
+            Team[0].cur_rcv = card_rcv;
             lblATK1.Text = card_atk.ToString();
             lblHP1.Text = card_hp.ToString();
             lblRCV1.Text = card_rcv.ToString();
@@ -624,9 +651,8 @@ namespace PAD
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int num_orbs = LightCombo1.num_orbs;
-            lblMain1.Text = num_orbs.ToString();
-
+            string team_to_save_json = JsonConvert.SerializeObject(Team, Formatting.Indented);
+            File.WriteAllText("E:\\PadSync\\team.json", team_to_save_json);
         }
 
         private void cmbLightCombo1_MouseDown(object sender, MouseEventArgs e)
@@ -644,6 +670,23 @@ namespace PAD
 
         private void imgLightCombo1_MouseUp(object sender, MouseEventArgs e)
         {
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            List<CombinedCard> LoadedList = new List<CombinedCard>();
+            string team_json = File.ReadAllText("E:\\PadSync\\team.json");
+            LoadedList = JsonConvert.DeserializeObject<List<CombinedCard>>(team_json);
+            for(int i = 0; i < 6; i++)
+            {
+                SetMonsterSlot(i, LoadedList[i].card_id);
+                Team[i] = LoadedList[i];
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
@@ -787,15 +830,6 @@ namespace PAD
         }
     }
     
-    public class LeaderSkillItem
-    {
-        public LeaderSkillTypes skill_type;
-        public List<double> arguments;
-        public LeaderSkillItem()
-        {
-            arguments = new List<double>();
-        }
-    }
     public class CombinedCard : PadMonster
     {
         public bool jp_only { get; set; }
