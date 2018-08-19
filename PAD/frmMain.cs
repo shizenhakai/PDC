@@ -506,16 +506,10 @@ namespace PAD
                     else L_mult = 1;
                     if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
                     else OE_mult = 1;
-                    double ComboDamage = Team[i].cur_atk;
-                    ComboDamage *= (1 + (0.25 * (Combos[color][j] - 3))) * OE_mult * vdp_mult * L_mult;
-                    ComboDamage = Math.Round(Math.Ceiling(ComboDamage) * tpa_mult, MidpointRounding.AwayFromZero);
-
-                    //                    double ComboDamage = Team[i].cur_atk *
-                    //                        (1 + (0.25 * (Combos[color][j] - 3))) *
-                    //                       (vdp_mult) *
-                    //                        (OE_mult) *
-                    //                        (L_mult);
-                    //                    if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
+                    double ComboDamage = 0;
+                    double orb_count_mult = (1 + (0.25 * (Combos[color][j] - 3)));
+                    ComboDamage = Team[i].cur_atk * orb_count_mult * OE_mult * vdp_mult * L_mult;
+                    ComboDamage =  Math.Round(ComboDamage * tpa_mult, MidpointRounding.AwayFromZero);
                     MainDamage += ComboDamage;
                     
                 }
@@ -527,25 +521,22 @@ namespace PAD
                     for (int j = 0; j < Combos[color].Count; j++)
                     {
                         double vdp_mult = Math.Pow(2.5, numVDP) * Boxes[color];
-                        double tpa_mult = Math.Pow(1.5, numTPA);
-                        if (Combos[color][j] != 4) tpa_mult = 1; 
+                        double tpa_mult = 1;
+                        if (Combos[color][j] == 4) tpa_mult = Math.Pow(1.5, numTPA);
                         double OE_mult;
                         double L_mult;
                         if (vdp_mult == 0) vdp_mult = 1;
-                        if (tpa_mult == 0) tpa_mult = 1;
                         if (Ls[color][j] == 1) L_mult = numL * 2.5;
                         else L_mult = 1;
                         if (Enhance[color][j] != 0) OE_mult = (1 + 0.06 * Enhance[color][j]) * (1 + 0.05 * OE[color]);
                         else OE_mult = 1;
-                        double ComboDamage = Team[i].cur_atk;
-                        ComboDamage *= Math.Round((1 + (0.25 * (Combos[color][j] - 3))) * tpa_mult);
-                        //ComboDamage *= (1 + (0.25 * (Combos[color][j] - 3)));
-                        //ComboDamage *= (vdp_mult);
-                        //ComboDamage *= (OE_mult);
-                        //ComboDamage *=  (L_mult);
-                        //if (Combos[color][j] == 4) ComboDamage = ComboDamage * tpa_mult;
-                        if (Team[i].attr_id == Team[i].sub_attr_id) ComboDamage = ComboDamage * 0.1f;
-                        else ComboDamage = ComboDamage * 0.33f;
+                        double ComboDamage = 0;
+                        double orb_count_mult = (1 + (0.25 * (Combos[color][j] - 3)));
+                        double sub_att_atk = Team[i].cur_atk;
+                        if (Team[i].attr_id == Team[i].sub_attr_id) sub_att_atk = sub_att_atk / 10;
+                        else sub_att_atk = sub_att_atk / 3;
+                        ComboDamage = sub_att_atk * orb_count_mult * OE_mult * vdp_mult * L_mult;
+                        ComboDamage = Math.Round(ComboDamage * tpa_mult, MidpointRounding.AwayFromZero);
                         SubDamage += ComboDamage;
                     }
                 }
@@ -554,7 +545,8 @@ namespace PAD
                 double row_mult = 1;
                 double _7c_mult = 1;
                 double SFU_mult = 1;
-                double LS_mult = 1;
+                LS_Results LS_A = new LS_Results();
+                LS_Results LS_B = new LS_Results();
 
                 if (comboCount > 6) _7c_mult = Math.Pow(2, num7c);
                 if (numLowHP > 0) low_hp_mult = Math.Pow(2, numLowHP);
@@ -563,29 +555,37 @@ namespace PAD
                 Skill leader_skillA = new Skill();
                 leader_skillA.load_skill("E:\\PadSync\\paddata\\processed\\na_skills.json", Team[0].leader_skill_id);
                 leader_skillA.is_leaderskill = true;
+                LS_A = leader_skillA.GetLeaderskillMultiplier(Combos, Enhance, 100, false, Team[i]);
                 Skill leader_skillB = new Skill();
                 leader_skillB.load_skill("E:\\PadSync\\paddata\\processed\\na_skills.json", Team[5].leader_skill_id);
                 leader_skillB.is_leaderskill = true;
-                LS_mult = leader_skillA.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[i]);
-                LS_mult = LS_mult * leader_skillB.GetLeaderskillMultiplier(Combos, Enhance, 100, true, Team[i]);
+                LS_B = leader_skillB.GetLeaderskillMultiplier(Combos, Enhance, 100, false, Team[i]);
 
-                double TotalMain = MainDamage;
-                TotalMain *= (1 + 0.25 * (comboCount - 1));
-                TotalMain *= row_mult;
-                TotalMain *= LS_mult;
-                TotalMain *= _7c_mult;
-                TotalMain *= SFU_mult;
-                TotalMain *= low_hp_mult;
-                TotalMain *= high_hp_mult;
-                double TotalSub = SubDamage * (1 + 0.25 * (comboCount - 1)) *
-                    row_mult *
-                    _7c_mult *
-                    SFU_mult *
-                    low_hp_mult *
-                    high_hp_mult *
-                    LS_mult;
+                double combo_mult = (1 + 0.25 * (comboCount - 1));
+
+                double TotalMain = MainDamage * combo_mult * row_mult * SFU_mult * low_hp_mult * high_hp_mult;
+                double TotalSub = SubDamage * combo_mult * row_mult * SFU_mult * low_hp_mult * high_hp_mult;
+                for (int k = 0; k < LS_A.atk_mults.Count; k++)
+                {
+                    double ls_item = LS_A.atk_mults[k];
+                    TotalMain = TotalMain * ls_item;
+                    TotalSub = TotalSub * ls_item;
+                }
+                TotalMain = Math.Ceiling(TotalMain);
+                TotalSub = Math.Floor(TotalSub);
+                for (int k = 0; k < LS_B.atk_mults.Count; k++)
+                {
+                    double ls_item = LS_B.atk_mults[k];
+                    TotalMain = TotalMain * ls_item;
+                    TotalSub = TotalSub * ls_item;
+                }
+//                foreach (double ls_item in LS_B.atk_mults)
+//                {
+//                    TotalMain = Math.Ceiling(TotalMain * ls_item);
+//                    TotalSub = Math.Ceiling(TotalSub * ls_item);
+//                }
                 MainAttDamage.Add((int)Math.Round(TotalMain, MidpointRounding.AwayFromZero));
-                SubAttDamage.Add((int)TotalSub);
+                SubAttDamage.Add((int)Math.Round(TotalSub, MidpointRounding.AwayFromZero));
             }
             int totalDamage = 0;
             for (int i = 0; i < Team.Count;i++)
